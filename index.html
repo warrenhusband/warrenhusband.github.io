@@ -38,9 +38,17 @@
       "url": "https://edgetheory.com/"
     },
     "knowsAbout": ["Narrative intelligence", "Software engineering", "Engineering leadership"],
-    "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "Belhaven University"
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Belhaven University" },
+      { "@type": "Organization", "name": "NXXIO" },
+      { "@type": "Organization", "name": "Renaissance RX" },
+      { "@type": "Organization", "name": "Natural Molecular Testing" },
+      { "@type": "Organization", "name": "Bladder Health Network" }
+    ],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Chief Technology Officer",
+      "occupationLocation": { "@type": "State", "name": "Mississippi" }
     },
     "homeLocation": {
       "@type": "Place",
@@ -90,6 +98,13 @@
     .role { color: var(--muted); margin: 0 0 2rem; font-size: 1.1rem; }
     p { margin: 0 0 1.25rem; }
     a { color: var(--link); text-underline-offset: .15em; }
+    h2 { font-size: 1.15rem; margin: 2.5rem 0 1rem; letter-spacing: -0.01em; }
+    .timeline { list-style: none; margin: 0; padding: 0; }
+    .timeline li { padding: 0 0 1.1rem 1.1rem; border-left: 2px solid var(--rule); position: relative; }
+    .timeline li::before { content: ""; position: absolute; left: -6px; top: .55rem; width: 10px; height: 10px; border-radius: 50%; background: var(--bg); border: 2px solid var(--muted); }
+    .timeline .what { font-weight: 600; display: block; }
+    .timeline .when { color: var(--muted); font-size: .95rem; display: block; }
+    .timeline .note { display: block; margin-top: .2rem; font-size: .95rem; }
     nav { border-top: 1px solid var(--rule); padding-top: 1.25rem; margin-top: 2rem; }
     nav a { margin-right: 1.25rem; }
   </style>
@@ -103,6 +118,41 @@
     <p>Warren Husband is CTO of <a href="https://edgetheory.com/">EdgeTheory</a>, a narrative intelligence company, where he leads the engineering team.</p>
     <p>Narrative intelligence is about understanding the stories that shape what people believe: where they start, who pushes them, how they spread and where they're heading. There is far more online content than any team can read, and more of it is synthetic or coordinated every year. The goal is to spot a narrative early enough that the people making decisions, in government or in business, can act before it takes hold.</p>
     <p>Warren has worked in software since 1995 as an engineer, team leader, IT director and CTO. Before joining EdgeTheory in 2018, he spent much of that time building systems for healthcare and medical labs. He's more of a people person than the typical engineer, and he likes keeping the business goal in view above the details. He lives in Mississippi.</p>
+
+    <h2>Experience</h2>
+    <ol class="timeline">
+      <li>
+        <span class="what">Chief Technology Officer, <a href="https://edgetheory.com/">EdgeTheory</a></span>
+        <span class="when">2018 – present · Ridgeland, Mississippi</span>
+      </li>
+      <li>
+        <span class="what">Team Leader and Senior Software Engineer, NXXIO</span>
+        <span class="when">2015 – 2018</span>
+        <span class="note">Led the development team and built sales, compliance and lab-reporting portals for a clinical lab business.</span>
+      </li>
+      <li>
+        <span class="what">Team Leader and Senior Software Engineer, Renaissance RX</span>
+        <span class="when">2013 – 2015</span>
+        <span class="note">Built web portals for sales data, pharmacogenomics analyses and physician registries, working directly with physicians and pharmacists.</span>
+      </li>
+      <li>
+        <span class="what">Senior Software Engineer, Natural Molecular Testing</span>
+        <span class="when">2013</span>
+        <span class="note">Designed a pharmacogenomics report format that made DNA lab results easier for physicians and patients to read.</span>
+      </li>
+      <li>
+        <span class="what">Information Technology Director, Bladder Health Network</span>
+        <span class="when">2005 – 2013 · Jackson, Mississippi area</span>
+        <span class="note">Ran software, infrastructure and technology decisions; built the patient scheduling and clinical reporting system, a sales portal and two iPhone apps.</span>
+      </li>
+      <li>
+        <span class="what">Software and IT roles</span>
+        <span class="when">1995 – 2005</span>
+      </li>
+    </ol>
+
+    <h2>Education</h2>
+    <p>Belhaven University</p>
 
     <nav aria-label="Profiles">
       <a href="https://www.linkedin.com/in/warren-husband/" rel="me">LinkedIn</a>
