@@ -3,26 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Warren Husband – CTO, EdgeTheory</title>
-  <meta name="description" content="Warren Husband is CTO of EdgeTheory, a narrative intelligence company, and has built software since 1995. Based in Mississippi.">
+  <title>Warren Husband – Chief Technology Officer, EdgeTheory</title>
+  <meta name="description" content="Warren Husband is Chief Technology Officer of EdgeTheory, a narrative intelligence company. He has built software since 1995 and lives in Mississippi.">
   <link rel="canonical" href="https://warrenhusband.com/">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Warren Husband – CTO, EdgeTheory">
-  <meta property="og:description" content="Warren Husband is CTO of EdgeTheory, a narrative intelligence company, and has built software since 1995. Based in Mississippi.">
+  <meta property="og:title" content="Warren Husband – Chief Technology Officer, EdgeTheory">
+  <meta property="og:description" content="Warren Husband is Chief Technology Officer of EdgeTheory, a narrative intelligence company. He has built software since 1995 and lives in Mississippi.">
   <meta property="og:url" content="https://warrenhusband.com/">
-  <meta property="og:image" content="https://warrenhusband.com/headshot.jpg">
-  <meta property="og:image:width" content="460">
-  <meta property="og:image:height" content="460">
-  <meta property="og:image:alt" content="Warren Husband">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://warrenhusband.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Warren Husband, Chief Technology Officer, EdgeTheory">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:creator" content="@WarrenHusband">
-  <meta name="twitter:image" content="https://warrenhusband.com/headshot.jpg">
-  <meta name="twitter:title" content="Warren Husband – CTO, EdgeTheory">
-  <meta name="twitter:description" content="Warren Husband is CTO of EdgeTheory, a narrative intelligence company, and has built software since 1995. Based in Mississippi.">
+  <meta name="twitter:image" content="https://warrenhusband.com/og-image.png">
+  <meta name="twitter:image:alt" content="Warren Husband, Chief Technology Officer, EdgeTheory">
+  <meta name="twitter:title" content="Warren Husband – Chief Technology Officer, EdgeTheory">
+  <meta name="twitter:description" content="Warren Husband is Chief Technology Officer of EdgeTheory, a narrative intelligence company. He has built software since 1995 and lives in Mississippi.">
 
   <script type="application/ld+json">
   {
@@ -31,7 +33,8 @@
     "name": "Warren Husband",
     "url": "https://warrenhusband.com/",
     "image": "https://warrenhusband.com/headshot.jpg",
-    "jobTitle": "CTO",
+    "description": "Warren Husband is Chief Technology Officer of EdgeTheory, a narrative intelligence company. He has built software since 1995 and lives in Mississippi.",
+    "jobTitle": "Chief Technology Officer",
     "worksFor": {
       "@type": "Organization",
       "name": "EdgeTheory",
@@ -69,16 +72,23 @@
       --bg: #fbfaf8;
       --fg: #1c1c1c;
       --muted: #5f5f5f;
-      --link: #1f5fbf;
+      --brand: #1E3669;
+      --accent: #0390C8;
       --rule: #e3e0da;
+      --button-bg: #1E3669;
+      --button-fg: #ffffff;
+      color-scheme: light;
     }
     @media (prefers-color-scheme: dark) {
       :root {
         --bg: #141414;
         --fg: #ececec;
         --muted: #a3a3a3;
-        --link: #7fb0ff;
+        --brand: #0390C8;
         --rule: #2c2c2c;
+        --button-bg: #ececec;
+        --button-fg: #1E3669;
+        color-scheme: dark;
       }
     }
     * { box-sizing: border-box; }
@@ -86,45 +96,159 @@
       margin: 0;
       background: var(--bg);
       color: var(--fg);
-      font: 18px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font: 18px/1.65 "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     main {
-      max-width: 38rem;
+      max-width: 40rem;
       margin: 0 auto;
-      padding: 18vh 1.25rem 4rem;
+      padding: clamp(2.5rem, 8vh, 5rem) 1.25rem 4rem;
     }
-    .headshot { width: 7.5rem; height: 7.5rem; border-radius: 50%; object-fit: cover; display: block; margin: 0 0 1.5rem; }
-    h1 { font-size: 2.4rem; line-height: 1.1; margin: 0 0 .25rem; letter-spacing: -0.02em; }
-    .role { color: var(--muted); margin: 0 0 2rem; font-size: 1.1rem; }
+    .headshot {
+      width: clamp(8rem, 14vw, 10rem);
+      height: auto;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 0 1.25rem;
+    }
+    h1 {
+      font-size: clamp(2.25rem, 6vw, 3rem);
+      font-weight: 600;
+      letter-spacing: -.02em;
+      line-height: 1.12;
+      margin: 0 0 .3rem;
+    }
+    .role {
+      color: var(--fg);
+      font-size: 1.2rem;
+      line-height: 1.4;
+      margin: 0 0 .85rem;
+    }
+    .profiles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .2rem 1.15rem;
+      margin: 0 0 1.15rem;
+    }
+    .hero-cta { margin: 0 0 2rem; }
     p { margin: 0 0 1.25rem; }
-    a { color: var(--link); text-underline-offset: .15em; }
-    h2 { font-size: 1.15rem; margin: 2.5rem 0 1rem; letter-spacing: -0.01em; }
+    a {
+      color: var(--brand);
+      text-decoration-thickness: 1px;
+      text-underline-offset: .18em;
+    }
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: .55rem 1.15rem;
+      background: var(--button-bg);
+      color: var(--button-fg);
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.2;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    a.button:hover { filter: brightness(1.08); }
+    h2 {
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin: 3rem 0 1rem;
+      padding-bottom: .4rem;
+      border-bottom: 2px solid var(--accent);
+    }
     .timeline { list-style: none; margin: 0; padding: 0; }
-    .timeline li { padding: 0 0 1.1rem 1.1rem; border-left: 2px solid var(--rule); position: relative; }
-    .timeline li::before { content: ""; position: absolute; left: -6px; top: .55rem; width: 10px; height: 10px; border-radius: 50%; background: var(--bg); border: 2px solid var(--muted); }
+    .timeline li {
+      padding: 0 0 1.1rem 1.25rem;
+      border-left: 2px solid var(--rule);
+      position: relative;
+    }
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: .55rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--accent);
+    }
+    .timeline li:not(:first-child)::before { background: var(--bg); }
     .timeline .what { font-weight: 600; display: block; }
     .timeline .when { color: var(--muted); font-size: .95rem; display: block; }
     .timeline .note { display: block; margin-top: .2rem; font-size: .95rem; }
-    nav { border-top: 1px solid var(--rule); padding-top: 1.25rem; margin-top: 2rem; }
-    nav a { margin-right: 1.25rem; }
+    .label {
+      color: var(--muted);
+      font-size: .95rem;
+      margin: 0 0 .35rem;
+    }
+    .file-note {
+      color: var(--muted);
+      font-size: .95rem;
+      margin-top: -.65rem;
+    }
+    blockquote.press-bio {
+      margin: 0;
+      padding: 0 0 0 1rem;
+      border-left: 2px solid var(--accent);
+    }
+    blockquote.press-bio p { margin: 0; }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    footer p { margin: 0 0 .2rem; }
+    @media (max-width: 640px) {
+      .profiles { gap: .1rem .4rem; }
+      .profiles a,
+      a.download,
+      .education a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        min-width: 44px;
+      }
+    }
   </style>
 </head>
 <body>
   <main>
-    <img class="headshot" src="headshot.jpg" width="460" height="460" alt="Warren Husband">
+    <img class="headshot" src="headshot.jpg" width="460" height="460" alt="Warren Husband" loading="eager" fetchpriority="high">
     <h1>Warren Husband</h1>
-    <p class="role">CTO, <a href="https://edgetheory.com/?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">EdgeTheory</a></p>
+    <p class="role">Chief Technology Officer, <a href="https://edgetheory.com/?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">EdgeTheory</a></p>
+    <nav class="profiles" aria-label="Profiles">
+      <a href="https://www.linkedin.com/in/warren-husband/" rel="me">LinkedIn</a>
+      <a href="https://x.com/WarrenHusband" rel="me">X</a>
+      <a href="https://www.facebook.com/warren.husband" rel="me">Facebook</a>
+      <a href="https://www.instagram.com/warrenhusband/" rel="me">Instagram</a>
+      <a href="https://github.com/warrenhusband" rel="me">GitHub</a>
+    </nav>
+    <p class="hero-cta"><a class="button" href="https://edgetheory.com/contact?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">Contact</a></p>
 
     <p>Warren Husband is the Chief Technology Officer at <a href="https://edgetheory.com/?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">EdgeTheory</a>, a narrative intelligence company, where he leads the engineering team.</p>
-    <p>Narrative intelligence is about understanding the stories that shape what people believe: where they start, who pushes them, how they spread and where they're heading. There is far more online content than any team can read, and more of it is synthetic or coordinated every year. The goal is to spot a narrative early enough that the people making decisions, in government or in business, can act before it takes hold.</p>
-    <p>Warren has worked in software since 1995 as an engineer, team leader, IT director and CTO. Before joining EdgeTheory in 2018, he spent much of that time building systems for healthcare and medical labs. He's more of a people person than the typical engineer, and he likes keeping the business goal in view above the details. He lives in Mississippi.</p>
+    <p>Narrative intelligence is the work of understanding the stories that shape what people believe: where they start, who pushes them, how they spread, and where they're heading. With more content online than any team can read, and more of it synthetic or coordinated every year, the goal is to spot a narrative early enough for decision-makers in government and business to act before it takes hold.</p>
+    <p>Warren has worked in software since 1995 as an engineer, team leader, IT director and CTO. Before joining EdgeTheory in 2018, he spent much of that time building systems for healthcare and medical labs. He enjoys working with people as much as with code, and he keeps the business goal in view above the technical details. He lives in Mississippi.</p>
 
     <h2>Experience</h2>
     <ol class="timeline">
       <li>
-        <span class="what">Chief Technology Officer, <a href="https://edgetheory.com/?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">EdgeTheory</a></span>
+        <span class="what">Chief Technology Officer, EdgeTheory</span>
         <span class="when">2018 – present · Ridgeland, Mississippi</span>
-        <span class="note"><a href="https://edgetheory.com/team?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">EdgeTheory Team</a></span>
       </li>
       <li>
         <span class="what">Team Leader and Senior Software Engineer, NXXIO</span>
@@ -146,21 +270,24 @@
         <span class="when">2005 – 2013 · Jackson, Mississippi area</span>
         <span class="note">Ran software, infrastructure and technology decisions; built the patient scheduling and clinical reporting system, a sales portal and two iPhone apps.</span>
       </li>
-      <li>
-        <span class="what">Software and IT roles</span>
-        <span class="when">1995 – 2005</span>
-      </li>
     </ol>
 
     <h2>Education</h2>
-    <p><a href="https://www.belhaven.edu/">Belhaven University</a></p>
+    <p class="education"><a href="https://www.belhaven.edu/">Belhaven University</a></p>
 
-    <nav aria-label="Profiles">
-      <a href="https://www.linkedin.com/in/warren-husband/" rel="me">LinkedIn</a>
-      <a href="https://x.com/WarrenHusband" rel="me">X</a>
-      <a href="https://www.facebook.com/warren.husband" rel="me">Facebook</a>
-      <a href="https://www.instagram.com/warrenhusband/" rel="me">Instagram</a>
-    </nav>
+    <h2>Speaking &amp; press</h2>
+    <p class="hero-cta"><a class="button" href="https://edgetheory.com/contact?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">Contact</a></p>
+    <p class="asset"><a class="download" href="headshot.jpg" download="warren-husband.jpg">Download headshot</a></p>
+    <p class="file-note">460×460 JPEG</p>
+    <p class="label">Short bio</p>
+    <blockquote class="press-bio">
+      <p>Warren Husband is Chief Technology Officer of EdgeTheory, a narrative intelligence company, where he leads the engineering team. He has worked in software since 1995 as an engineer, team leader, IT director and CTO. Before joining EdgeTheory in 2018, he built systems for healthcare and medical labs. He lives in Mississippi.</p>
+    </blockquote>
+
+    <footer>
+      <p>© 2026 Warren Husband</p>
+      <p>Last updated <time datetime="2026-11-12">November 12, 2026</time></p>
+    </footer>
   </main>
 </body>
 </html>
