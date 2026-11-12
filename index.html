@@ -34,60 +34,191 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://warrenhusband.com/#person",
-    "name": "Warren Husband",
-    "url": "https://warrenhusband.com/",
-    "image": "https://warrenhusband.com/headshot-1200.jpg",
-    "description": "Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company. Bio, experience, speaking, headshot, and ready-to-use bios for press and event organizers.",
-    "jobTitle": "Chief Technology Officer",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "EdgeTheory",
-      "url": "https://edgetheory.com/"
-    },
-    "knowsAbout": ["Narrative intelligence", "AI and LLM engineering", "Agentic AI workflows", "Retrieval and embeddings", "Cloud data engineering", "Software engineering leadership"],
-    "alumniOf": [
+    "@graph": [
       {
-        "@type": "EducationalOrganization",
-        "name": "Belhaven University",
-        "url": "https://www.belhaven.edu/"
+        "@type": "ProfilePage",
+        "@id": "https://warrenhusband.com/",
+        "url": "https://warrenhusband.com/",
+        "name": "Warren Husband – CTO, EdgeTheory",
+        "description": "Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company. Bio, experience, speaking, headshot, and ready-to-use bios for press and event organizers.",
+        "dateModified": "2026-11-12",
+        "mainEntity": { "@id": "https://warrenhusband.com/#person" }
       },
-      { "@type": "Organization", "name": "NXXIO" },
-      { "@type": "Organization", "name": "Spivey & Company" },
-      { "@type": "Organization", "name": "Renaissance RX" },
-      { "@type": "Organization", "name": "Natural Molecular Testing" },
-      { "@type": "Organization", "name": "Bladder Health Network" },
-      { "@type": "Organization", "name": "Bomgar Corporation" },
-      { "@type": "Organization", "name": "Moonlight Media" }
-    ],
-    "hasCredential": {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "degree",
-      "educationalLevel": "Bachelor of Science",
-      "name": "B.S. in Computer Science, minor in Business Administration",
-      "recognizedBy": {
-        "@type": "CollegeOrUniversity",
-        "name": "Belhaven University",
-        "url": "https://www.belhaven.edu/"
+      {
+        "@type": "Person",
+        "@id": "https://warrenhusband.com/#person",
+        "name": "Warren Husband",
+        "givenName": "Warren",
+        "familyName": "Husband",
+        "url": "https://warrenhusband.com/",
+        "jobTitle": "Chief Technology Officer",
+        "description": "Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company that helps government and commercial organizations understand the information environment, including how narratives emerge and spread.",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://warrenhusband.com/headshot-1200.jpg",
+          "width": 1200,
+          "height": 1200,
+          "caption": "Warren Husband, Chief Technology Officer at EdgeTheory"
+        },
+        "worksFor": [
+          {
+            "@type": "Organization",
+            "@id": "https://edgetheory.com/",
+            "name": "EdgeTheory",
+            "url": "https://edgetheory.com/"
+          },
+          {
+            "@type": "OrganizationRole",
+            "roleName": "Team Leader / Senior Software Engineer",
+            "startDate": "2015-03",
+            "endDate": "2018-02",
+            "worksFor": { "@type": "Organization", "name": "NXXIO / Spivey & Company" }
+          },
+          {
+            "@type": "OrganizationRole",
+            "roleName": "Team Leader / Senior Software Engineer",
+            "startDate": "2013-07",
+            "endDate": "2015-03",
+            "worksFor": { "@type": "Organization", "name": "Renaissance RX" }
+          },
+          {
+            "@type": "OrganizationRole",
+            "roleName": "Senior Software Engineer",
+            "startDate": "2013",
+            "worksFor": { "@type": "Organization", "name": "Natural Molecular Testing" }
+          },
+          {
+            "@type": "OrganizationRole",
+            "roleName": "Information Technology Director",
+            "startDate": "2005",
+            "endDate": "2013",
+            "worksFor": { "@type": "Organization", "name": "Bladder Health Network" }
+          },
+          {
+            "@type": "OrganizationRole",
+            "roleName": "Senior Web Applications Developer",
+            "startDate": "2005",
+            "endDate": "2009",
+            "worksFor": { "@type": "Organization", "name": "Bomgar Corporation" }
+          },
+          {
+            "@type": "OrganizationRole",
+            "roleName": "Director of Software Engineering",
+            "startDate": "2005",
+            "worksFor": { "@type": "Organization", "name": "TicketsXChange" }
+          },
+          {
+            "@type": "OrganizationRole",
+            "roleName": "Senior Programmer/Analyst",
+            "startDate": "2002",
+            "endDate": "2005",
+            "worksFor": { "@type": "Organization", "name": "Mississippi Baptist Health Systems" }
+          },
+          {
+            "@type": "OrganizationRole",
+            "roleName": "President and CEO",
+            "startDate": "2001",
+            "endDate": "2009",
+            "worksFor": { "@type": "Organization", "name": "Kalostech" }
+          },
+          {
+            "@type": "OrganizationRole",
+            "roleName": "Senior Software Engineer",
+            "startDate": "2001",
+            "worksFor": { "@type": "Organization", "name": "GoCo-OP" }
+          },
+          {
+            "@type": "OrganizationRole",
+            "startDate": "1995",
+            "endDate": "1999",
+            "worksFor": { "@type": "Organization", "name": "Moonlight Media" }
+          }
+        ],
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Belhaven University",
+          "url": "https://www.belhaven.edu/"
+        },
+        "knowsAbout": ["Narrative intelligence", "AI and LLM engineering", "Agentic AI workflows", "Retrieval and embeddings", "Cloud data engineering", "Software engineering leadership"],
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "degree",
+          "educationalLevel": "Bachelor of Science",
+          "name": "B.S. in Computer Science, minor in Business Administration",
+          "recognizedBy": {
+            "@type": "CollegeOrUniversity",
+            "name": "Belhaven University",
+            "url": "https://www.belhaven.edu/"
+          }
+        },
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Chief Technology Officer",
+          "occupationalCategory": "11-3021.00",
+          "occupationLocation": { "@type": "State", "name": "Mississippi" }
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "MS",
+          "addressCountry": "US"
+        },
+        "homeLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "MS",
+            "addressCountry": "US"
+          }
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/warren-husband/",
+          "https://x.com/WarrenHusband",
+          "https://www.facebook.com/warren.husband",
+          "https://www.instagram.com/warrenhusband/",
+          "https://github.com/warrenhusband",
+          "https://www.crunchbase.com/person/warren-husband"
+        ]
+      },
+      {
+        "@type": "Event",
+        "name": "XAI Workshop 2026 (XAI: Experiential Learning in AI/ML for Future Innovators), Mississippi State University",
+        "startDate": "2026-10-27",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "url": "https://xai-exlent.github.io/workshop-2026/",
+        "location": {
+          "@type": "Place",
+          "name": "Bill R. Foster Ballroom, Colvard Student Union",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Starkville",
+            "addressRegion": "MS",
+            "addressCountry": "US"
+          }
+        },
+        "organizer": { "@type": "Organization", "name": "Mississippi State University" },
+        "performer": { "@id": "https://warrenhusband.com/#person" }
+      },
+      {
+        "@type": "Event",
+        "name": "NCNI Summit 2026 (National Center for Narrative Intelligence, 3rd Annual Invitational Summit)",
+        "startDate": "2026-03-31",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "url": "https://ncnisummit.org/2026",
+        "location": {
+          "@type": "Place",
+          "name": "Gertrude C. Ford Ballroom, The Inn at Ole Miss",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Oxford",
+            "addressRegion": "MS",
+            "addressCountry": "US"
+          }
+        },
+        "organizer": { "@type": "Organization", "name": "National Center for Narrative Intelligence" },
+        "performer": { "@id": "https://warrenhusband.com/#person" }
       }
-    },
-    "hasOccupation": {
-      "@type": "Occupation",
-      "name": "Chief Technology Officer",
-      "occupationLocation": { "@type": "State", "name": "Mississippi" }
-    },
-    "homeLocation": {
-      "@type": "State",
-      "name": "Mississippi"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/in/warren-husband/",
-      "https://x.com/WarrenHusband",
-      "https://www.facebook.com/warren.husband",
-      "https://www.instagram.com/warrenhusband/",
-      "https://github.com/warrenhusband",
-      "https://www.crunchbase.com/person/warren-husband"
     ]
   }
   </script>
