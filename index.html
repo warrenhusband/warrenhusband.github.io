@@ -32,7 +32,7 @@
     "@type": "Person",
     "name": "Warren Husband",
     "url": "https://warrenhusband.com/",
-    "image": "https://warrenhusband.com/headshot.jpg",
+    "image": "https://warrenhusband.com/headshot-1200.jpg",
     "description": "Warren Husband is Chief Technology Officer of EdgeTheory, a narrative intelligence company. He has built software since 1995 and lives in Mississippi.",
     "jobTitle": "Chief Technology Officer",
     "worksFor": {
@@ -103,6 +103,7 @@
       margin: 0 auto;
       padding: clamp(2.5rem, 8vh, 5rem) 1.25rem 4rem;
     }
+    picture { display: block; margin: 0 0 1.25rem; }
     .headshot {
       width: clamp(8rem, 14vw, 10rem);
       height: auto;
@@ -110,7 +111,6 @@
       border-radius: 50%;
       object-fit: cover;
       display: block;
-      margin: 0 0 1.25rem;
     }
     h1 {
       font-size: clamp(2.25rem, 6vw, 3rem);
@@ -198,6 +198,17 @@
       font-size: .95rem;
       margin-top: -.65rem;
     }
+    .speaking {
+      list-style: none;
+      margin: 0 0 1.5rem;
+      padding: 0;
+    }
+    .speaking li { margin: 0 0 1.15rem; }
+    .speaking a { font-weight: 600; }
+    .speaking .when,
+    .speaking .note { display: block; }
+    .speaking .when { color: var(--muted); font-size: .95rem; }
+    .speaking .note { margin-top: .15rem; }
     blockquote.press-bio {
       margin: 0;
       padding: 0 0 0 1rem;
@@ -216,7 +227,8 @@
       .profiles { gap: .1rem .4rem; }
       .profiles a,
       a.download,
-      .education a {
+      .education a,
+      .speaking a {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -228,7 +240,10 @@
 </head>
 <body>
   <main>
-    <img class="headshot" src="headshot.jpg" width="460" height="460" alt="Warren Husband" loading="eager" fetchpriority="high">
+    <picture>
+      <source type="image/webp" srcset="headshot-256.webp 256w, headshot-320.webp 320w" sizes="(max-width: 914px) 128px, (max-width: 1143px) 14vw, 160px">
+      <img class="headshot" src="headshot-320.jpg" srcset="headshot-256.jpg 256w, headshot-320.jpg 320w" sizes="(max-width: 914px) 128px, (max-width: 1143px) 14vw, 160px" width="320" height="320" alt="Warren Husband" loading="eager" fetchpriority="high">
+    </picture>
     <h1>Warren Husband</h1>
     <p class="role">Chief Technology Officer, <a href="https://edgetheory.com/?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">EdgeTheory</a></p>
     <nav class="profiles" aria-label="Profiles">
@@ -276,9 +291,21 @@
     <p class="education"><a href="https://www.belhaven.edu/">Belhaven University</a></p>
 
     <h2>Speaking &amp; press</h2>
+    <ul class="speaking">
+      <li>
+        <a href="https://xai-exlent.github.io/workshop-2026/">XAI Workshop 2026</a>
+        <span class="when">October 27, 2026 · Bill R. Foster Ballroom, Colvard Student Union, Mississippi State University, Starkville, MS</span>
+        <span class="note">Keynote: Beyond the AI Buzz: Narrative Intelligence for Real-World National Security.</span>
+      </li>
+      <li>
+        <a href="https://ncnisummit.org/2026">NCNI Summit 2026</a>
+        <span class="when">March 31, 2026 · Gertrude C. Ford Ballroom, The Inn at Ole Miss, Oxford, MS</span>
+        <span class="note">Day 2 session, Cognitive Warfare &amp; Artificial Intelligence. Listed as CTO, EdgeTheory.</span>
+      </li>
+    </ul>
     <p class="hero-cta"><a class="button" href="https://edgetheory.com/contact?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">Contact</a></p>
-    <p class="asset"><a class="download" href="headshot.jpg" download="warren-husband.jpg">Download headshot</a></p>
-    <p class="file-note">460×460 JPEG</p>
+    <p class="asset"><a class="download" href="headshot-1200.jpg" download="warren-husband-1200.jpg">Download headshot</a></p>
+    <p class="file-note">1200×1200 JPEG</p>
     <p class="label">Short bio</p>
     <blockquote class="press-bio">
       <p>Warren Husband is Chief Technology Officer of EdgeTheory, a narrative intelligence company, where he leads the engineering team. He has worked in software since 1995 as an engineer, team leader, IT director and CTO. Before joining EdgeTheory in 2018, he built systems for healthcare and medical labs. He lives in Mississippi.</p>
