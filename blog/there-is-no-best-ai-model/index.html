@@ -1,0 +1,259 @@
+<!--
+  New post: copy this folder to /blog/<slug>/, edit the title, dates,
+  description, canonical URL, and JSON-LD, and replace the body. Add
+  the post to the top of /blog/index.html (newest first) and to sitemap.xml.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>There's No Best AI Model. That's the Point. – Warren Husband</title>
+  <meta name="description" content="Everyone wants to know which AI model is best. It's the wrong question.">
+  <link rel="canonical" href="https://warrenhusband.com/blog/there-is-no-best-ai-model/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Warren Husband">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="There's No Best AI Model. That's the Point. – Warren Husband">
+  <meta property="og:description" content="Everyone wants to know which AI model is best. It's the wrong question.">
+  <meta property="og:url" content="https://warrenhusband.com/blog/there-is-no-best-ai-model/">
+  <meta property="article:published_time" content="2026-11-13">
+  <meta property="og:image" content="https://warrenhusband.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Warren Husband, Chief Technology Officer at EdgeTheory">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@WarrenHusband">
+  <meta name="twitter:creator" content="@WarrenHusband">
+  <meta name="twitter:title" content="There's No Best AI Model. That's the Point. – Warren Husband">
+  <meta name="twitter:description" content="Everyone wants to know which AI model is best. It's the wrong question.">
+  <meta name="twitter:image" content="https://warrenhusband.com/og-image.png">
+  <meta name="twitter:image:alt" content="Warren Husband, Chief Technology Officer at EdgeTheory">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "There's No Best AI Model. That's the Point.",
+    "description": "Everyone wants to know which AI model is best. It's the wrong question.",
+    "datePublished": "2026-11-13",
+    "dateModified": "2026-11-13",
+    "mainEntityOfPage": "https://warrenhusband.com/blog/there-is-no-best-ai-model/",
+    "url": "https://warrenhusband.com/blog/there-is-no-best-ai-model/",
+    "author": {
+      "@type": "Person",
+      "name": "Warren Husband",
+      "url": "https://warrenhusband.com",
+      "@id": "https://warrenhusband.com/#person"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #fbfaf8;
+      --fg: #1c1c1c;
+      --muted: #5f5f5f;
+      --brand: #1E3669;
+      --accent: #0390C8;
+      --rule: #e3e0da;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141414;
+        --fg: #ececec;
+        --muted: #a3a3a3;
+        --brand: #0390C8;
+        --rule: #2c2c2c;
+        color-scheme: dark;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 18px/1.65 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    main {
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: clamp(2.5rem, 8vh, 5rem) 1.25rem 4rem;
+    }
+    .site-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 0 0 .15rem;
+    }
+    .site-name a {
+      color: var(--fg);
+      text-decoration: none;
+    }
+    .role {
+      color: var(--fg);
+      font-size: 1.05rem;
+      line-height: 1.4;
+      margin: 0 0 .85rem;
+    }
+    .profiles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .2rem 1.15rem;
+      margin: 0 0 2rem;
+    }
+    h1 {
+      font-size: clamp(2.25rem, 6vw, 3rem);
+      font-weight: 600;
+      letter-spacing: -.02em;
+      line-height: 1.12;
+      margin: 0 0 1rem;
+    }
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -.01em;
+      line-height: 1.3;
+      margin: 2.25rem 0 .75rem;
+    }
+    ul {
+      margin: 0 0 1.25rem;
+      padding-left: 1.25rem;
+    }
+    li { margin: 0 0 .85rem; }
+    li:last-child { margin-bottom: 0; }
+    hr {
+      border: 0;
+      border-top: 1px solid var(--rule);
+      margin: 2rem 0 1.25rem;
+    }
+    .when {
+      color: var(--muted);
+      font-size: .95rem;
+      margin: 0 0 1.25rem;
+    }
+    p { margin: 0 0 1.25rem; }
+    a {
+      color: var(--brand);
+      text-decoration-thickness: 1px;
+      text-underline-offset: .18em;
+    }
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    footer p { margin: 0; }
+    @media (max-width: 640px) {
+      .profiles { gap: 0 1rem; }
+      .profiles a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: .6rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="site-name"><a href="/">Warren Husband</a></p>
+      <p class="role">Chief Technology Officer at <a href="https://edgetheory.com/?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">EdgeTheory</a></p>
+      <nav class="profiles" aria-label="Profiles">
+        <a href="https://www.linkedin.com/in/warren-husband/" rel="me">LinkedIn</a>
+        <a href="https://x.com/WarrenHusband" rel="me">X</a>
+        <a href="https://www.facebook.com/warren.husband" rel="me">Facebook</a>
+        <a href="https://www.instagram.com/warrenhusband/" rel="me">Instagram</a>
+        <a href="https://github.com/warrenhusband" rel="me">GitHub</a>
+        <a href="/#press">Press kit</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+    </header>
+    <article>
+      <h1>There's No Best AI Model. That's the Point.</h1>
+      <p class="when"><time datetime="2026-11-13">November 13, 2026</time></p>
+      <p>Everyone wants to know which AI model is best. It's the wrong question. The more important question is whether your organization can adapt as the answer keeps changing.</p>
+      <p>The question I get asked most about AI is some version of "Which model should we use?"</p>
+      <p>It's a reasonable question. It's also the wrong place to start.</p>
+      <p>In March, I spoke at the NCNI Summit at Ole Miss in Oxford, in a session on cognitive warfare and artificial intelligence. Part of my presentation was a snapshot of the AI landscape: who was building the leading models, how their capabilities compared, and where the industry was heading.</p>
+      <p>The model names on those slides have already started to age. That's actually the point. The organizations that build their AI strategy around a particular model are going to spend a lot of time rebuilding it.</p>
+      <p>Here's what I think matters more.</p>
+      <h2>AI isn't an experiment anymore</h2>
+      <p>The first thing I wanted the room to understand was scale.</p>
+      <p>According to McKinsey's global survey, 88% of companies were using AI in at least one business function, up from 78% the previous year and 55% the year before that. The average company was using AI in about three different departments.</p>
+      <p>That's a significant shift. A few years ago, the conversation was about whether organizations should experiment with AI. Now it's about how to operate it across the business.</p>
+      <p>Those are very different challenges. Experimentation is about finding possibilities. Operational adoption is about integration, cost, security, accountability, and whether the technology actually improves the work.</p>
+      <p>Your employees are probably already using AI, whether there's an organizational strategy for it or not. That's a reason to have a plan, not a reason to panic.</p>
+      <h2>The model race isn't producing a permanent winner</h2>
+      <p>In March, I put nine models on one slide. Four closed models from OpenAI, Anthropic, Google DeepMind, and xAI made up the top tier. Five open-weight models from Meta, DeepSeek, Alibaba, Mistral, and Google were competing not far behind.</p>
+      <p>Two things stood out.</p>
+      <p>First, there wasn't a clear winner. Each leading model had areas where it performed particularly well. One might lead on reasoning, another on coding and writing, another on general-purpose capabilities or ecosystem. Price, context length, deployment options, and customization added another layer to the comparison.</p>
+      <p>Second, open-weight models had closed much of the gap faster than many people expected.</p>
+      <p>DeepSeek was a particularly good example. Its architecture demonstrated how a model could have hundreds of billions of total parameters while activating only a fraction of them for each token. That has significant implications for the cost of running capable models. Meta's Llama models demonstrated how far context windows were expanding.</p>
+      <p>The distinction between open and closed models matters, too. Open-weight models can offer more control over deployment, data, and customization. Closed models often offer managed infrastructure, support, and a more integrated ecosystem.</p>
+      <p>Neither approach is automatically better.</p>
+      <p>Most organizations will eventually find themselves using a combination. Different problems have different requirements, and the economics and capabilities of the models keep changing.</p>
+      <p>The mistake is treating model selection as a permanent decision.</p>
+      <h2>Benchmarks are a starting point, not a buying decision</h2>
+      <p>I also showed the audience IQ test results for several frontier models using Mensa Norway's testing framework.</p>
+      <p>It's an easy way to start a conversation because everyone understands what an IQ score is supposed to represent.</p>
+      <p>The results were striking. The top two models tied at 145, and the top seven cleared the traditional Mensa threshold of 130. Even several open models scored above the human test average.</p>
+      <p>But I made a point of explaining what those numbers don't tell us.</p>
+      <p>These tests measure particular forms of reasoning, pattern recognition, and problem-solving. They don't establish that a model has human-equivalent intelligence, and they certainly don't tell you whether it will perform well in your organization.</p>
+      <p>The same model could score quite differently depending on whether it was working from text or images. Some models performed exceptionally well on this test but weren't necessarily the strongest choices for coding, writing, or other specialized tasks.</p>
+      <p>That's the larger lesson.</p>
+      <p>A model can lead a benchmark and still be the wrong choice for your application. It might struggle with your data, fail to follow your instructions consistently, use tools poorly, or produce answers that require too much human review.</p>
+      <p>A leaderboard can tell you who's capable. It can't tell you who's right for you.</p>
+      <p>The only benchmark that really counts is performance on your own problems.</p>
+      <h2>From answers to actions</h2>
+      <p>The biggest transition I discussed was agents.</p>
+      <p>The industry called 2025 the year of the agent. In 2026, we're seeing agents move into production.</p>
+      <p>Gartner expects 40% of enterprise applications to include task-specific AI agents by the end of this year. The architecture is shifting from a single assistant that answers questions to teams of specialized agents that coordinate across workflows. The Model Context Protocol, or MCP, has emerged as an important standard for connecting agents to tools and data.</p>
+      <p>The difference is simple to describe and hard to overstate.</p>
+      <p>A traditional AI feature waits for a question and gives you an answer. An agent is given a goal. It determines the steps, selects its tools, accesses data, performs actions, and returns a result.</p>
+      <p>That changes the risk profile.</p>
+      <p>When an AI gives you a bad answer, someone can choose not to use it. When an agent has permission to modify a database, send an email, execute code, or make a decision in another system, the consequences are different.</p>
+      <p>The questions become architectural: What can the agent access? What is it allowed to change? How do you verify its work? Where does a human need to approve an action?</p>
+      <p>Those aren't questions you want to answer after deployment.</p>
+      <h2>Software development is changing, too</h2>
+      <p>Software engineering is going through its own version of this transition.</p>
+      <p>Andrej Karpathy coined the term "vibe coding" in February 2025, and Collins Dictionary subsequently made it its Word of the Year. The idea is that you describe what you want in plain English and AI writes the code.</p>
+      <p>A quarter of Y Combinator's Winter 2025 startups reported that 95% of their code was AI-generated. Coding agents are now built into the major development ecosystems, and the tools around them have become big businesses.</p>
+      <p>I see this firsthand.</p>
+      <p>The speed improvement is real. But writing code was never the hardest part of building good software. Understanding the problem, making architectural decisions, anticipating how a system will behave, and knowing whether the result is actually correct are much harder.</p>
+      <p>AI changes the economics of producing code. It doesn't eliminate the need for experienced engineering judgment. If anything, it makes that judgment more valuable.</p>
+      <p>When producing code becomes dramatically cheaper, the ability to determine what should be built and whether it works becomes the differentiator.</p>
+      <h2>What I'd tell leaders</h2>
+      <p>If I had to boil my talk down to four recommendations, they'd be these:</p>
+      <ul>
+        <li><strong>Choose for the job, not the leaderboard.</strong> There is no universally best model. Match capabilities, cost, deployment requirements, and reliability to the actual task. Expect to use more than one.</li>
+        <li><strong>Don't build your business around a single provider.</strong> The market changes too quickly. Keep your architecture flexible enough to switch models without rebuilding everything around them.</li>
+        <li><strong>Test against your own problems.</strong> Public benchmarks are useful for narrowing the field. Your data, workflows, and standards determine whether a model is actually useful.</li>
+        <li><strong>Treat agents as an architectural decision.</strong> Moving from answers to actions changes what can go wrong. Define permissions, access, verification, and human approval before putting agents into production.</li>
+      </ul>
+      <p>The models I showed in March have already been superseded by newer versions. The models available today will eventually be replaced, too.</p>
+      <p>That's not a problem. It's the nature of the market.</p>
+      <p>The organizations that succeed won't necessarily be the ones using the model that scores highest on the latest benchmark. They'll be the ones that understand their problems, evaluate their options, manage their risks, and adapt as the technology changes.</p>
+      <p>Don't build your AI strategy around a model. Build it around your ability to use whichever model does the job best.</p>
+      <p>I gave this talk at the <a href="https://warrenhusband.com/#ncni-2026">NCNI Summit 2026</a> in Oxford, Mississippi, on March 31, 2026.</p>
+      <hr>
+      <p><em>Warren Husband is CTO at EdgeTheory and has been building software since 1995. He lives in Ridgeland, Mississippi.</em></p>
+    </article>
+    <footer>
+      <p>© 2026 Warren Husband</p>
+    </footer>
+  </main>
+</body>
+</html>
