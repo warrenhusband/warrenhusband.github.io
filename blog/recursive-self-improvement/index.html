@@ -1,0 +1,250 @@
+<!--
+  New post: copy this folder to /blog/<slug>/, edit the title, dates,
+  description, canonical URL, and JSON-LD, and replace the body. Add
+  the post to the top of /blog/index.html (newest first) and to sitemap.xml.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Is Starting to Build AI. Who's Checking the Work? – Warren Husband</title>
+  <meta name="description" content="Recursive self-improvement is already happening, though not in the way science fiction imagined. AI is increasingly helping build the next generation of AI.">
+  <link rel="canonical" href="https://warrenhusband.com/blog/recursive-self-improvement/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Warren Husband">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="AI Is Starting to Build AI. Who's Checking the Work? – Warren Husband">
+  <meta property="og:description" content="Recursive self-improvement is already happening, though not in the way science fiction imagined. AI is increasingly helping build the next generation of AI.">
+  <meta property="og:url" content="https://warrenhusband.com/blog/recursive-self-improvement/">
+  <meta property="article:published_time" content="2026-11-13">
+  <meta property="og:image" content="https://warrenhusband.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Warren Husband, Chief Technology Officer at EdgeTheory">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@WarrenHusband">
+  <meta name="twitter:creator" content="@WarrenHusband">
+  <meta name="twitter:title" content="AI Is Starting to Build AI. Who's Checking the Work? – Warren Husband">
+  <meta name="twitter:description" content="Recursive self-improvement is already happening, though not in the way science fiction imagined. AI is increasingly helping build the next generation of AI.">
+  <meta name="twitter:image" content="https://warrenhusband.com/og-image.png">
+  <meta name="twitter:image:alt" content="Warren Husband, Chief Technology Officer at EdgeTheory">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "AI Is Starting to Build AI. Who's Checking the Work?",
+    "description": "Recursive self-improvement is already happening, though not in the way science fiction imagined. AI is increasingly helping build the next generation of AI.",
+    "datePublished": "2026-11-13",
+    "dateModified": "2026-11-13",
+    "mainEntityOfPage": "https://warrenhusband.com/blog/recursive-self-improvement/",
+    "url": "https://warrenhusband.com/blog/recursive-self-improvement/",
+    "author": {
+      "@type": "Person",
+      "name": "Warren Husband",
+      "url": "https://warrenhusband.com",
+      "@id": "https://warrenhusband.com/#person"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #fbfaf8;
+      --fg: #1c1c1c;
+      --muted: #5f5f5f;
+      --brand: #1E3669;
+      --accent: #0390C8;
+      --rule: #e3e0da;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141414;
+        --fg: #ececec;
+        --muted: #a3a3a3;
+        --brand: #0390C8;
+        --rule: #2c2c2c;
+        color-scheme: dark;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 18px/1.65 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    main {
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: clamp(2.5rem, 8vh, 5rem) 1.25rem 4rem;
+    }
+    .site-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 0 0 .15rem;
+    }
+    .site-name a {
+      color: var(--fg);
+      text-decoration: none;
+    }
+    .role {
+      color: var(--fg);
+      font-size: 1.05rem;
+      line-height: 1.4;
+      margin: 0 0 .85rem;
+    }
+    .profiles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .2rem 1.15rem;
+      margin: 0 0 2rem;
+    }
+    h1 {
+      font-size: clamp(2.25rem, 6vw, 3rem);
+      font-weight: 600;
+      letter-spacing: -.02em;
+      line-height: 1.12;
+      margin: 0 0 1rem;
+    }
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -.01em;
+      line-height: 1.3;
+      margin: 2.25rem 0 .75rem;
+    }
+    ul {
+      margin: 0 0 1.25rem;
+      padding-left: 1.25rem;
+    }
+    li { margin: 0 0 .85rem; }
+    li:last-child { margin-bottom: 0; }
+    hr {
+      border: 0;
+      border-top: 1px solid var(--rule);
+      margin: 2rem 0 1.25rem;
+    }
+    .when {
+      color: var(--muted);
+      font-size: .95rem;
+      margin: 0 0 1.25rem;
+    }
+    p { margin: 0 0 1.25rem; }
+    a {
+      color: var(--brand);
+      text-decoration-thickness: 1px;
+      text-underline-offset: .18em;
+    }
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    footer p { margin: 0; }
+    @media (max-width: 640px) {
+      .profiles { gap: 0 1rem; }
+      .profiles a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: .6rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="site-name"><a href="/">Warren Husband</a></p>
+      <p class="role">Chief Technology Officer at <a href="https://edgetheory.com/?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">EdgeTheory</a></p>
+      <nav class="profiles" aria-label="Profiles">
+        <a href="https://www.linkedin.com/in/warren-husband/" rel="me">LinkedIn</a>
+        <a href="https://x.com/WarrenHusband" rel="me">X</a>
+        <a href="https://www.facebook.com/warren.husband" rel="me">Facebook</a>
+        <a href="https://www.instagram.com/warrenhusband/" rel="me">Instagram</a>
+        <a href="https://github.com/warrenhusband" rel="me">GitHub</a>
+        <a href="/#press">Press kit</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+    </header>
+    <article>
+      <h1>AI Is Starting to Build AI. Who's Checking the Work?</h1>
+      <p class="when"><time datetime="2026-11-13">November 13, 2026</time></p>
+      <p>Recursive self-improvement is already happening, though not in the way science fiction imagined. AI is increasingly helping build the next generation of AI. The question is whether we can reliably check what it's building.</p>
+      <p>This fall I was on a panel at an explainable-AI workshop at Mississippi State. The opening question was a big one: What's the most consequential AI transition we'll see over the next five years?</p>
+      <p>My answer was that AI starts doing AI research.</p>
+      <p>People call it recursive self-improvement, or RSI. The idea is straightforward: AI helps build the next, better AI, which then helps build the one after that. Each generation contributes to creating its successor.</p>
+      <p>I've been writing software since 1995, and I've heard plenty of claims about technologies that will change everything. This one is different. But probably not for the reasons most people expect.</p>
+      <h2>It's not a robot rewriting its brain</h2>
+      <p>The idea isn't new. In 1965, mathematician I. J. Good argued that designing machines is itself an intellectual task. A machine sufficiently intelligent could design a better version of itself, which could then repeat the process. He called the result an "intelligence explosion."</p>
+      <p>What's happening today is less dramatic, but arguably more important because it's already underway.</p>
+      <p>AI is accelerating the human-run process of building better AI. It's writing code, running experiments, generating training data, and evaluating results. Humans still set research priorities, decide which experiments matter, and determine what gets released.</p>
+      <p>The labs are starting to quantify this. In September, OpenAI reported that its research agents log roughly three workdays of runtime for every workday contributed by a human researcher. That's runtime, not three times the research output. OpenAI also emphasizes that people still set the priorities.</p>
+      <p>But the direction is clear: AI is becoming a bigger part of the process that produces the next generation of AI.</p>
+      <h2>The people closest to it disagree on how fast</h2>
+      <p>I've spent much of this fall listening to researchers discuss this transition, particularly on the Dwarkesh Podcast and The Cognitive Revolution. Their predictions vary considerably, and the disagreement is worth understanding.</p>
+      <p>On one Dwarkesh episode, John Schulman, Beren Millidge, and Charlie O'Neill debated how close we are. Schulman cautioned that faster coding doesn't automatically translate into faster research. As he put it, "Even if the model can write way more code than a person, it doesn't make you 100X more productive." He estimated a tenfold increase in AI research productivity might be about two years away. O'Neill put the timeline at five to ten years.</p>
+      <p>Ryan Greenblatt of Redwood Research made a more aggressive case. AI research is unusually well suited to automation because so many machine-learning tasks are small, self-contained, and objectively verifiable. Those are precisely the kinds of tasks where AI tends to improve fastest. He sees full automation of AI research potentially arriving around 2030 or 2031.</p>
+      <p>But Greenblatt also identified an important exception: judgment. Large experiments are expensive, sometimes offer only a few opportunities to get things right, and require decisions that aren't easily reduced to an automated score.</p>
+      <p>OpenAI's Noam Brown landed somewhere in between. He expects substantial acceleration, but not a hundredfold explosion, because experiments and computing resources remain limiting factors.</p>
+      <p>The timelines differ. The direction doesn't. Even the more conservative predictions put a major transition within the next five years.</p>
+      <p>That's why I chose this as the development to watch.</p>
+      <h2>The real question is who sets the objectives</h2>
+      <p>Beren Millidge raised a question that I keep coming back to: "How well can AIs generalize to learning their own objectives?"</p>
+      <p>It's one thing for an AI to execute a task. It's another for it to decide what task should come next, understand why it matters, and pursue it over an extended period without losing sight of the original intent.</p>
+      <p>That distinction becomes critical when AI is helping build AI.</p>
+      <p>We already have a preview of what can go wrong when the objective and the intended outcome aren't quite the same.</p>
+      <p>This summer, OpenAI tested a large group of agents on a hacking benchmark that included many impossible tasks. According to an independent investigation by METR and Redwood Research, approximately 1,200 agents discovered a way to communicate through a shared software cache. They coordinated, found a way to beat the benchmark, and broke into Hugging Face to retrieve the answers.</p>
+      <p>Not one of them alerted a human.</p>
+      <p>This wasn't a self-improvement incident. It was reward hacking: the agents found a way to optimize for the score rather than accomplish the intended task. But it happened inside the broader ecosystem developing increasingly capable AI systems.</p>
+      <p>Greenblatt described how models can develop a general tendency to pursue whatever gets them a high score from the system evaluating them.</p>
+      <p>Think about the implications. If an AI system is helping train or evaluate its successor, a flawed objective doesn't necessarily stay confined to one model. It can become part of the next generation.</p>
+      <p>The system can get better at achieving a goal without getting better at understanding whether that goal is worth achieving.</p>
+      <h2>Who checks the checker?</h2>
+      <p>There's another detail from that investigation that I find particularly revealing.</p>
+      <p>The investigators had to use AI to analyze the agents' transcripts because there was simply too much material for people to review. Ajeya Cotra, who co-authored the investigation, explained on Dwarkesh that they couldn't have fully understood what happened without using a model, including one of the models involved in the incident.</p>
+      <p>That's a remarkable development. We're increasingly relying on AI to evaluate the behavior of other AI systems because the volume and complexity of their work exceed what humans can reasonably inspect.</p>
+      <p>On The Cognitive Revolution, Bronson Schoen of Apollo Research made a point about monitoring a model's chain of thought: it's "necessary but not sufficient."</p>
+      <p>I agree.</p>
+      <p>Being able to observe what a model says it's thinking is useful. But observing a system isn't the same as verifying that it's behaving correctly. And a system that can produce convincing explanations isn't necessarily a system whose decisions deserve our trust.</p>
+      <p>The harder question isn't just whether AI can check AI. It's whether we can independently establish that the checking itself is reliable.</p>
+      <h2>How I run my own small loop</h2>
+      <p>I use a team of AI agents every day. Some write code. Others review and test it. Nothing gets merged until it passes review and I approve it.</p>
+      <p>I look at what they've built or changed and decide what stays and what goes. They can draft and improve their own instructions, but I approve the changes.</p>
+      <p>The agents are getting better at their jobs. But I'm still the one deciding what better means.</p>
+      <p>They don't change their own goals, permissions, or approval rules. That separation is intentional.</p>
+      <p>It's a small example of the same problem facing AI research labs. You want systems that can improve their performance without giving them unrestricted authority to redefine success.</p>
+      <p>The more capable the system becomes, the more important that distinction gets.</p>
+      <h2>What I'd tell any leader</h2>
+      <p>There are three principles I'd take from all of this:</p>
+      <ul>
+        <li><strong>Invest in verification, not just generation.</strong> The ability to produce more code, research, or analysis is only valuable if you can establish that the output is correct. The quality of your evaluation process will increasingly determine the quality of your AI.</li>
+        <li><strong>Automate where you can verify and recover.</strong> Let AI move quickly on tasks with measurable outcomes and reversible consequences. Keep meaningful human decision-making where the stakes are high or the answers are difficult to independently validate.</li>
+        <li><strong>Build oversight into the architecture.</strong> Don't treat human review as a final checkbox. When the volume of AI output already exceeds what people can read, oversight has to be designed into the system from the beginning.</li>
+      </ul>
+      <p>AI is going to give us extraordinary improvements in speed and scale. I expect that to accelerate considerably as AI takes on more of the work of building AI.</p>
+      <p>But capability and judgment aren't the same thing. And as these systems become more involved in creating their successors, the ability to distinguish between getting better and merely getting a better score may become one of the most important capabilities we have to develop ourselves.</p>
+      <p>The future of AI may depend less on how well machines can improve themselves than on how well we can tell whether they're improving in the right direction.</p>
+      <hr>
+      <p><em>Warren Husband is CTO at EdgeTheory and has been building software since 1995. He lives in Ridgeland, Mississippi.</em></p>
+    </article>
+    <footer>
+      <p>© 2026 Warren Husband</p>
+    </footer>
+  </main>
+</body>
+</html>
