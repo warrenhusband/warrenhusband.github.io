@@ -1,0 +1,277 @@
+<!--
+  New post: copy this folder to /blog/<slug>/, edit the title, dates,
+  description, canonical URL, and JSON-LD, and replace the body. Add
+  the post to the top of /blog/index.html (newest first) and to sitemap.xml.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Information Is Outrunning People – Warren Husband</title>
+  <meta name="description" content="The world is producing information far faster than anyone can read it. That gap isn't just an inconvenience.">
+  <link rel="canonical" href="https://warrenhusband.com/blog/information-is-outrunning-people/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Warren Husband">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Information Is Outrunning People – Warren Husband">
+  <meta property="og:description" content="The world is producing information far faster than anyone can read it. That gap isn't just an inconvenience.">
+  <meta property="og:url" content="https://warrenhusband.com/blog/information-is-outrunning-people/">
+  <meta property="article:published_time" content="2026-11-13">
+  <meta property="og:image" content="https://warrenhusband.com/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Warren Husband, Chief Technology Officer at EdgeTheory">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@WarrenHusband">
+  <meta name="twitter:creator" content="@WarrenHusband">
+  <meta name="twitter:title" content="Information Is Outrunning People – Warren Husband">
+  <meta name="twitter:description" content="The world is producing information far faster than anyone can read it. That gap isn't just an inconvenience.">
+  <meta name="twitter:image" content="https://warrenhusband.com/og-image.png">
+  <meta name="twitter:image:alt" content="Warren Husband, Chief Technology Officer at EdgeTheory">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Information Is Outrunning People",
+    "description": "The world is producing information far faster than anyone can read it. That gap isn't just an inconvenience.",
+    "datePublished": "2026-11-13",
+    "dateModified": "2026-11-13",
+    "mainEntityOfPage": "https://warrenhusband.com/blog/information-is-outrunning-people/",
+    "url": "https://warrenhusband.com/blog/information-is-outrunning-people/",
+    "author": {
+      "@type": "Person",
+      "name": "Warren Husband",
+      "url": "https://warrenhusband.com",
+      "@id": "https://warrenhusband.com/#person"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #fbfaf8;
+      --fg: #1c1c1c;
+      --muted: #5f5f5f;
+      --brand: #1E3669;
+      --accent: #0390C8;
+      --rule: #e3e0da;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141414;
+        --fg: #ececec;
+        --muted: #a3a3a3;
+        --brand: #0390C8;
+        --rule: #2c2c2c;
+        color-scheme: dark;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 18px/1.65 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    main {
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: clamp(2.5rem, 8vh, 5rem) 1.25rem 4rem;
+    }
+    .site-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 0 0 .15rem;
+    }
+    .site-name a {
+      color: var(--fg);
+      text-decoration: none;
+    }
+    .role {
+      color: var(--fg);
+      font-size: 1.05rem;
+      line-height: 1.4;
+      margin: 0 0 .85rem;
+    }
+    .profiles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .2rem 1.15rem;
+      margin: 0 0 2rem;
+    }
+    h1 {
+      font-size: clamp(2.25rem, 6vw, 3rem);
+      font-weight: 600;
+      letter-spacing: -.02em;
+      line-height: 1.12;
+      margin: 0 0 1rem;
+    }
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -.01em;
+      line-height: 1.3;
+      margin: 2.25rem 0 .75rem;
+    }
+    ul {
+      margin: 0 0 1.25rem;
+      padding-left: 1.25rem;
+    }
+    li { margin: 0 0 .85rem; }
+    li:last-child { margin-bottom: 0; }
+    hr {
+      border: 0;
+      border-top: 1px solid var(--rule);
+      margin: 2rem 0 1.25rem;
+    }
+    .when {
+      color: var(--muted);
+      font-size: .95rem;
+      margin: 0 0 1.25rem;
+    }
+    p { margin: 0 0 1.25rem; }
+    a {
+      color: var(--brand);
+      text-decoration-thickness: 1px;
+      text-underline-offset: .18em;
+    }
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--rule);
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    footer p { margin: 0; }
+    @media (max-width: 640px) {
+      .profiles { gap: 0 1rem; }
+      .profiles a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        padding: .6rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="site-name"><a href="/">Warren Husband</a></p>
+      <p class="role">Chief Technology Officer at <a href="https://edgetheory.com/?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">EdgeTheory</a></p>
+      <nav class="profiles" aria-label="Profiles">
+        <a href="https://www.linkedin.com/in/warren-husband/" rel="me">LinkedIn</a>
+        <a href="https://x.com/WarrenHusband" rel="me">X</a>
+        <a href="https://www.facebook.com/warren.husband" rel="me">Facebook</a>
+        <a href="https://www.instagram.com/warrenhusband/" rel="me">Instagram</a>
+        <a href="https://github.com/warrenhusband" rel="me">GitHub</a>
+        <a href="/#press">Press kit</a>
+        <a href="/blog/">Blog</a>
+      </nav>
+    </header>
+    <article>
+      <h1>Information Is Outrunning People</h1>
+      <p class="when"><time datetime="2026-11-13">November 13, 2026</time></p>
+      <p>The world is producing information far faster than anyone can read it. That gap isn't just an inconvenience. It's where influence happens, and closing it takes both machines and people.</p>
+      <p>A lot of conversations about AI start with what the technology can do. When I spoke at Mississippi State's explainable-AI workshop this fall, I wanted to start with a different question: What happens when the amount of information being produced exceeds our ability to understand it?</p>
+      <p>We're already there.</p>
+      <p>The creation of information is far outpacing our ability to consume it, make sense of it, and react to it. AI is accelerating that gap, and the consequences extend well beyond information overload.</p>
+      <h2>Nobody reads a zettabyte</h2>
+      <p>In 2010, the world generated roughly 2 zettabytes of data.</p>
+      <p>If you're wondering what a zettabyte is, one is roughly equivalent to 300 trillion photos on your iPhone. I'm pretty sure my iCloud+ plan won't cover that.</p>
+      <p>By 2024, estimates put annual data generation at roughly 173 zettabytes. Projections suggest that number could exceed 500 zettabytes by 2029 and continue climbing.</p>
+      <p>The exact numbers will change as forecasts are revised. The trajectory is what matters.</p>
+      <p>The hours in an analyst's day aren't increasing at anything close to that rate. Neither are yours.</p>
+      <p>Meanwhile, AI has made producing content dramatically cheaper and faster. Anyone can generate articles, images, videos, and messages at a scale that would have been difficult to imagine just a few years ago.</p>
+      <p>That creates an enormous advantage for anyone trying to manipulate the information environment. The combination of cheap content generation and algorithmic distribution makes it possible to flood audiences with messages, reinforce narratives, and exploit the limited attention people have available.</p>
+      <p>The question is no longer simply how much information exists. It's who's producing it, who's distributing it, and what they're trying to accomplish.</p>
+      <h2>The target is what people believe</h2>
+      <p>Information has become a weapon.</p>
+      <p>When someone deliberately uses information to change what a population believes, how it perceives an event, or how it behaves, we're talking about cognitive warfare. It's an increasingly important national security concern.</p>
+      <p>The target isn't necessarily a server or a network. It's what people believe, and how those beliefs influence their decisions. It's hearts and minds.</p>
+      <p>Defending against these efforts is part of what we call cognitive security.</p>
+      <p>Adversaries are using AI to produce and distribute content, but the objective isn't necessarily to make someone believe a single false story. It can be to create confusion, amplify existing divisions, undermine confidence, or shift how people understand an event over time.</p>
+      <p>That's the work I care most about: detection and early warning. Seeing what's happening, understanding why it matters, and giving decision-makers enough time to respond.</p>
+      <h2>Monitoring isn't understanding</h2>
+      <p>The discipline that addresses this problem is called narrative intelligence. It's the study of how information influences perception, decision-making, and behavior through narratives.</p>
+      <p>Put simply, it's understanding how stories move and what they do.</p>
+      <p>Social media monitoring tells you what was posted. Narrative intelligence looks at how those messages connect, why they're spreading, who they're reaching, and what effects they're having on the people and institutions that matter.</p>
+      <p>A single post rarely tells you much. A pattern of messages, repeated across platforms and audiences, can tell you considerably more.</p>
+      <p>Here's the distinction I often use: sentiment analysis gives you the pulse. Narrative intelligence gives you the MRI.</p>
+      <p>Knowing that a conversation is positive or negative is useful, but it doesn't tell you much about what's driving it. You need to understand the underlying emotions, the sources, the connections between messages, and how the narrative is changing over time.</p>
+      <p>The goal comes down to three things:</p>
+      <ul>
+        <li>Detect how narratives emerge and spread.</li>
+        <li>Track who they're reaching and influencing.</li>
+        <li>Explain what effects they're designed to produce.</li>
+      </ul>
+      <p>That adds up to early warning. And early warning buys leaders time. It creates decision advantage: the opportunity to respond with facts while there's still room to act, before fear or misinformation starts driving decisions.</p>
+      <h2>Positive and negative isn't enough</h2>
+      <p>One of the most common shortcuts in information analysis is classifying everything as positive, negative, or neutral.</p>
+      <p>That loses much of what matters.</p>
+      <p>Anger and fear are both classified as negative emotions, but they can produce very different responses. Anger can motivate confrontation and action. Fear can lead people to seek protection, withdraw, or look for someone to provide certainty.</p>
+      <p>When you distinguish between those emotions and watch how they change over time, you start seeing patterns that a simple sentiment score misses.</p>
+      <p>One pattern I pay particular attention to is anger and fear rising together around the same story. That combination can signal growing emotional volatility and a population becoming more susceptible to calls for action.</p>
+      <p>Volume matters, too. When the same story appears repeatedly across platforms, but the distribution is concentrated among a relatively small group of sources, that's worth investigating. It doesn't automatically prove coordination, but it gives an analyst a reason to look closer.</p>
+      <p>The point is that information has dimensions that simple sentiment analysis can't capture. Understanding those dimensions is what makes it possible to move from describing a conversation to assessing its potential effects.</p>
+      <h2>Show me where you got that</h2>
+      <p>As AI agents take on more analytical work, one requirement becomes increasingly important: every claim needs a source.</p>
+      <p>When an agent can't show you where it got something, you shouldn't trust the conclusion.</p>
+      <p>That principle applies to people, too. Knowing where a claim originated, who is promoting it, and how it has changed as it moves through the information environment is essential to understanding what you're looking at.</p>
+      <p>This is also why I'm wary of any system, human or machine, that tells people what to think.</p>
+      <p>At EdgeTheory, we like to say that we don't opine. The goal isn't to decide what's true for someone or tell them what conclusion to reach. It's to give them the evidence and context to make that determination themselves: who's behind a narrative, where it came from, how it's spreading, and what it may be designed to accomplish.</p>
+      <p>Analysis should make people better informed, not more dependent on whoever is doing the analysis.</p>
+      <h2>You need both</h2>
+      <p>A system that's 100% human-driven can't keep up anymore. One that's 100% machine shouldn't make the call.</p>
+      <p>Here's why.</p>
+      <p>Adversaries adapt. They change their language, switch accounts, and borrow each other's tactics. Analysts recognize new patterns, identify what the system might be missing, and redirect attention.</p>
+      <p>Context shifts. A new platform emerges. A story jumps into another language or cultural context. Something that was normal yesterday suddenly isn't. People recognize those changes and help the system account for them.</p>
+      <p>Meaning takes judgment. A machine can identify that two stories are similar, that a particular theme is spreading, or that a source has suddenly become more active. Determining what those patterns mean, what an adversary intends, and how to respond requires human judgment.</p>
+      <p>I think about this as four layers of analysis.</p>
+      <p>At the outer layer is what the machine can observe: the enormous volume of information being produced.</p>
+      <p>Next is what it can infer: patterns, relationships, emerging themes, and changes in activity.</p>
+      <p>Then comes what the evidence actually supports. This is where assumptions have to be challenged and conclusions have to be grounded in what we can verify.</p>
+      <p>At the center is the decision: what does it mean, what should we do, and who is accountable for that choice?</p>
+      <p>AI is exceptionally good at processing the outer layers at a scale people simply cannot match. It can surface patterns, connect information, and identify developments that might otherwise go unnoticed.</p>
+      <p>But the closer you get to decisions with real consequences, the more important human judgment becomes.</p>
+      <p>The objective isn't to keep people involved in every calculation. It's to make sure they're involved where their judgment actually matters.</p>
+      <h2>Building the people side</h2>
+      <p>If human judgment is this important, we have to invest in developing it.</p>
+      <p>The World Economic Forum's Future of Jobs Report identifies AI and big data among the fastest-growing skills. At the same time, employers continue to place enormous value on analytical thinking.</p>
+      <p>Those capabilities belong together.</p>
+      <p>Understanding how to use AI is one skill. Knowing how to question its conclusions, evaluate evidence, recognize patterns, and understand context is another.</p>
+      <p>Narrative intelligence sits at that intersection of technical capability and analytical tradecraft.</p>
+      <p>Some of the most rewarding work I do is mentoring students here in Mississippi who are learning both. Watching them move beyond classroom exercises and take on real problems reinforces something I believe strongly: the next generation of analysts will need to be comfortable working alongside machines without surrendering their own judgment.</p>
+      <h2>What I'd tell leaders</h2>
+      <p>If I had to boil all of this down to four recommendations, they'd be these:</p>
+      <ul>
+        <li>Plan for the curve, not the number. Information volume will continue to grow faster than your people can process it. Design your operations around that reality.</li>
+        <li>Look past the pulse. Positive and negative sentiment won't tell you what a narrative is doing. Understand who's pushing it, how it's spreading, and what it's designed to make people feel and do.</li>
+        <li>Demand the source. Whether a claim comes from an AI agent or a human analyst, ask where it came from and what evidence supports it.</li>
+        <li>Let machines read and people decide. Use AI to process information at scale, identify patterns, and provide early warning. Keep interpretation, judgment, and accountability with people.</li>
+      </ul>
+      <p>There's more information coming than any of us will ever read. That's not going to change.</p>
+      <p>What can change is how early we see the stories that matter, how well we understand what's driving them, and whether we recognize their potential effects before they shape what people believe.</p>
+      <p>The advantage won't belong to whoever has the most information. It will belong to whoever understands what that information means while there's still time to act.</p>
+      <p>I gave this talk at the <a href="https://warrenhusband.com/#msu-xai-2026">MSU XAI Workshop</a> in Starkville, Mississippi, on October 27, 2026.</p>
+      <hr>
+      <p><em>Warren Husband is CTO at EdgeTheory and has been building software since 1995. He lives in Ridgeland, Mississippi.</em></p>
+    </article>
+    <footer>
+      <p>© 2026 Warren Husband</p>
+    </footer>
+  </main>
+</body>
+</html>
