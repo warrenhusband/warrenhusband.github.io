@@ -49,134 +49,396 @@
   }
   </script>
 
+  <link rel="preload" href="/fonts/fraunces-latin-400.woff2" as="font" type="font/woff2" crossorigin>
   <style>
+    @font-face {
+      font-family: Fraunces;
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url("/fonts/fraunces-latin-400.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: Fraunces;
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url("/fonts/fraunces-latin-600.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Source Sans 3";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url("/fonts/source-sans-3-latin-400.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Source Sans 3";
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url("/fonts/source-sans-3-latin-600.woff2") format("woff2");
+    }
     :root {
-      --bg: #fbfaf8;
-      --fg: #1c1c1c;
-      --muted: #5f5f5f;
-      --brand: #1E3669;
-      --accent: #0390C8;
-      --rule: #e3e0da;
+      --paper: #f6f1e7;
+      --ink: #1d1a16;
+      --muted: #6b6358;
+      --rule: #d9cfbd;
+      --link: #a14026;
+      --card: #fffdf8;
       color-scheme: light;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #141414;
-        --fg: #ececec;
-        --muted: #a3a3a3;
-        --brand: #0390C8;
-        --rule: #2c2c2c;
+        --paper: #16130f;
+        --ink: #efe8db;
+        --muted: #a39886;
+        --rule: #3a332a;
+        --link: #ec8a64;
+        --card: #1f1b16;
         color-scheme: dark;
       }
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font: 18px/1.65 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      font: 18px/1.7 "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
     }
-    main {
-      max-width: 40rem;
-      margin: 0 auto;
-      padding: clamp(2.5rem, 8vh, 5rem) 1.25rem 4rem;
+    a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: .2em;
     }
-    .site-name {
-      font-size: 1.05rem;
+    a:focus-visible {
+      outline: 2px solid var(--link);
+      outline-offset: 3px;
+    }
+    .wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.5rem; }
+    .mast {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 1.3rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: .95rem;
+    }
+    .mast .word {
+      font-family: Fraunces, Georgia, serif;
       font-weight: 600;
-      margin: 0 0 .15rem;
-    }
-    .site-name a {
-      color: var(--fg);
+      font-size: 1.1rem;
+      color: var(--ink);
       text-decoration: none;
     }
-    .role {
-      color: var(--fg);
-      font-size: 1.05rem;
-      line-height: 1.4;
-      margin: 0 0 .85rem;
+    .mast nav { display: flex; flex-wrap: wrap; gap: .2rem 1.4rem; }
+    .mast nav a {
+      color: var(--ink);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 15rem;
+      gap: 3.5rem;
+      align-items: start;
+      padding: 4.5rem 0 3.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .kicker, .lbl, .label, .meta, .post-meta, .role-tag {
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .kicker { margin: 0 0 1rem; }
+    h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(3.2rem, 8vw, 6rem);
+      line-height: .95;
+      letter-spacing: -.035em;
+      margin: 0 0 1.4rem;
+    }
+    .lede {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.45rem;
+      line-height: 1.45;
+      font-weight: 400;
+      max-width: 34rem;
+      margin: 0;
+    }
+    .lede em { font-style: italic; color: var(--ink); }
+    .hero picture { display: block; margin-top: 2.6rem; }
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid var(--rule);
+      border-radius: 0;
+      mix-blend-mode: multiply;
+      background: var(--paper);
+      object-fit: cover;
+    }
+    @media (prefers-color-scheme: dark) {
+      .hero img { mix-blend-mode: normal; }
     }
     .profiles {
       display: flex;
       flex-wrap: wrap;
-      gap: .2rem 1.15rem;
-      margin: 0 0 2rem;
+      gap: 0 1rem;
+      margin: 1.8rem 0 0;
+      font-size: 1rem;
     }
-    h1 {
-      font-size: clamp(2.25rem, 6vw, 3rem);
+    .profiles a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      min-width: 0;
+    }
+    .profiles a.btn {
+      border: 1px solid var(--link);
+      padding: 0 .9rem;
+      border-radius: 2px;
+      text-decoration: none;
       font-weight: 600;
-      letter-spacing: -.02em;
-      line-height: 1.12;
+    }
+    .stats {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: nowrap;
+      margin: 2rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .stats li { font-size: .9rem; color: var(--muted); }
+    .stats b {
+      display: block;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--ink);
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    section {
+      display: grid;
+      grid-template-columns: 13rem 1fr;
+      gap: 3rem;
+      padding: 3.2rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .lbl span[aria-hidden="true"] {
+      display: block;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 2.2rem;
+      letter-spacing: 0;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: .4rem;
+      font-weight: 400;
+      text-transform: none;
+    }
+    .lbl h2 {
+      all: unset;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--muted);
+      font-family: "Source Sans 3", system-ui, sans-serif;
+    }
+    .body > p:first-child { margin-top: 0; }
+    p { margin: 0 0 1.25rem; }
+    .essays { list-style: none; margin: 0; padding: 0; }
+    .essays > li {
+      padding: 0 0 1.6rem;
+      margin: 0 0 1.6rem;
+      border-bottom: 1px dotted var(--rule);
+    }
+    .essays > li:last-child { border: 0; margin: 0; padding: 0; }
+    .essays h3 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 400;
+      font-size: 1.85rem;
+      line-height: 1.15;
+      letter-spacing: -.015em;
+      margin: .3rem 0 .4rem;
+    }
+    .essays h3 a { color: var(--ink); text-decoration: none; }
+    .essays h3 a:hover { color: var(--link); text-decoration: underline; }
+    .essays .blurb { margin: 0; color: var(--muted); max-width: 38rem; }
+    .more { margin-top: 1.4rem; }
+    .posts { list-style: none; margin: 0; padding: 0; }
+    .posts > li {
+      padding: .9rem 0;
+      border-top: 1px solid var(--rule);
+    }
+    .posts > li:first-child { border-top: 0; padding-top: 0; }
+    .posts p { margin: 0; }
+    .post-meta { margin: 0 0 .25rem; }
+    .post-meta .platform::before { content: "· "; }
+    .posts a {
+      color: var(--ink);
+      font-size: 1rem;
+      line-height: 1.5;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+    .posts a:hover { color: var(--link); text-decoration: underline; }
+    .speaking {
+      list-style: none;
+      margin: 0 0 1.5rem;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    .speaking li {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    .speaking h3 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 400;
+      font-size: 1.3rem;
+      line-height: 1.3;
+      margin: 0;
+    }
+    .speaking .event { font-size: .92rem; }
+    .speaking .when, .speaking .note { font-size: .85rem; color: var(--muted); }
+    .press {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      padding: 1.6rem;
+      margin-top: .5rem;
+    }
+    .press h3 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 400;
+      font-size: 1.5rem;
+      margin: 0 0 .8rem;
+    }
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 0 1.1rem;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 2px;
+    }
+    .file-note { color: var(--muted); font-size: .9rem; margin-top: -.4rem; }
+    .press-bio {
+      margin: .3rem 0 1.2rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--rule);
+    }
+    .press-bio p { margin: 0; }
+    .timeline { list-style: none; margin: 0; padding: 0; }
+    .timeline li {
+      display: grid;
+      grid-template-columns: 11rem 1fr;
+      column-gap: 1.5rem;
+      padding: .9rem 0;
+      border-top: 1px solid var(--rule);
+    }
+    .timeline li:first-child { border-top: 0; padding-top: 0; }
+    .timeline .what { grid-column: 2; font-weight: 600; }
+    .timeline .when {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    .timeline .note { grid-column: 2; color: var(--muted); font-size: .98rem; }
+    .skills { margin-top: .3rem; }
+    footer {
+      padding: 2.2rem 0 4rem;
+      font-size: .92rem;
+      color: var(--muted);
+    }
+    footer p { margin: 0 0 .35rem; }
+    .foot-links { display: flex; flex-wrap: wrap; gap: 0 1rem; width: 100%; margin-bottom: .6rem; }
+    .foot-links a { min-height: 44px; display: inline-flex; align-items: center; }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; gap: 1.8rem; padding-top: 2.5rem; }
+      .hero picture { order: -1; margin-top: 0; }
+      .hero img { width: 9rem; }
+      section { grid-template-columns: 1fr; gap: 1rem; padding: 2.4rem 0; }
+      .speaking { grid-template-columns: 1fr; }
+      .timeline li { grid-template-columns: 1fr; }
+      .timeline .when, .timeline .what, .timeline .note { grid-column: 1; grid-row: auto; }
+      .mast { flex-direction: column; align-items: flex-start; gap: .3rem; }
+      .stats { gap: 2rem; }
+    }
+
+    .article-wrap { max-width: 38rem; }
+    main.article-wrap { padding: 2.5rem 0 1rem; }
+    main.article-wrap h1 {
+      font-size: clamp(2.4rem, 6vw, 3.4rem);
+      line-height: 1.05;
       margin: 0 0 1rem;
     }
-    h2 {
-      font-size: 1.35rem;
-      font-weight: 600;
-      letter-spacing: -.01em;
-      line-height: 1.3;
+    main.article-wrap h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 1.25;
+      letter-spacing: -.015em;
       margin: 2.25rem 0 .75rem;
+      text-transform: none;
+      color: var(--ink);
     }
-    ul {
-      margin: 0 0 1.25rem;
-      padding-left: 1.25rem;
-    }
+    .when { color: var(--muted); font-size: .95rem; margin: 0 0 1.25rem; }
+    .role { margin: 1.4rem 0 0; font-size: 1.05rem; }
+    ul { margin: 0 0 1.25rem; padding-left: 1.25rem; }
     li { margin: 0 0 .85rem; }
-    li:last-child { margin-bottom: 0; }
-    hr {
-      border: 0;
-      border-top: 1px solid var(--rule);
-      margin: 2rem 0 1.25rem;
+    hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0 1.25rem; }
+    .blog-list h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 400;
+      font-size: 1.85rem;
+      line-height: 1.15;
+      letter-spacing: -.015em;
+      margin: .2rem 0 .35rem;
+      text-transform: none;
+      color: var(--ink);
     }
-    .when {
-      color: var(--muted);
-      font-size: .95rem;
-      margin: 0 0 1.25rem;
-    }
-    p { margin: 0 0 1.25rem; }
-    a {
-      color: var(--brand);
-      text-decoration-thickness: 1px;
-      text-underline-offset: .18em;
-    }
-    a:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-    }
-    footer {
-      margin-top: 3rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid var(--rule);
-      color: var(--muted);
-      font-size: .95rem;
-    }
-    footer p { margin: 0; }
-    @media (max-width: 640px) {
-      .profiles { gap: 0 1rem; }
-      .profiles a {
-        display: inline-flex;
-        align-items: center;
-        min-height: 44px;
-        padding: .6rem 0;
-      }
-    }
+    .blog-list h2 a { color: var(--ink); text-decoration: none; }
+    .blog-list h2 a:hover { color: var(--link); text-decoration: underline; }
+    .blog-list .summary { margin: 0; color: var(--muted); }
+    .blog-list > li { border-top: 0; border-bottom: 1px dotted var(--rule); padding: 0 0 1.6rem; margin: 0 0 1.6rem; }
+    .blog-list > li:last-child { border: 0; margin: 0; padding: 0; }
+
   </style>
 </head>
 <body>
-  <main>
-    <header>
-      <p class="site-name"><a href="/">Warren Husband</a></p>
-      <p class="role">Chief Technology Officer at <a href="https://edgetheory.com/?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">EdgeTheory</a></p>
-      <nav class="profiles" aria-label="Profiles">
-        <a href="https://www.linkedin.com/in/warren-husband/" rel="me">LinkedIn</a>
-        <a href="https://x.com/WarrenHusband" rel="me">X</a>
-        <a href="https://www.facebook.com/warren.husband" rel="me">Facebook</a>
-        <a href="https://www.instagram.com/warrenhusband/" rel="me">Instagram</a>
-        <a href="https://github.com/warrenhusband" rel="me">GitHub</a>
+  <div class="wrap">
+    <header class="mast">
+      <a class="word" href="/">Warren Husband</a>
+      <nav aria-label="Sections">
+        <a href="/#writing">Writing</a>
+        <a href="/#speaking">Speaking</a>
+        <a href="/#experience">Experience</a>
         <a href="/#press">Press kit</a>
-        <a href="/blog/">Blog</a>
       </nav>
     </header>
-    <article>
+    <main class="article-wrap">
+      <p class="role">Chief Technology Officer at <a href="https://edgetheory.com/?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">EdgeTheory</a></p>
+      <article>
       <h1>Information Is Outrunning People</h1>
       <p class="when"><time datetime="2026-11-13">November 13, 2026</time></p>
       <p>The world is producing information far faster than anyone can read it. That gap isn't just an inconvenience. It's where influence happens, and closing it takes both machines and people.</p>
@@ -264,9 +526,21 @@
       <hr>
       <p><em>Warren Husband is CTO at EdgeTheory and has been building software since 1995. He lives in Ridgeland, Mississippi. Views are my own and do not represent EdgeTheory.</em></p>
     </article>
+    </main>
     <footer>
+      <nav class="foot-links" aria-label="Contact and profiles">
+        <a href="https://www.linkedin.com/in/warren-husband/" rel="me">LinkedIn</a>
+        <a href="https://x.com/WarrenHusband" rel="me">X</a>
+        <a href="https://www.facebook.com/warren.husband" rel="me">Facebook</a>
+        <a href="https://www.instagram.com/warrenhusband/" rel="me">Instagram</a>
+        <a href="https://github.com/warrenhusband" rel="me">GitHub</a>
+        <a href="/#press">Press kit</a>
+        <a href="/blog/">Blog</a>
+        <a href="https://edgetheory.com/contact?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">Press &amp; speaking inquiries</a>
+      </nav>
       <p>© 2026 Warren Husband</p>
+      <p>Last updated <time datetime="2026-11-16T10:40-06:00">November 16, 2026, 10:40 AM CT</time></p>
     </footer>
-  </main>
+  </div>
 </body>
 </html>
