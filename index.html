@@ -36,13 +36,36 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        "@id": "https://warrenhusband.com/#website",
+        "url": "https://warrenhusband.com/",
+        "name": "Warren Husband",
+        "publisher": { "@id": "https://warrenhusband.com/#person" },
+        "inLanguage": "en-US"
+      },
+      {
         "@type": "ProfilePage",
         "@id": "https://warrenhusband.com/",
         "url": "https://warrenhusband.com/",
         "name": "Warren Husband – CTO, EdgeTheory",
         "description": "Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company. Bio, experience, speaking, headshot, and ready-to-use bios for press and event organizers.",
-        "dateModified": "2026-11-16T14:15:00-06:00",
+        "dateModified": "2026-11-16T14:20:00-06:00",
+        "inLanguage": "en-US",
+        "isPartOf": { "@id": "https://warrenhusband.com/#website" },
         "mainEntity": { "@id": "https://warrenhusband.com/#person" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://edgetheory.com/",
+        "name": "EdgeTheory",
+        "url": "https://edgetheory.com/",
+        "sameAs": ["https://www.linkedin.com/company/edgetheory/", "https://x.com/EdgeTheory", "https://www.facebook.com/edgetheory", "https://www.crunchbase.com/organization/edge-theory"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ridgeland",
+          "addressRegion": "MS",
+          "addressCountry": "US"
+        }
       },
       {
         "@type": "Person",
@@ -55,31 +78,20 @@
         "description": "Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company that helps government and commercial organizations understand the information environment, including how narratives emerge and spread.",
         "image": {
           "@type": "ImageObject",
+          "@id": "https://warrenhusband.com/#headshot",
           "url": "https://warrenhusband.com/warren-husband-cto-edgetheory.jpg",
           "width": 1200,
           "height": 1200,
           "caption": "Warren Husband, Chief Technology Officer at EdgeTheory"
         },
-        "worksFor": {
-          "@type": "Organization",
-          "@id": "https://edgetheory.com/",
-          "name": "EdgeTheory",
-          "url": "https://edgetheory.com/",
-          "sameAs": ["https://www.linkedin.com/company/edgetheory/", "https://x.com/EdgeTheory", "https://www.facebook.com/edgetheory", "https://www.crunchbase.com/organization/edge-theory"],
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Ridgeland",
-            "addressRegion": "MS",
-            "addressCountry": "US"
-          }
-        },
+        "worksFor": { "@id": "https://edgetheory.com/" },
         "alumniOf": {
           "@type": "CollegeOrUniversity",
           "name": "Belhaven University",
           "url": "https://www.belhaven.edu/",
           "sameAs": ["https://en.wikipedia.org/wiki/Belhaven_University", "https://www.wikidata.org/wiki/Q4882717"]
         },
-        "knowsAbout": ["Narrative intelligence", "AI and LLM engineering", "Agentic AI workflows and MCP", "Retrieval and embeddings", "Cloud data engineering", "Software engineering leadership"],
+        "knowsAbout": ["Narrative intelligence", "AI and LLM models", "Agentic AI workflows and MCP", "Retrieval and embeddings", "Cloud data engineering", "Building and scaling engineering teams"],
         "hasCredential": {
           "@type": "EducationalOccupationalCredential",
           "credentialCategory": "degree",
@@ -121,9 +133,13 @@
           "https://github.com/warrenhusband",
           "https://www.crunchbase.com/person/warren-husband",
           "https://theorg.com/org/edgetheory/person/warren-husband",
-          "https://medium.com/@warrenhusband",
-          "https://edgetheory.com/team"
-        ]
+          "https://medium.com/@warrenhusband"
+        ],
+        "subjectOf": {
+          "@type": "WebPage",
+          "url": "https://edgetheory.com/team",
+          "name": "EdgeTheory Team"
+        }
       }
     ]
   }
@@ -721,7 +737,7 @@
         <a href="https://edgetheory.com/contact?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">Press &amp; speaking inquiries</a>
       </nav>
       <p>© 2026 Warren Husband</p>
-      <p>Last updated <time datetime="2026-11-16T14:15-06:00">November 16, 2026, 2:15 PM CT</time></p>
+      <p>Last updated <time datetime="2026-11-16T14:20-06:00">November 16, 2026, 2:20 PM CT</time></p>
     </footer>
   </div>
 </body>
