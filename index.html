@@ -41,7 +41,7 @@
         "url": "https://warrenhusband.com/",
         "name": "Warren Husband – CTO, EdgeTheory",
         "description": "Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company. Bio, experience, speaking, headshot, and ready-to-use bios for press and event organizers.",
-        "dateModified": "2026-11-16T10:25:00-06:00",
+        "dateModified": "2026-11-16T10:49:00-06:00",
         "mainEntity": { "@id": "https://warrenhusband.com/#person" }
       },
       {
@@ -217,278 +217,416 @@
   }
   </script>
 
+  <link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
   <style>
+    @font-face {
+      font-family: Fraunces;
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: swap;
+      src: url("/fonts/fraunces-latin.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: Fraunces;
+      font-style: italic;
+      font-weight: 400 600;
+      font-display: swap;
+      src: url("/fonts/fraunces-italic-latin.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Source Sans 3";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url("/fonts/source-sans-3-latin-400.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Source Sans 3";
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url("/fonts/source-sans-3-latin-600.woff2") format("woff2");
+    }
     :root {
-      --bg: #fbfaf8;
-      --fg: #1c1c1c;
-      --muted: #5f5f5f;
-      --brand: #1E3669;
-      --accent: #0390C8;
-      --rule: #e3e0da;
-      --button-bg: #1E3669;
-      --button-fg: #ffffff;
+      --paper: #f6f1e7;
+      --ink: #1d1a16;
+      --muted: #6b6358;
+      --rule: #d9cfbd;
+      --link: #a14026;
+      --card: #fffdf8;
       color-scheme: light;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #141414;
-        --fg: #ececec;
-        --muted: #a3a3a3;
-        --brand: #0390C8;
-        --rule: #2c2c2c;
-        --button-bg: #ececec;
-        --button-fg: #1E3669;
+        --paper: #16130f;
+        --ink: #efe8db;
+        --muted: #a39886;
+        --rule: #3a332a;
+        --link: #ec8a64;
+        --card: #1f1b16;
         color-scheme: dark;
       }
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      background: var(--bg);
-      color: var(--fg);
-      font: 18px/1.65 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      font: 18px/1.7 "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
     }
-    main {
-      max-width: 40rem;
-      margin: 0 auto;
-      padding: clamp(2.5rem, 8vh, 5rem) 1.25rem 4rem;
+    a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: .2em;
     }
-    picture { display: block; margin: 0 0 1.25rem; }
-    .headshot {
-      width: clamp(8rem, 14vw, 10rem);
-      height: auto;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      object-fit: cover;
-      display: block;
+    a:focus-visible {
+      outline: 2px solid var(--link);
+      outline-offset: 3px;
     }
-    h1 {
-      font-size: clamp(2.25rem, 6vw, 3rem);
+    .wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.5rem; }
+    .mast {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 1.3rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: .95rem;
+    }
+    .mast .word {
+      font-family: Fraunces, Georgia, serif;
       font-weight: 600;
-      letter-spacing: -.02em;
-      line-height: 1.12;
-      margin: 0 0 .3rem;
+      font-size: 1.1rem;
+      color: var(--ink);
+      text-decoration: none;
     }
-    .role {
-      color: var(--fg);
-      font-size: 1.2rem;
-      line-height: 1.4;
-      margin: 0 0 .85rem;
+    .mast nav { display: flex; flex-wrap: wrap; gap: .2rem 1.4rem; }
+    .mast nav a {
+      color: var(--ink);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 15rem;
+      gap: 3.5rem;
+      align-items: start;
+      padding: 4.5rem 0 3.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .kicker, .lbl, .label, .meta, .post-meta, .role-tag {
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .kicker { margin: 0 0 1rem; }
+    h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(3.2rem, 8vw, 6rem);
+      line-height: .95;
+      letter-spacing: -.035em;
+      margin: 0 0 1.4rem;
+    }
+    .lede {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.45rem;
+      line-height: 1.45;
+      font-weight: 400;
+      max-width: 34rem;
+      margin: 0;
+    }
+    .lede em { font-style: italic; color: var(--ink); }
+    .hero picture { display: block; margin-top: 2.6rem; }
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid var(--rule);
+      border-radius: 0;
+      mix-blend-mode: multiply;
+      background: var(--paper);
+      object-fit: cover;
+    }
+    @media (prefers-color-scheme: dark) {
+      .hero img { mix-blend-mode: normal; }
     }
     .profiles {
       display: flex;
       flex-wrap: wrap;
-      gap: .2rem 1.15rem;
-      margin: 0 0 1.15rem;
+      gap: 0 1rem;
+      margin: 1.8rem 0 0;
+      font-size: 1rem;
     }
-    p { margin: 0 0 1.25rem; }
-    a {
-      color: var(--brand);
-      text-decoration-thickness: 1px;
-      text-underline-offset: .18em;
-    }
-    a:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
-    }
-    a.button {
+    .profiles a {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
       min-height: 44px;
-      padding: .55rem 1.15rem;
-      background: var(--button-bg);
-      color: var(--button-fg);
-      font-weight: 600;
-      font-size: 1rem;
-      line-height: 1.2;
+      min-width: 0;
+    }
+    .profiles a.btn {
+      border: 1px solid var(--link);
+      padding: 0 .9rem;
+      border-radius: 2px;
       text-decoration: none;
-      border-radius: 4px;
-    }
-    a.button:hover { filter: brightness(1.08); }
-    @media (prefers-color-scheme: dark) {
-      a.button:hover {
-        filter: none;
-        background: var(--accent);
-        color: #141414;
-      }
-    }
-    h2 {
-      font-size: .8rem;
       font-weight: 600;
-      letter-spacing: .12em;
+    }
+    .stats {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: nowrap;
+      margin: 2rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .stats li { font-size: .9rem; color: var(--muted); }
+    .stats b {
+      display: block;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--ink);
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    section {
+      display: grid;
+      grid-template-columns: 13rem 1fr;
+      gap: 3rem;
+      padding: 3.2rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .lbl span[aria-hidden="true"] {
+      display: block;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 2.2rem;
+      letter-spacing: 0;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: .4rem;
+      font-weight: 400;
+      text-transform: none;
+    }
+    .lbl h2 {
+      all: unset;
+      display: block;
       text-transform: uppercase;
-      color: var(--brand);
-      margin: 3rem 0 1rem;
-      padding-bottom: .4rem;
-      border-bottom: 2px solid var(--accent);
-    }
-    .timeline { list-style: none; margin: 0; padding: 0; }
-    .timeline li {
-      padding: 0 0 1.1rem 1.25rem;
-      border-left: 2px solid var(--rule);
-      position: relative;
-    }
-    .timeline li::before {
-      content: "";
-      position: absolute;
-      left: -6px;
-      top: .55rem;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-      border: 2px solid var(--accent);
-    }
-    .timeline li:not(:first-child)::before { background: var(--bg); }
-    .timeline .what { font-weight: 600; display: block; }
-    .timeline .when { color: var(--muted); font-size: .95rem; display: block; }
-    .timeline .note { display: block; margin-top: .2rem; font-size: .95rem; }
-    .label {
+      letter-spacing: .08em;
+      font-size: .85rem;
+      font-weight: 600;
       color: var(--muted);
-      font-size: .95rem;
-      margin: 0 0 .35rem;
+      font-family: "Source Sans 3", system-ui, sans-serif;
     }
-    .file-note {
-      color: var(--muted);
-      font-size: .95rem;
-      margin-top: -.65rem;
+    .body > p:first-child { margin-top: 0; }
+    p { margin: 0 0 1.25rem; }
+    .essays { list-style: none; margin: 0; padding: 0; }
+    .essays > li {
+      padding: 0 0 1.6rem;
+      margin: 0 0 1.6rem;
+      border-bottom: 1px dotted var(--rule);
     }
+    .essays > li:last-child { border: 0; margin: 0; padding: 0; }
+    .essays h3 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 400;
+      font-size: 1.85rem;
+      line-height: 1.15;
+      letter-spacing: -.015em;
+      margin: .3rem 0 .4rem;
+    }
+    .essays h3 a { color: var(--ink); text-decoration: none; }
+    .essays h3 a:hover { color: var(--link); text-decoration: underline; }
+    .essays .blurb { margin: 0; color: var(--muted); max-width: 38rem; }
+    .more { margin-top: 1.4rem; }
+    .posts { list-style: none; margin: 0; padding: 0; }
+    .posts > li {
+      padding: .9rem 0;
+      border-top: 1px solid var(--rule);
+    }
+    .posts > li:first-child { border-top: 0; padding-top: 0; }
+    .posts p { margin: 0; }
+    .post-meta { margin: 0 0 .25rem; }
+    .post-meta .platform::before { content: "· "; }
+    .posts a {
+      color: var(--ink);
+      font-size: 1rem;
+      line-height: 1.5;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+    .posts a:hover { color: var(--link); text-decoration: underline; }
     .speaking {
       list-style: none;
       margin: 0 0 1.5rem;
       padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
     }
-    .speaking li { margin: 0 0 1.15rem; }
-    .speaking a { font-weight: 600; }
-    .speaking .when,
-    .speaking .note { display: block; }
-    .speaking .when { color: var(--muted); font-size: .95rem; }
-    .speaking .note { margin-top: .15rem; }
-    .posts { list-style: none; margin: 0; padding: 0; }
-    .posts > li { margin: 0 0 1.35rem; }
-    .posts > li > p { margin: 0 0 .45rem; }
-    .posts > li > p:last-child { margin-bottom: 0; }
-    .posts p.post-meta {
-      margin: 0 0 .3rem;
-      padding: 0;
-      border: 0;
-      color: var(--muted);
-      font-size: .95rem;
+    .speaking li {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    .speaking h3 {
+      font-family: Fraunces, Georgia, serif;
       font-weight: 400;
-      letter-spacing: 0;
-      line-height: 1.4;
-      text-transform: none;
-    }
-    .post-meta .platform {
-      margin-left: .75rem;
-      color: var(--brand);
-      font-size: .75rem;
-      font-weight: 600;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-    blockquote.press-bio {
+      font-size: 1.3rem;
+      line-height: 1.3;
       margin: 0;
-      padding: 0 0 0 1rem;
-      border-left: 2px solid var(--accent);
     }
-    blockquote.press-bio p { margin: 0; }
-    .press-bio + .label { margin-top: 1.15rem; }
-    footer {
-      margin-top: 3rem;
-      padding-top: 1.25rem;
+    .speaking .event { font-size: .92rem; }
+    .speaking .when, .speaking .note { font-size: .85rem; color: var(--muted); }
+    .press {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      padding: 1.6rem;
+      margin-top: .5rem;
+    }
+    .press h3 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 400;
+      font-size: 1.5rem;
+      margin: 0 0 .8rem;
+    }
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 0 1.1rem;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 2px;
+    }
+    .file-note { color: var(--muted); font-size: .9rem; margin-top: -.4rem; }
+    .press-bio {
+      margin: .3rem 0 1.2rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--rule);
+    }
+    .press-bio p { margin: 0; }
+    .timeline { list-style: none; margin: 0; padding: 0; }
+    .timeline li {
+      display: grid;
+      grid-template-columns: 11rem 1fr;
+      column-gap: 1.5rem;
+      padding: .9rem 0;
       border-top: 1px solid var(--rule);
+    }
+    .timeline li:first-child { border-top: 0; padding-top: 0; }
+    .timeline .what { grid-column: 2; font-weight: 600; }
+    .timeline .when {
+      grid-column: 1;
+      grid-row: 1 / span 2;
       color: var(--muted);
-      font-size: .95rem;
+      font-size: .92rem;
     }
-    footer p { margin: 0 0 .2rem; }
-    .timeline + .label { margin-top: 2rem; }
-    .skills { margin: 0; }
-    @media (max-width: 640px) {
-      .profiles { gap: 0 1rem; }
-      .profiles a {
-        display: inline-flex;
-        align-items: center;
-        min-height: 44px;
-        min-width: 0;
-        padding: .6rem 0;
-      }
-      a.download,
-      .education a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 44px;
-        min-width: 44px;
-      }
-      .speaking a {
-        display: block;
-        min-height: 44px;
-        padding: .4rem 0;
-      }
-      .posts a {
-        display: inline;
-      }
+    .timeline .note { grid-column: 2; color: var(--muted); font-size: .98rem; }
+    .skills { margin-top: .3rem; }
+    footer {
+      padding: 2.2rem 0 4rem;
+      font-size: .92rem;
+      color: var(--muted);
     }
+    footer p { margin: 0 0 .35rem; }
+    .foot-links { display: flex; flex-wrap: wrap; gap: 0 1rem; width: 100%; margin-bottom: .6rem; }
+    .foot-links a { min-height: 44px; display: inline-flex; align-items: center; }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; gap: 1.8rem; padding-top: 2.5rem; }
+      .hero picture { order: -1; margin-top: 0; }
+      .hero img { width: 9rem; }
+      section { grid-template-columns: 1fr; gap: 1rem; padding: 2.4rem 0; }
+      .speaking { grid-template-columns: 1fr; }
+      .timeline li { grid-template-columns: 1fr; }
+      .timeline .when, .timeline .what, .timeline .note { grid-column: 1; grid-row: auto; }
+      .mast { flex-direction: column; align-items: flex-start; gap: .3rem; }
+      .stats { gap: 2rem; }
+    }
+
   </style>
 </head>
 <body>
-  <main>
-    <picture>
+  <div class="wrap">
+    <header class="mast">
+      <a class="word" href="/">Warren Husband</a>
+      <nav aria-label="Sections">
+        <a href="#writing">Writing</a>
+        <a href="#speaking">Speaking</a>
+        <a href="#experience">Experience</a>
+        <a href="#press">Press kit</a>
+      </nav>
+    </header>
+    <div class="hero">
+      <div>
+        <p class="kicker">CTO · EdgeTheory · Mississippi</p>
+        <h1>Warren<br>Husband</h1>
+        <p class="lede">Chief Technology Officer at <a href="https://edgetheory.com/?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">EdgeTheory</a>, working in <em>narrative intelligence</em>: understanding the stories that shape what people believe, where they start, how they spread, and where they're heading.</p>
+        <ul class="stats">
+          <li><b>30+ years</b> in software, since 1995</li>
+          <li><b>2018</b> joined EdgeTheory as CTO</li>
+        </ul>
+        <nav class="profiles" aria-label="Profiles">
+          <a href="https://www.linkedin.com/in/warren-husband/" rel="me">LinkedIn</a>
+          <a href="https://x.com/WarrenHusband" rel="me">X</a>
+          <a href="https://www.facebook.com/warren.husband" rel="me">Facebook</a>
+          <a href="https://www.instagram.com/warrenhusband/" rel="me">Instagram</a>
+          <a href="https://github.com/warrenhusband" rel="me">GitHub</a>
+          <a class="btn" href="#press">Press kit</a>
+          <a href="/blog/">Blog</a>
+        </nav>
+      </div>
+      <picture>
       <source media="(prefers-color-scheme: dark)" type="image/webp" srcset="headshot-dark-256.webp 256w, headshot-dark-320.webp 320w" sizes="(max-width: 914px) 128px, (max-width: 1143px) 14vw, 160px">
       <source media="(prefers-color-scheme: dark)" type="image/jpeg" srcset="headshot-dark-256.jpg 256w, headshot-dark-320.jpg 320w" sizes="(max-width: 914px) 128px, (max-width: 1143px) 14vw, 160px">
       <source type="image/webp" srcset="headshot-256.webp 256w, headshot-320.webp 320w" sizes="(max-width: 914px) 128px, (max-width: 1143px) 14vw, 160px">
       <img class="headshot" src="headshot-320.jpg" srcset="headshot-256.jpg 256w, headshot-320.jpg 320w" sizes="(max-width: 914px) 128px, (max-width: 1143px) 14vw, 160px" width="320" height="320" alt="Warren Husband, Chief Technology Officer at EdgeTheory" loading="eager" fetchpriority="high">
     </picture>
-    <h1>Warren Husband</h1>
-    <p class="role">Chief Technology Officer at <a href="https://edgetheory.com/?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">EdgeTheory</a></p>
-    <nav class="profiles" aria-label="Profiles">
-      <a href="https://www.linkedin.com/in/warren-husband/" rel="me">LinkedIn</a>
-      <a href="https://x.com/WarrenHusband" rel="me">X</a>
-      <a href="https://www.facebook.com/warren.husband" rel="me">Facebook</a>
-      <a href="https://www.instagram.com/warrenhusband/" rel="me">Instagram</a>
-      <a href="https://github.com/warrenhusband" rel="me">GitHub</a>
-      <a href="#press">Press kit</a>
-      <a href="/blog/">Blog</a>
-    </nav>
-
-<h2>About</h2>
-    <p>Warren Husband is the Chief Technology Officer at <a href="https://edgetheory.com/?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">EdgeTheory</a>, a narrative intelligence company that helps government and commercial organizations understand the information environment, including how narratives emerge and spread. Warren leads EdgeTheory's engineering team.</p>
-    <p>Narrative intelligence is the work of understanding the stories that shape what people believe: Where they start, how they spread, and where they're heading. With more content online than any team can read, the goal is to spot a narrative early enough for leaders in government and business to act before it takes hold.</p>
-    <p>Warren has worked in software for more than 30 years, since 1995, as an engineer, team leader, IT director, and CTO. Before joining EdgeTheory in 2018, he spent much of that time building systems for healthcare and medical labs. He enjoys working with people as much as with code and keeps the business goal in view above the technical details. Warren lives in Mississippi.</p>
-
-<h2 id="press">Speaking &amp; press kit</h2>
-    <ul class="speaking">
-      <li id="msu-xai-2026">
-        <a href="https://xai-exlent.github.io/workshop-2026/">XAI Workshop 2026 (XAI: Experiential Learning in AI/ML for Future Innovators), Mississippi State University</a>
-        <span class="when">October 27, 2026 · Bill R. Foster Ballroom, Colvard Student Union, Starkville, MS</span>
-        <span class="note">Keynote: “Beyond the AI Buzz: Narrative Intelligence for Real-World National Security.” Also a workshop panelist.</span>
-      </li>
-      <li id="ncni-2026">
-        <a href="https://ncnisummit.org/2026">NCNI Summit 2026 (National Center for Narrative Intelligence, 3rd Annual Invitational Summit)</a>
-        <span class="when">March 31, 2026 · Gertrude C. Ford Ballroom, The Inn at Ole Miss, Oxford, MS</span>
-        <span class="note">“The Intelligence of the Narrative” (Cognitive Warfare &amp; Artificial Intelligence session).</span>
-      </li>
-    </ul>
-    <p><a class="button" href="https://edgetheory.com/contact?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">Press &amp; speaking inquiries</a></p>
-    <p class="asset"><a class="download" href="headshot-1200.jpg" download="warren-husband-1200.jpg">Download headshot</a></p>
-    <p class="file-note">1200×1200 JPEG</p>
-    <p class="label">Short bio</p>
-    <blockquote class="press-bio">
-      <p>Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company that helps government and commercial organizations understand the information environment, including how narratives emerge and spread. He leads EdgeTheory's engineering team. Warren has worked in software since 1995, including years building systems for healthcare and medical labs. He lives in Mississippi.</p>
-    </blockquote>
-    <p class="label">Longer bio</p>
-    <blockquote class="press-bio">
-      <p>Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company that helps government and commercial organizations understand the information environment, including how narratives emerge and spread. He leads the engineering team behind EdgeTheory's narrative intelligence platform. Warren has worked in software for more than 30 years as an engineer, team leader, IT director, and CTO. Before joining EdgeTheory in 2018, he spent much of his career building systems for healthcare and medical labs. He holds a B.S. in Computer Science from Belhaven University and lives in Mississippi.</p>
-    </blockquote>
-    <p class="label">Suggested introduction</p>
-    <blockquote class="press-bio">
-      <p>Please welcome Warren Husband, Chief Technology Officer at EdgeTheory, who has spent more than 30 years building software and now leads the engineering team behind EdgeTheory's narrative intelligence work.</p>
-    </blockquote>
-
-<h2>Recent posts</h2>
-    <ol class="posts">
+    </div>
+    <section id="about">
+      <div class="lbl"><span aria-hidden="true">01</span><h2>About</h2></div>
+      <div class="body">
+        <p>Warren Husband is the Chief Technology Officer at <a href="https://edgetheory.com/?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">EdgeTheory</a>, a narrative intelligence company that helps government and commercial organizations understand the information environment, including how narratives emerge and spread. Warren leads EdgeTheory's engineering team.</p>
+        <p>Narrative intelligence is the work of understanding the stories that shape what people believe: Where they start, how they spread, and where they're heading. With more content online than any team can read, the goal is to spot a narrative early enough for leaders in government and business to act before it takes hold.</p>
+        <p>Warren has worked in software for more than 30 years, since 1995, as an engineer, team leader, IT director, and CTO. Before joining EdgeTheory in 2018, he spent much of that time building systems for healthcare and medical labs. He enjoys working with people as much as with code and keeps the business goal in view above the technical details. Warren lives in Mississippi.</p>
+      </div>
+    </section>
+    <section id="writing">
+      <div class="lbl"><span aria-hidden="true">02</span><h2>Writing</h2></div>
+      <div class="body">
+        <ol class="essays">
+          <li>
+            <p class="meta"><time datetime="2026-11-13">Nov 13, 2026</time> · 7 min read</p>
+            <h3><a href="/blog/information-is-outrunning-people/">Information Is Outrunning People</a></h3>
+            <p class="blurb">The world is producing information far faster than anyone can read it. That gap isn't just an inconvenience.</p>
+          </li>
+          <li>
+            <p class="meta"><time datetime="2026-11-13">Nov 13, 2026</time> · 6 min read</p>
+            <h3><a href="/blog/there-is-no-best-ai-model/">There's No Best AI Model. That's the Point.</a></h3>
+            <p class="blurb">Everyone wants to know which AI model is best. It's the wrong question.</p>
+          </li>
+          <li>
+            <p class="meta"><time datetime="2026-10-29">Oct 29, 2026</time> · 6 min read</p>
+            <h3><a href="/blog/recursive-self-improvement/">AI Is Starting to Build AI. Who's Checking the Work?</a></h3>
+            <p class="blurb">Recursive self-improvement is already happening, though not in the way science fiction imagined. AI is increasingly helping build the next generation of AI.</p>
+          </li>
+        </ol>
+        <p class="more"><a href="/blog/">All writing</a></p>
+      </div>
+    </section>
+    <section id="posts">
+      <div class="lbl"><span aria-hidden="true">03</span><h2>Recent posts</h2></div>
+      <div class="body">
+        <ol class="posts">
       <li>
           <p class="post-meta"><time datetime="2026-11-16">Nov 16, 2026</time> <span class="platform">X</span></p>
           <p><a href="https://x.com/WarrenHusband/status/2122363918823858397" rel="noopener" aria-label="The FAA just expanded its SMART system to all 22 US air-traffic centers, using weather, flight paths, traffic and staffing to recommend routes. (X post, Nov 16, 2026)">The FAA just expanded its SMART system to all 22 US air-traffic centers, using weather, flight paths, traffic and staffing to recommend routes.</a></p>
@@ -514,9 +652,12 @@
           <p><a href="https://www.linkedin.com/feed/update/urn:li:share:7527010908859039744/" rel="noopener" aria-label="The cloud isn't really in the clouds. It's physical infrastructure sitting in places with real geopolitical exposure. (LinkedIn post, Nov 13, 2026)">The cloud isn't really in the clouds. It's physical infrastructure sitting in places with real geopolitical exposure.</a></p>
       </li>
     </ol>
-
-<h2>Recent from EdgeTheory</h2>
-    <ol class="posts">
+      </div>
+    </section>
+    <section id="edgetheory">
+      <div class="lbl"><span aria-hidden="true">04</span><h2>Recent from EdgeTheory</h2></div>
+      <div class="body">
+        <ol class="posts">
       <li>
           <p class="post-meta"><time datetime="2026-11-16">Nov 16, 2026</time> <span class="platform">LinkedIn</span></p>
           <p><a href="https://www.linkedin.com/posts/edgetheory_osint-cognitivewarfare-activity-7528098444058615809-b30Y" rel="noopener" aria-label="Understanding what is being said is no longer enough. Organizations need to understand how narratives form. (LinkedIn post, Nov 16, 2026)">Understanding what is being said is no longer enough. Organizations need to understand how narratives form.</a></p>
@@ -542,9 +683,49 @@
           <p><a href="https://x.com/EdgeTheory/status/2120218735927546320" rel="noopener" aria-label="9/11 demonstrates how historical events can be repurposed for contemporary influence. (X post, Nov 10, 2026)">9/11 demonstrates how historical events can be repurposed for contemporary influence.</a></p>
       </li>
     </ol>
-
-<h2>Experience</h2>
-    <ol class="timeline">
+      </div>
+    </section>
+    <section id="speaking">
+      <div class="lbl"><span aria-hidden="true">05</span><h2>Speaking &amp; press kit</h2></div>
+      <div class="body">
+        <ul class="speaking">
+          <li id="msu-xai-2026">
+            <h3>Beyond the AI Buzz: Narrative Intelligence for Real-World National Security</h3>
+            <a class="event" href="https://xai-exlent.github.io/workshop-2026/">XAI Workshop 2026 (XAI: Experiential Learning in AI/ML for Future Innovators), Mississippi State University</a>
+            <span class="when">October 27, 2026 · Bill R. Foster Ballroom, Colvard Student Union, Starkville, MS</span>
+            <span class="note">Keynote: “Beyond the AI Buzz: Narrative Intelligence for Real-World National Security.” Also a workshop panelist.</span>
+          </li>
+          <li id="ncni-2026">
+            <h3>The Intelligence of the Narrative</h3>
+            <a class="event" href="https://ncnisummit.org/2026">NCNI Summit 2026 (National Center for Narrative Intelligence, 3rd Annual Invitational Summit)</a>
+            <span class="when">March 31, 2026 · Gertrude C. Ford Ballroom, The Inn at Ole Miss, Oxford, MS</span>
+            <span class="note">“The Intelligence of the Narrative” (Cognitive Warfare &amp; Artificial Intelligence session).</span>
+          </li>
+        </ul>
+        <div class="press" id="press">
+          <h3>Booking a speaker? Press kit</h3>
+          <p><a class="button" href="https://edgetheory.com/contact?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">Press &amp; speaking inquiries</a></p>
+          <p class="asset"><a class="download" href="headshot-1200.jpg" download="warren-husband-1200.jpg">Download headshot</a></p>
+          <p class="file-note">1200×1200 JPEG</p>
+          <p class="label">Short bio</p>
+          <blockquote class="press-bio">
+            <p>Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company that helps government and commercial organizations understand the information environment, including how narratives emerge and spread. He leads EdgeTheory's engineering team. Warren has worked in software since 1995, including years building systems for healthcare and medical labs. He lives in Mississippi.</p>
+          </blockquote>
+          <p class="label">Longer bio</p>
+          <blockquote class="press-bio">
+            <p>Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company that helps government and commercial organizations understand the information environment, including how narratives emerge and spread. He leads the engineering team behind EdgeTheory's narrative intelligence platform. Warren has worked in software for more than 30 years as an engineer, team leader, IT director, and CTO. Before joining EdgeTheory in 2018, he spent much of his career building systems for healthcare and medical labs. He holds a B.S. in Computer Science from Belhaven University and lives in Mississippi.</p>
+          </blockquote>
+          <p class="label">Suggested introduction</p>
+          <blockquote class="press-bio">
+            <p>Please welcome Warren Husband, Chief Technology Officer at EdgeTheory, who has spent more than 30 years building software and now leads the engineering team behind EdgeTheory's narrative intelligence work.</p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+    <section id="experience">
+      <div class="lbl"><span aria-hidden="true">06</span><h2>Experience</h2></div>
+      <div class="body">
+        <ol class="timeline">
       <li>
         <span class="what">CTO, EdgeTheory</span>
         <span class="when">Feb 2018 – Present · Ridgeland, MS</span>
@@ -600,16 +781,32 @@
         <span class="when">1995 – 1999</span>
       </li>
     </ol>
-    <p class="label">Skills</p>
+        <p class="label">Skills</p>
     <p class="skills">Narrative intelligence, technology strategy and leadership, building and scaling engineering teams, AI strategy and adoption, agentic AI and LLM systems, data platforms and cloud architecture</p>
 
-<h2>Education</h2>
-    <p class="education"><a href="https://www.belhaven.edu/">Belhaven University</a>, Jackson, MS. B.S. in Computer Science, minor in Business Administration, 1994 – 1998.</p>
 
-<footer>
+      </div>
+    </section>
+    <section id="education">
+      <div class="lbl"><span aria-hidden="true">07</span><h2>Education</h2></div>
+      <div class="body">
+        <p class="education"><a href="https://www.belhaven.edu/">Belhaven University</a>, Jackson, MS. B.S. in Computer Science, minor in Business Administration, 1994 – 1998.</p>
+      </div>
+    </section>
+    <footer>
+      <nav class="foot-links" aria-label="Contact and profiles">
+        <a href="https://www.linkedin.com/in/warren-husband/" rel="me">LinkedIn</a>
+        <a href="https://x.com/WarrenHusband" rel="me">X</a>
+        <a href="https://www.facebook.com/warren.husband" rel="me">Facebook</a>
+        <a href="https://www.instagram.com/warrenhusband/" rel="me">Instagram</a>
+        <a href="https://github.com/warrenhusband" rel="me">GitHub</a>
+        <a href="/#press">Press kit</a>
+        <a href="/blog/">Blog</a>
+        <a href="https://edgetheory.com/contact?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">Press &amp; speaking inquiries</a>
+      </nav>
       <p>© 2026 Warren Husband</p>
-      <p>Last updated <time datetime="2026-11-16T10:25-06:00">November 16, 2026, 10:25 AM CT</time></p>
+      <p>Last updated <time datetime="2026-11-16T10:49-06:00">November 16, 2026, 10:49 AM CT</time></p>
     </footer>
-  </main>
+  </div>
 </body>
 </html>
