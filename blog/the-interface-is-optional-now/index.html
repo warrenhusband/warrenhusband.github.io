@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Interface Is Optional Now – Warren Husband</title>
+  <meta name="description" content="For most of the history of software, using a system meant opening it. You logged in, found the right screen, and clicked through the steps someone designed for you.">
+  <link rel="canonical" href="https://warrenhusband.com/blog/the-interface-is-optional-now/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Warren Husband">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="The Interface Is Optional Now – Warren Husband">
+  <meta property="og:description" content="For most of the history of software, using a system meant opening it. You logged in, found the right screen, and clicked through the steps someone designed for you.">
+  <meta property="og:url" content="https://warrenhusband.com/blog/the-interface-is-optional-now/">
+  <meta property="article:published_time" content="2026-11-17">
+  <meta property="og:image" content="https://warrenhusband.com/blog/the-interface-is-optional-now/og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Warren Husband, Chief Technology Officer at EdgeTheory">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@WarrenHusband">
+  <meta name="twitter:creator" content="@WarrenHusband">
+  <meta name="twitter:title" content="The Interface Is Optional Now – Warren Husband">
+  <meta name="twitter:description" content="For most of the history of software, using a system meant opening it. You logged in, found the right screen, and clicked through the steps someone designed for you.">
+  <meta name="twitter:image" content="https://warrenhusband.com/blog/the-interface-is-optional-now/og.png">
+  <meta name="twitter:image:alt" content="Warren Husband, Chief Technology Officer at EdgeTheory">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": "https://warrenhusband.com/blog/the-interface-is-optional-now/#article",
+    "headline": "The Interface Is Optional Now",
+    "description": "For most of the history of software, using a system meant opening it. You logged in, found the right screen, and clicked through the steps someone designed for you.",
+    "datePublished": "2026-11-17",
+    "dateModified": "2026-11-17T10:20-06:00",
+    "mainEntityOfPage": "https://warrenhusband.com/blog/the-interface-is-optional-now/",
+    "url": "https://warrenhusband.com/blog/the-interface-is-optional-now/",
+    "inLanguage": "en-US",
+    "isPartOf": { "@id": "https://warrenhusband.com/#website" },
+    "publisher": { "@id": "https://warrenhusband.com/#person" },
+    "author": {
+      "@type": "Person",
+      "@id": "https://warrenhusband.com/#person",
+      "name": "Warren Husband",
+      "url": "https://warrenhusband.com/"
+    }
+  }
+  </script>
+
+  <link rel="preload" href="/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face {
+      font-family: Fraunces;
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: swap;
+      src: url("/fonts/fraunces-latin.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: Fraunces;
+      font-style: italic;
+      font-weight: 400 600;
+      font-display: swap;
+      src: url("/fonts/fraunces-italic-latin.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Source Sans 3";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url("/fonts/source-sans-3-latin-400.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: "Source Sans 3";
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url("/fonts/source-sans-3-latin-600.woff2") format("woff2");
+    }
+    :root {
+      --paper: #f6f1e7;
+      --ink: #1d1a16;
+      --muted: #6b6358;
+      --rule: #d9cfbd;
+      --link: #a14026;
+      --card: #fffdf8;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #16130f;
+        --ink: #efe8db;
+        --muted: #a39886;
+        --rule: #3a332a;
+        --link: #ec8a64;
+        --card: #1f1b16;
+        color-scheme: dark;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 18px/1.7 "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: .2em;
+    }
+    a:focus-visible {
+      outline: 2px solid var(--link);
+      outline-offset: 3px;
+    }
+    .wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.5rem; }
+    .mast {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 1.3rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: .95rem;
+    }
+    .mast .word {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .mast nav { display: flex; flex-wrap: wrap; gap: .2rem 1.4rem; }
+    .mast nav a {
+      color: var(--ink);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 15rem;
+      gap: 3.5rem;
+      align-items: start;
+      padding: 4.5rem 0 3.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .kicker, .lbl, .label, .meta, .post-meta, .role-tag {
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .kicker { margin: 0 0 1rem; }
+    h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(3.2rem, 8vw, 6rem);
+      line-height: .95;
+      letter-spacing: -.035em;
+      margin: 0 0 1.4rem;
+    }
+    .lede {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.45rem;
+      line-height: 1.45;
+      font-weight: 400;
+      max-width: 34rem;
+      margin: 0;
+    }
+    .lede em { font-style: italic; color: var(--ink); }
+    .hero picture { display: block; margin-top: 2.6rem; }
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid var(--rule);
+      border-radius: 0;
+      mix-blend-mode: multiply;
+      background: var(--paper);
+      object-fit: cover;
+    }
+    @media (prefers-color-scheme: dark) {
+      .hero img { mix-blend-mode: normal; }
+    }
+    .profiles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 1rem;
+      margin: 1.8rem 0 0;
+      font-size: 1rem;
+    }
+    .profiles a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      min-width: 0;
+    }
+    .profiles a.btn {
+      border: 1px solid var(--link);
+      padding: 0 .9rem;
+      border-radius: 2px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .stats {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: nowrap;
+      margin: 2rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .stats li { font-size: .9rem; color: var(--muted); }
+    .stats b {
+      display: block;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--ink);
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    section {
+      display: grid;
+      grid-template-columns: 13rem 1fr;
+      gap: 3rem;
+      padding: 3.2rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .lbl span[aria-hidden="true"] {
+      display: block;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 2.2rem;
+      letter-spacing: 0;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: .4rem;
+      font-weight: 400;
+      text-transform: none;
+    }
+    .lbl h2 {
+      all: unset;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--muted);
+      font-family: "Source Sans 3", system-ui, sans-serif;
+    }
+    .body > p:first-child { margin-top: 0; }
+    p { margin: 0 0 1.25rem; }
+    .essays { list-style: none; margin: 0; padding: 0; }
+    .essays > li {
+      padding: 0 0 1.6rem;
+      margin: 0 0 1.6rem;
+      border-bottom: 1px dotted var(--rule);
+    }
+    .essays > li:last-child { border: 0; margin: 0; padding: 0; }
+    .essays h3 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 400;
+      font-size: 1.85rem;
+      line-height: 1.15;
+      letter-spacing: -.015em;
+      margin: .3rem 0 .4rem;
+    }
+    .essays h3 a { color: var(--ink); text-decoration: none; }
+    .essays h3 a:hover { color: var(--link); text-decoration: underline; }
+    .essays .blurb { margin: 0; color: var(--muted); max-width: 38rem; }
+    .more { margin-top: 1.4rem; }
+    .posts { list-style: none; margin: 0; padding: 0; }
+    .posts > li {
+      padding: .9rem 0;
+      border-top: 1px solid var(--rule);
+    }
+    .posts > li:first-child { border-top: 0; padding-top: 0; }
+    .posts p { margin: 0; }
+    .post-meta { margin: 0 0 .25rem; }
+    .post-meta .platform::before { content: "· "; }
+    .posts a {
+      color: var(--ink);
+      font-size: 1rem;
+      line-height: 1.5;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+    .posts a:hover { color: var(--link); text-decoration: underline; }
+    .speaking {
+      list-style: none;
+      margin: 0 0 1.5rem;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    .speaking li {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    .speaking h3 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 400;
+      font-size: 1.3rem;
+      line-height: 1.3;
+      margin: 0;
+    }
+    .speaking .event { font-size: .92rem; }
+    .speaking .when, .speaking .note { font-size: .85rem; color: var(--muted); }
+    .press {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      padding: 1.6rem;
+      margin-top: .5rem;
+    }
+    .press h3 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 400;
+      font-size: 1.5rem;
+      margin: 0 0 .8rem;
+    }
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      background: var(--ink);
+      color: var(--paper);
+      padding: 0 1.1rem;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 2px;
+    }
+    .file-note { color: var(--muted); font-size: .9rem; margin-top: -.4rem; }
+    .press-bio {
+      margin: .3rem 0 1.2rem;
+      padding-left: 1rem;
+      border-left: 2px solid var(--rule);
+    }
+    .press-bio p { margin: 0; }
+    .timeline { list-style: none; margin: 0; padding: 0; }
+    .timeline li {
+      display: grid;
+      grid-template-columns: 11rem 1fr;
+      column-gap: 1.5rem;
+      padding: .9rem 0;
+      border-top: 1px solid var(--rule);
+    }
+    .timeline li:first-child { border-top: 0; padding-top: 0; }
+    .timeline .what { grid-column: 2; font-weight: 600; }
+    .timeline .when {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    .timeline .note { grid-column: 2; color: var(--muted); font-size: .98rem; }
+    .skills { margin-top: .3rem; }
+    footer {
+      padding: 2.2rem 0 4rem;
+      font-size: .92rem;
+      color: var(--muted);
+    }
+    footer p { margin: 0 0 .35rem; }
+    .foot-links { display: flex; flex-wrap: wrap; gap: 0 1rem; width: 100%; margin-bottom: .6rem; }
+    .foot-links a { min-height: 44px; display: inline-flex; align-items: center; }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; gap: 1.8rem; padding-top: 2.5rem; }
+      .hero picture { order: -1; margin-top: 0; }
+      .hero img { width: 9rem; }
+      section { grid-template-columns: 1fr; gap: 1rem; padding: 2.4rem 0; }
+      .speaking { grid-template-columns: 1fr; }
+      .timeline li { grid-template-columns: 1fr; }
+      .timeline .when, .timeline .what, .timeline .note { grid-column: 1; grid-row: auto; }
+      .mast { flex-direction: column; align-items: flex-start; gap: .3rem; }
+      .stats { gap: 2rem; }
+    }
+
+    .article-wrap { max-width: 38rem; }
+    main.article-wrap { padding: 2.5rem 0 1rem; }
+    main.article-wrap h1 {
+      font-size: clamp(2.4rem, 6vw, 3.4rem);
+      line-height: 1.05;
+      margin: 0 0 1rem;
+    }
+    main.article-wrap h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 1.25;
+      letter-spacing: -.015em;
+      margin: 2.25rem 0 .75rem;
+      text-transform: none;
+      color: var(--ink);
+    }
+    .when { color: var(--muted); font-size: .95rem; margin: 0 0 1.25rem; }
+    .role { margin: 1.4rem 0 0; font-size: 1.05rem; }
+    ul { margin: 0 0 1.25rem; padding-left: 1.25rem; }
+    li { margin: 0 0 .85rem; }
+    hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0 1.25rem; }
+    .blog-list h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 400;
+      font-size: 1.85rem;
+      line-height: 1.15;
+      letter-spacing: -.015em;
+      margin: .2rem 0 .35rem;
+      text-transform: none;
+      color: var(--ink);
+    }
+    .blog-list h2 a { color: var(--ink); text-decoration: none; }
+    .blog-list h2 a:hover { color: var(--link); text-decoration: underline; }
+    .blog-list .summary { margin: 0; color: var(--muted); }
+    .blog-list > li { border-top: 0; border-bottom: 1px dotted var(--rule); padding: 0 0 1.6rem; margin: 0 0 1.6rem; }
+    .blog-list > li:last-child { border: 0; margin: 0; padding: 0; }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="mast">
+      <a class="word" href="/">Warren Husband</a>
+      <nav aria-label="Sections">
+        <a href="/#writing">Writing</a>
+        <a href="/#speaking">Speaking</a>
+        <a href="/#experience">Experience</a>
+        <a href="/#press">Press kit</a>
+      </nav>
+    </header>
+    <main class="article-wrap">
+      <p class="role">Chief Technology Officer at <a href="https://edgetheory.com/?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">EdgeTheory</a></p>
+      <article>
+      <h1>The Interface Is Optional Now</h1>
+      <p class="when"><time datetime="2026-11-17">November 17, 2026</time></p>
+      <p>For most of the history of software, using a system meant opening it. You logged in, found the right screen, and clicked through the steps someone designed for you. That assumption is starting to break. More and more, people will just say what they want done and let an assistant go get it from whatever systems hold the answer.</p>
+      <p>A few weeks ago, an executive I work with spent a drive building out a stack of analysis by talking to his AI assistant on his phone. When he sat down at his desk, all of it was waiting for him in our product. He never opened the app.</p>
+      <p>I've been building software since 1995. For nearly all of that time, the user interface was the product. Now the screen is one way in among several, and sometimes it isn't the one people use most.</p>
+      <p>The technology making this possible is a fairly unglamorous standard called the Model Context Protocol, or MCP. At EdgeTheory, we used it twice this year: first inside the company, then for our customers. Here's what that taught me.</p>
+      <h2>Plumbing, not magic</h2>
+      <p>MCP gives an AI assistant a standard way to connect to a system's tools and data. A system publishes what it can do, and an assistant that speaks the protocol can use those capabilities without a custom integration for every pairing.</p>
+      <p>There's no intelligence in the protocol itself. The reasoning happens in whatever model you're already using. MCP is the plumbing that lets that model reach the places where your work actually lives.</p>
+      <p>MCP has spread fast. Anthropic introduced it in November 2024, and in December 2025 donated it to the <a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation" rel="noopener">Agentic AI Foundation</a>, a new fund under the Linux Foundation co-founded by Anthropic, Block and OpenAI. By then there were more than 10,000 published MCP servers, and Claude, ChatGPT, Gemini, Microsoft Copilot, Cursor and VS Code had all adopted it. In August, Google's Agent2Agent protocol, which handles how agents talk to each other, <a href="https://aaif.io/blog/a2a-joins-aaif" rel="noopener">joined the same foundation</a>.</p>
+      <p>Companies that compete hard on models are now cooperating on the connections between them. That's usually the sign a technology has stopped being an experiment and started becoming infrastructure.</p>
+      <h2>Not everyone is opening the door</h2>
+      <p>In October, <a href="https://corporate.walmart.com/news/2026/10/Making-It-Possible-for-Agents-to-Shop-on-Behalf-of-Customers" rel="noopener">Walmart launched an Agent Gateway</a>, an MCP server that lets approved AI agents search its inventory and make purchases for customers. Each agent gets its own profile. Customers can require approval for every purchase or set a spending limit, and agents never see payment information. Agents that break Walmart's published terms get blocked.</p>
+      <p>Around the same time, <a href="https://techcrunch.com/2026/10/21/while-amazon-blocks-ai-agents-walmart-rolls-out-the-welcome-mat/" rel="noopener">Amazon began blocking AI agents</a> from making purchases for shoppers, including Meta's new Muse shopping agent.</p>
+      <p>Two of the largest retailers in the world made opposite bets. Retail just happens to be where it's most visible. Anyone who runs software people depend on is going to face the same question: when your customers' assistants show up, do you give them a governed way in, or try to keep them out?</p>
+      <p>At EdgeTheory, we decided to build the way in. People will use the assistant they like. But we built it for ourselves first.</p>
+      <h2>Inside first: Vesper</h2>
+      <p>In September, I started building Vesper, our internal knowledge layer.</p>
+      <p>Vesper has no AI of its own. It routes context. The reasoning happens in whatever assistant each person already uses, and the tokens are spent on their side. Nobody has to give up the tools they already like.</p>
+      <p>Notion and Jira remain our record of intent. Vesper is the live window into what the product and the data are actually doing. You can ask a question without knowing which system has the answer or which screen to open.</p>
+      <p>We opened it one slice of data at a time, with approval for each. Access follows who you are, and everything is audited. Some questions are off-limits for some roles. When that happens, Vesper says so plainly instead of letting the assistant guess around the gap. A clear "you don't have access to that" builds more trust than a confident wrong answer.</p>
+      <p>Every source we connect shows up for everyone who has access to it, in whatever assistant they use, so the whole thing gets more useful each time we add one. My rule of thumb for what belongs in it: the moment two people need to do the same thing, it goes in Vesper.</p>
+      <h2>Outside: EdgeContext</h2>
+      <p>In late October, we built the same pattern for customers with EdgeContext, which lets a customer's own AI assistant work with their EdgeTheory data. It's in pilot now.</p>
+      <p>You sign in with your existing product login, and the assistant can do no more than you can do in the app. It's a new way in, not a new set of powers. Your identity and permissions carry over to the assistant. There's no second login system and no special account with extra access.</p>
+      <p>We started read-only, and a security review was required before launch, not something we'd get to later. Vesper had shown us that assistants remember a system's tools from the moment they connect. So we kept the set of tools fixed and let their capabilities grow behind them. New abilities can reach users without requiring them to reconnect.</p>
+      <p>We learned a lot by watching colleagues outside engineering connect for the first time. Within a day, we'd added setup pages and better guidance inside the product. Nobody should have to understand the protocol to get connected. The setup and the documentation are part of the product now.</p>
+      <p>By early November, EdgeContext could change data, not just read it. That's a different conversation.</p>
+      <h2>Reads are easy. Writes are where the risk lives.</h2>
+      <p>Letting an assistant read and summarize is relatively low risk. If it gets something wrong, a person can catch it before anything happens.</p>
+      <p>Creating, editing, deleting, approving and buying are different. An agent can take those actions faster and more often than any person would. It can also encounter instructions hidden in the material it's asked to read. A document, message or web page may contain text intended to redirect the assistant away from the user's request. Once an agent can act, the content it reads becomes part of the attack surface.</p>
+      <p>In EdgeContext, reading and changing are separate tools, and the change tool is labeled so the assistant asks you before it uses it.</p>
+      <p>We also keep some things out of reach entirely: administrative tools and anything that changes permissions. Deletes and anything that sends something out sit behind the change tool, so the person is asked first. Exposing an API doesn't mean an agent should be allowed to use it.</p>
+      <p>When a person works through screens, the screens slow them down in useful ways. There's a moment to look, think and catch a mistake. An agent working through tools doesn't get those moments. So the safeguards have to be built into the system itself: permissions, approvals, audit trails and clear limits on what an agent can do.</p>
+      <p>Some say software matters less now that any assistant can use any system. I see it the other way. Someone still has to decide what an agent may touch, build the permissions and audit trails, write the documentation it depends on, and design the confirmations that keep a person in charge. That work is harder than building screens ever was, and it's where engineering judgment matters most.</p>
+      <h2>Checking the work</h2>
+      <p>In "<a href="https://warrenhusband.com/blog/information-is-outrunning-people/">Information Is Outrunning People</a>," I wrote that information is being produced faster than anyone can read it. In "<a href="https://warrenhusband.com/blog/recursive-self-improvement/">AI Is Starting to Build AI. Who's Checking the Work?</a>," I argued that verification has to keep pace with generation.</p>
+      <p>Agents connected through standards like MCP take that one step further. They don't just produce information faster. They act faster.</p>
+      <p>When people no longer have to move through an interface, the checks that once happened as they clicked through screens have to happen elsewhere. That means permissions, approvals and a record of what the agent actually did. People need to be able to check the result, not just trust that the assistant got it right.</p>
+      <p>The interface may be optional now. Accountability isn't.</p>
+      <hr>
+      <p><em><a href="/" rel="author">Warren Husband</a> is CTO at EdgeTheory and has been building software since 1995. He lives in Mississippi. Views are my own and do not represent EdgeTheory.</em></p>
+    </article>
+    </main>
+    <footer>
+      <nav class="foot-links" aria-label="Contact and profiles">
+        <a href="https://www.linkedin.com/in/warren-husband/" rel="me">LinkedIn</a>
+        <a href="https://x.com/WarrenHusband" rel="me">X</a>
+        <a href="https://www.facebook.com/warren.husband" rel="me">Facebook</a>
+        <a href="https://www.instagram.com/warrenhusband/" rel="me">Instagram</a>
+        <a href="https://github.com/warrenhusband" rel="me">GitHub</a>
+        <a href="/#press">Press kit</a>
+        <a href="/blog/">Blog</a>
+        <a href="https://edgetheory.com/contact?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">Press &amp; speaking inquiries</a>
+      </nav>
+      <p>© 2026 Warren Husband</p>
+      <p>Last updated <time datetime="2026-11-17T10:20-06:00">November 17, 2026, 10:20 AM CT</time></p>
+    </footer>
+  </div>
+</body>
+</html>
