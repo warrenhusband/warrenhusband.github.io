@@ -3,22 +3,26 @@
     {
       "id": "2123144238280081545",
       "date": "2026-11-18",
-      "text": "AI is already helping build the next generation of AI. The question isn't whether recursive self-improvement happens. It's who's checking the work while it does."
+      "text": "AI is already helping build the next generation of AI. The question isn't whether recursive self-improvement happens. It's who's checking the work while it does.",
+      "link_domain": "invertedpassion.substack.com"
     },
     {
       "id": "2123124051442807140",
       "date": "2026-11-18",
-      "text": "We're building machines that do more of our thinking for us, then acting surprised when people treat them as more than a tool. The real risk may be less about machines becoming gods and more about humans deciding they don't need to think for themselves."
+      "text": "We're building machines that do more of our thinking for us, then acting surprised when people treat them as more than a tool. The real risk may be less about machines becoming gods and more about humans deciding they don't need to think for themselves.",
+      "link_domain": "newyorker.com"
     },
     {
       "id": "2123059307906252905",
       "date": "2026-11-18",
-      "text": "If AI can discover mathematical truths that humans couldn't find, does understanding the proof become less important? Or does it become more important than ever?"
+      "text": "If AI can discover mathematical truths that humans couldn't find, does understanding the proof become less important? Or does it become more important than ever?",
+      "link_domain": "spectrum.ieee.org"
     },
     {
       "id": "2122808272356839557",
       "date": "2026-11-17",
-      "text": "We're approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That's a much bigger shift than a new way to interact with software."
+      "text": "We're approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That's a much bigger shift than a new way to interact with software.",
+      "link_domain": "warrenhusband.com"
     }
   ],
   "linkedin": [
@@ -26,25 +30,29 @@
       "url": "https://www.linkedin.com/posts/warren-husband_ai-governance-is-going-to-be-as-much-a-geopolitical-share-7528825657611571201-7JpY/",
       "urn": "urn:li:share:7528825657611571201",
       "date": "2026-11-18",
-      "text": "AI governance is going to be as much a geopolitical challenge as a technical one. Building enough transparency and mutual trust to make those capabilities less dangerous is a much more realistic starting point."
+      "text": "AI governance is going to be as much a geopolitical challenge as a technical one. Countries aren't going to stop developing capabilities because of international agreements. Building enough transparency and mutual trust to make those capabilities less dangerous is a much more realistic starting point.",
+      "link_domain": "vox.com"
     },
     {
       "url": "https://www.linkedin.com/feed/update/urn:li:share:7528571160595382272/",
       "urn": "urn:li:share:7528571160595382272",
       "date": "2026-11-17",
-      "text": "We're moving from software people operate to software their agents operate. The interface might become optional, but permissions, security and accountability certainly aren't."
+      "text": "We're moving from software people operate to software their agents operate. That's a pretty fundamental change in how applications need to be designed. The interface might become optional, but permissions, security and accountability certainly aren't.",
+      "link_domain": "warrenhusband.com"
     },
     {
       "url": "https://www.linkedin.com/feed/update/urn:li:share:7528477722541555712/",
       "urn": "urn:li:share:7528477722541555712",
       "date": "2026-11-17",
-      "text": "National security is moving out of the government relations department and into the boardroom. That's a different kind of corporate governance challenge."
+      "text": "National security is moving out of the government relations department and into the boardroom. When your products are foundational to global AI infrastructure, export controls, geopolitical exposure, and commercial strategy become deeply interconnected. That's a different kind of corporate governance challenge.",
+      "link_domain": "techcrunch.com"
     },
     {
       "url": "https://www.linkedin.com/posts/warren-husband_exposed-credentials-weak-mfa-forgotten-share-7528191109521543169-Vcmk/",
       "urn": "urn:li:share:7528191109521543169",
       "date": "2026-11-16",
-      "text": "Exposed credentials, weak MFA, forgotten vendor access. AI isn't necessarily finding some ingenious new way in. It's making the discovery and exploitation of ordinary security failures dramatically faster and easier to scale."
+      "text": "Exposed credentials, weak MFA, forgotten vendor access. AI isn't necessarily finding some ingenious new way in. It's making the discovery and exploitation of ordinary security failures dramatically faster and easier to scale.",
+      "link_domain": "techcrunch.com"
     }
   ]
 }

@@ -26,36 +26,46 @@ def label_date(iso):
     return f"{month} {posted.day}, {posted.year}"
 
 
+X_ICON = (
+    '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3'
+    'l-4.9-6.4L6.4 22H3.3l7.3-8.3L1 2h6.4l4.4 5.9zm-1.1 18h1.7L6.3 3.9H4.5z"/></svg>'
+)
+LINKEDIN_ICON = (
+    '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z'
+    'M3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5'
+    'c0-1.2-.02-2.73-1.66-2.73-1.66 0-1.92 1.3-1.92 2.64V21h-4z"/></svg>'
+)
+
+
+def card(href, post, network, icon):
+    """One post card. The "View on" link stretches over the whole card."""
+    when = label_date(post["date"])
+    label = f"View on {network}: {post['text']} ({when})"
+    source = ""
+    if post.get("link_domain"):
+        source = f'<span class="post-src">Link: {text_escape(post["link_domain"])}</span>'
+    return (
+        "          <article class=\"post\">\n"
+        f'            <p class="post-meta"><span class="post-net">{icon}{network}</span>'
+        f'<time datetime="{attr_escape(post["date"])}">{when}</time></p>\n'
+        f'            <p class="post-text">{text_escape(post["text"])}</p>\n'
+        f'            <p class="post-foot">{source}'
+        f'<a class="post-open" href="{attr_escape(href)}" target="_blank" rel="noopener" aria-label="{attr_escape(label)}">'
+        f'View on {network} <span aria-hidden="true">&rarr;</span></a></p>\n'
+        "          </article>"
+    )
+
+
+def grid(cards):
+    return "        <div class=\"posts\">\n" + "\n".join(cards) + "\n        </div>"
+
+
 def x_markup(posts):
-    cards = []
-    for post in posts:
-        href = f"https://x.com/WarrenHusband/status/{post['id']}"
-        label = f"{post['text']} (X post, {label_date(post['date'])})"
-        cards.append(
-            "          <div class=\"x-card\">\n"
-            "            <div class=\"x-frame\">\n"
-            "              <blockquote class=\"twitter-tweet\" data-dnt=\"true\" data-conversation=\"none\">"
-            f'<a href="{attr_escape(href)}" target="_blank" rel="noopener">{text_escape(post["text"])}</a>'
-            "</blockquote>\n"
-            "            </div>\n"
-            f'            <a class="x-open" href="{attr_escape(href)}" target="_blank" rel="noopener" aria-label="{attr_escape(label)}"></a>\n'
-            "          </div>"
-        )
-    return "        <div class=\"x-grid\">\n" + "\n".join(cards) + "\n        </div>"
+    return grid(card(f"https://x.com/WarrenHusband/status/{post['id']}", post, "X", X_ICON) for post in posts)
 
 
 def linkedin_markup(posts):
-    cards = []
-    for post in posts:
-        src = "https://www.linkedin.com/embed/feed/update/" + post["urn"]
-        label = f"{post['text']} (LinkedIn post, {label_date(post['date'])})"
-        cards.append(
-            "          <figure class=\"li-card\">\n"
-            f'            <iframe src="{attr_escape(src)}" loading="lazy" title="{attr_escape(post["text"])}" height="780"></iframe>\n'
-            f'            <a class="li-open" href="{attr_escape(post["url"])}" target="_blank" rel="noopener" aria-label="{attr_escape(label)}"></a>\n'
-            "          </figure>"
-        )
-    return "        <div class=\"li-grid\">\n" + "\n".join(cards) + "\n        </div>"
+    return grid(card(post["url"], post, "LinkedIn", LINKEDIN_ICON) for post in posts)
 
 
 def replace_marked(page, start, end, inner):

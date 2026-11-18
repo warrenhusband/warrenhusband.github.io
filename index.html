@@ -49,7 +49,7 @@
         "url": "https://warrenhusband.com/",
         "name": "Warren Husband – CTO, EdgeTheory",
         "description": "Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company. Bio, experience, speaking, headshot, and ready-to-use bios for press and event organizers.",
-        "dateModified": "2026-11-18T14:29-06:00",
+        "dateModified": "2026-11-18T14:55-06:00",
         "inLanguage": "en-US",
         "isPartOf": { "@id": "https://warrenhusband.com/#website" },
         "mainEntity": { "@id": "https://warrenhusband.com/#person" }
@@ -372,71 +372,62 @@
     .essays h3 a:hover { color: var(--link); text-decoration: underline; }
     .essays .blurb { margin: 0; color: var(--muted); max-width: 38rem; }
     .more { margin-top: 1.4rem; }
-    #on-x .x-grid,
-    #on-linkedin .li-grid {
+    .posts {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1.25rem;
-      align-items: stretch;
     }
-    #on-x .x-card,
-    #on-linkedin .li-card {
-      margin: 0;
-      min-width: 0;
-      height: 100%;
+    .post {
+      position: relative;
       display: flex;
       flex-direction: column;
-      align-items: stretch;
-      background: #fff;
-      border: 1px solid #e1e8ed;
-      border-radius: 12px;
-      overflow: hidden;
+      min-width: 0;
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      padding: 1.35rem 1.5rem 1.1rem;
+      transition: border-color .15s, box-shadow .15s;
     }
-    #on-x .x-card,
-    #on-linkedin .li-card { position: relative; }
-    #on-x .x-frame {
-      overflow: hidden;
-      flex: 0 0 auto;
-      width: 100%;
-      align-self: stretch;
+    .post:hover { border-color: var(--muted); box-shadow: 0 2px 10px rgba(0, 0, 0, .06); }
+    .post:focus-within { outline: 2px solid var(--link); outline-offset: 2px; }
+    .post-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin: 0 0 .7rem;
+      font-size: .78rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
-    #on-x .x-open,
-    #on-linkedin .li-open {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: transparent;
-      cursor: pointer;
+    .post-net { display: inline-flex; align-items: center; gap: .45rem; font-weight: 600; }
+    .post-net svg { width: 14px; height: 14px; fill: currentColor; }
+    .post-text {
+      margin: 0 0 1.1rem;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.12rem;
+      line-height: 1.5;
+      color: var(--ink);
     }
-    #on-x .x-open:focus-visible,
-    #on-linkedin .li-open:focus-visible {
-      outline: 2px solid var(--link);
-      outline-offset: -3px;
+    .post-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin: auto 0 0;
+      padding-top: .8rem;
+      border-top: 1px dotted var(--rule);
+      font-size: .88rem;
+      line-height: 1.4;
     }
-    #on-x .twitter-tweet,
-    #on-x iframe {
-      display: block;
-      flex: 0 0 auto;
-      align-self: stretch;
-      width: 100% !important;
-      max-width: 100%;
-      margin: 0 !important;
-    }
-    #on-linkedin iframe {
-      display: block;
-      position: relative;
-      z-index: 0;
-      flex: 0 0 auto;
-      width: 100%;
-      max-width: 100%;
-      height: 780px;
-      border: 0;
-    }
+    .post-src { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted); }
+    .post-open { margin-left: auto; white-space: nowrap; font-weight: 600; text-decoration: none; }
+    .post-open:hover { text-decoration: underline; }
+    .post-open:focus-visible { outline: none; }
+    .post-open::after { content: ""; position: absolute; inset: 0; border-radius: 10px; }
     @media (min-width: 761px) {
-      #on-x .x-grid,
-      #on-linkedin .li-grid { grid-template-columns: 1fr 1fr; }
-      #on-x .x-card { min-height: 680px; }
-      #on-linkedin iframe { height: 760px; }
+      .posts { grid-template-columns: 1fr 1fr; }
     }
     .speaking {
       list-style: none;
@@ -610,107 +601,56 @@
       <div class="lbl"><span aria-hidden="true">03</span><h2>On X</h2></div>
       <div class="body">
         <!-- social:x:start -->
-        <div class="x-grid">
-          <div class="x-card">
-            <div class="x-frame">
-              <blockquote class="twitter-tweet" data-dnt="true" data-conversation="none"><a href="https://x.com/WarrenHusband/status/2123144238280081545" target="_blank" rel="noopener">AI is already helping build the next generation of AI. The question isn't whether recursive self-improvement happens. It's who's checking the work while it does.</a></blockquote>
-            </div>
-            <a class="x-open" href="https://x.com/WarrenHusband/status/2123144238280081545" target="_blank" rel="noopener" aria-label="AI is already helping build the next generation of AI. The question isn&#x27;t whether recursive self-improvement happens. It&#x27;s who&#x27;s checking the work while it does. (X post, Nov 18, 2026)"></a>
-          </div>
-          <div class="x-card">
-            <div class="x-frame">
-              <blockquote class="twitter-tweet" data-dnt="true" data-conversation="none"><a href="https://x.com/WarrenHusband/status/2123124051442807140" target="_blank" rel="noopener">We're building machines that do more of our thinking for us, then acting surprised when people treat them as more than a tool. The real risk may be less about machines becoming gods and more about humans deciding they don't need to think for themselves.</a></blockquote>
-            </div>
-            <a class="x-open" href="https://x.com/WarrenHusband/status/2123124051442807140" target="_blank" rel="noopener" aria-label="We&#x27;re building machines that do more of our thinking for us, then acting surprised when people treat them as more than a tool. The real risk may be less about machines becoming gods and more about humans deciding they don&#x27;t need to think for themselves. (X post, Nov 18, 2026)"></a>
-          </div>
-          <div class="x-card">
-            <div class="x-frame">
-              <blockquote class="twitter-tweet" data-dnt="true" data-conversation="none"><a href="https://x.com/WarrenHusband/status/2123059307906252905" target="_blank" rel="noopener">If AI can discover mathematical truths that humans couldn't find, does understanding the proof become less important? Or does it become more important than ever?</a></blockquote>
-            </div>
-            <a class="x-open" href="https://x.com/WarrenHusband/status/2123059307906252905" target="_blank" rel="noopener" aria-label="If AI can discover mathematical truths that humans couldn&#x27;t find, does understanding the proof become less important? Or does it become more important than ever? (X post, Nov 18, 2026)"></a>
-          </div>
-          <div class="x-card">
-            <div class="x-frame">
-              <blockquote class="twitter-tweet" data-dnt="true" data-conversation="none"><a href="https://x.com/WarrenHusband/status/2122808272356839557" target="_blank" rel="noopener">We're approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That's a much bigger shift than a new way to interact with software.</a></blockquote>
-            </div>
-            <a class="x-open" href="https://x.com/WarrenHusband/status/2122808272356839557" target="_blank" rel="noopener" aria-label="We&#x27;re approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That&#x27;s a much bigger shift than a new way to interact with software. (X post, Nov 17, 2026)"></a>
-          </div>
+        <div class="posts">
+          <article class="post">
+            <p class="post-meta"><span class="post-net"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1 2h6.4l4.4 5.9zm-1.1 18h1.7L6.3 3.9H4.5z"/></svg>X</span><time datetime="2026-11-18">Nov 18, 2026</time></p>
+            <p class="post-text">AI is already helping build the next generation of AI. The question isn't whether recursive self-improvement happens. It's who's checking the work while it does.</p>
+            <p class="post-foot"><span class="post-src">Link: invertedpassion.substack.com</span><a class="post-open" href="https://x.com/WarrenHusband/status/2123144238280081545" target="_blank" rel="noopener" aria-label="View on X: AI is already helping build the next generation of AI. The question isn&#x27;t whether recursive self-improvement happens. It&#x27;s who&#x27;s checking the work while it does. (Nov 18, 2026)">View on X <span aria-hidden="true">&rarr;</span></a></p>
+          </article>
+          <article class="post">
+            <p class="post-meta"><span class="post-net"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1 2h6.4l4.4 5.9zm-1.1 18h1.7L6.3 3.9H4.5z"/></svg>X</span><time datetime="2026-11-18">Nov 18, 2026</time></p>
+            <p class="post-text">We're building machines that do more of our thinking for us, then acting surprised when people treat them as more than a tool. The real risk may be less about machines becoming gods and more about humans deciding they don't need to think for themselves.</p>
+            <p class="post-foot"><span class="post-src">Link: newyorker.com</span><a class="post-open" href="https://x.com/WarrenHusband/status/2123124051442807140" target="_blank" rel="noopener" aria-label="View on X: We&#x27;re building machines that do more of our thinking for us, then acting surprised when people treat them as more than a tool. The real risk may be less about machines becoming gods and more about humans deciding they don&#x27;t need to think for themselves. (Nov 18, 2026)">View on X <span aria-hidden="true">&rarr;</span></a></p>
+          </article>
+          <article class="post">
+            <p class="post-meta"><span class="post-net"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1 2h6.4l4.4 5.9zm-1.1 18h1.7L6.3 3.9H4.5z"/></svg>X</span><time datetime="2026-11-18">Nov 18, 2026</time></p>
+            <p class="post-text">If AI can discover mathematical truths that humans couldn't find, does understanding the proof become less important? Or does it become more important than ever?</p>
+            <p class="post-foot"><span class="post-src">Link: spectrum.ieee.org</span><a class="post-open" href="https://x.com/WarrenHusband/status/2123059307906252905" target="_blank" rel="noopener" aria-label="View on X: If AI can discover mathematical truths that humans couldn&#x27;t find, does understanding the proof become less important? Or does it become more important than ever? (Nov 18, 2026)">View on X <span aria-hidden="true">&rarr;</span></a></p>
+          </article>
+          <article class="post">
+            <p class="post-meta"><span class="post-net"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1 2h6.4l4.4 5.9zm-1.1 18h1.7L6.3 3.9H4.5z"/></svg>X</span><time datetime="2026-11-17">Nov 17, 2026</time></p>
+            <p class="post-text">We're approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That's a much bigger shift than a new way to interact with software.</p>
+            <p class="post-foot"><span class="post-src">Link: warrenhusband.com</span><a class="post-open" href="https://x.com/WarrenHusband/status/2122808272356839557" target="_blank" rel="noopener" aria-label="View on X: We&#x27;re approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That&#x27;s a much bigger shift than a new way to interact with software. (Nov 17, 2026)">View on X <span aria-hidden="true">&rarr;</span></a></p>
+          </article>
         </div>
         <!-- social:x:end -->
-        <script>
-          (function () {
-            var block = document.getElementById("on-x");
-            if (!block || !("IntersectionObserver" in window)) return;
-            function footerPx() {
-              return window.matchMedia("(max-width: 760px)").matches ? 50 : 53;
-            }
-            function clipFrame(iframe) {
-              if (!iframe || !block.contains(iframe)) return;
-              var frame = iframe.closest(".x-frame");
-              if (!frame) return;
-              var height = iframe.getBoundingClientRect().height;
-              if (height < 80) return;
-              frame.style.height = Math.round(height - footerPx()) + "px";
-            }
-            function clipAll() {
-              var frames = block.querySelectorAll("iframe");
-              for (var i = 0; i < frames.length; i++) clipFrame(frames[i]);
-            }
-            function watch(api) {
-              if (api.events && !block.hasAttribute("data-x-bound")) {
-                block.setAttribute("data-x-bound", "");
-                api.events.bind("rendered", function (event) {
-                  var node = event && event.target;
-                  var iframe = node && node.tagName === "IFRAME" ? node : node && node.querySelector && node.querySelector("iframe");
-                  clipFrame(iframe);
-                });
-              }
-              clipAll();
-            }
-            var observer = new IntersectionObserver(function (entries) {
-              if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
-              observer.disconnect();
-              if (document.querySelector("script[data-x-widgets]")) {
-                if (window.twttr && window.twttr.ready) window.twttr.ready(watch);
-                return;
-              }
-              var script = document.createElement("script");
-              script.src = "https://platform.twitter.com/widgets.js";
-              script.async = true;
-              script.charset = "utf-8";
-              script.setAttribute("data-x-widgets", "");
-              script.onload = function () {
-                if (window.twttr && window.twttr.ready) window.twttr.ready(watch);
-              };
-              document.body.appendChild(script);
-            }, { rootMargin: "240px" });
-            observer.observe(block);
-            window.addEventListener("resize", clipAll);
-          }());
-        </script>
       </div>
     </section>
     <section id="on-linkedin">
       <div class="lbl"><span aria-hidden="true">04</span><h2>On LinkedIn</h2></div>
       <div class="body">
         <!-- social:li:start -->
-        <div class="li-grid">
-          <figure class="li-card">
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7528825657611571201" loading="lazy" title="AI governance is going to be as much a geopolitical challenge as a technical one. Building enough transparency and mutual trust to make those capabilities less dangerous is a much more realistic starting point." height="780"></iframe>
-            <a class="li-open" href="https://www.linkedin.com/posts/warren-husband_ai-governance-is-going-to-be-as-much-a-geopolitical-share-7528825657611571201-7JpY/" target="_blank" rel="noopener" aria-label="AI governance is going to be as much a geopolitical challenge as a technical one. Building enough transparency and mutual trust to make those capabilities less dangerous is a much more realistic starting point. (LinkedIn post, Nov 18, 2026)"></a>
-          </figure>
-          <figure class="li-card">
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7528571160595382272" loading="lazy" title="We&#x27;re moving from software people operate to software their agents operate. The interface might become optional, but permissions, security and accountability certainly aren&#x27;t." height="780"></iframe>
-            <a class="li-open" href="https://www.linkedin.com/feed/update/urn:li:share:7528571160595382272/" target="_blank" rel="noopener" aria-label="We&#x27;re moving from software people operate to software their agents operate. The interface might become optional, but permissions, security and accountability certainly aren&#x27;t. (LinkedIn post, Nov 17, 2026)"></a>
-          </figure>
-          <figure class="li-card">
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7528477722541555712" loading="lazy" title="National security is moving out of the government relations department and into the boardroom. That&#x27;s a different kind of corporate governance challenge." height="780"></iframe>
-            <a class="li-open" href="https://www.linkedin.com/feed/update/urn:li:share:7528477722541555712/" target="_blank" rel="noopener" aria-label="National security is moving out of the government relations department and into the boardroom. That&#x27;s a different kind of corporate governance challenge. (LinkedIn post, Nov 17, 2026)"></a>
-          </figure>
-          <figure class="li-card">
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7528191109521543169" loading="lazy" title="Exposed credentials, weak MFA, forgotten vendor access. AI isn&#x27;t necessarily finding some ingenious new way in. It&#x27;s making the discovery and exploitation of ordinary security failures dramatically faster and easier to scale." height="780"></iframe>
-            <a class="li-open" href="https://www.linkedin.com/posts/warren-husband_exposed-credentials-weak-mfa-forgotten-share-7528191109521543169-Vcmk/" target="_blank" rel="noopener" aria-label="Exposed credentials, weak MFA, forgotten vendor access. AI isn&#x27;t necessarily finding some ingenious new way in. It&#x27;s making the discovery and exploitation of ordinary security failures dramatically faster and easier to scale. (LinkedIn post, Nov 16, 2026)"></a>
-          </figure>
+        <div class="posts">
+          <article class="post">
+            <p class="post-meta"><span class="post-net"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5c0-1.2-.02-2.73-1.66-2.73-1.66 0-1.92 1.3-1.92 2.64V21h-4z"/></svg>LinkedIn</span><time datetime="2026-11-18">Nov 18, 2026</time></p>
+            <p class="post-text">AI governance is going to be as much a geopolitical challenge as a technical one. Countries aren't going to stop developing capabilities because of international agreements. Building enough transparency and mutual trust to make those capabilities less dangerous is a much more realistic starting point.</p>
+            <p class="post-foot"><span class="post-src">Link: vox.com</span><a class="post-open" href="https://www.linkedin.com/posts/warren-husband_ai-governance-is-going-to-be-as-much-a-geopolitical-share-7528825657611571201-7JpY/" target="_blank" rel="noopener" aria-label="View on LinkedIn: AI governance is going to be as much a geopolitical challenge as a technical one. Countries aren&#x27;t going to stop developing capabilities because of international agreements. Building enough transparency and mutual trust to make those capabilities less dangerous is a much more realistic starting point. (Nov 18, 2026)">View on LinkedIn <span aria-hidden="true">&rarr;</span></a></p>
+          </article>
+          <article class="post">
+            <p class="post-meta"><span class="post-net"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5c0-1.2-.02-2.73-1.66-2.73-1.66 0-1.92 1.3-1.92 2.64V21h-4z"/></svg>LinkedIn</span><time datetime="2026-11-17">Nov 17, 2026</time></p>
+            <p class="post-text">We're moving from software people operate to software their agents operate. That's a pretty fundamental change in how applications need to be designed. The interface might become optional, but permissions, security and accountability certainly aren't.</p>
+            <p class="post-foot"><span class="post-src">Link: warrenhusband.com</span><a class="post-open" href="https://www.linkedin.com/feed/update/urn:li:share:7528571160595382272/" target="_blank" rel="noopener" aria-label="View on LinkedIn: We&#x27;re moving from software people operate to software their agents operate. That&#x27;s a pretty fundamental change in how applications need to be designed. The interface might become optional, but permissions, security and accountability certainly aren&#x27;t. (Nov 17, 2026)">View on LinkedIn <span aria-hidden="true">&rarr;</span></a></p>
+          </article>
+          <article class="post">
+            <p class="post-meta"><span class="post-net"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5c0-1.2-.02-2.73-1.66-2.73-1.66 0-1.92 1.3-1.92 2.64V21h-4z"/></svg>LinkedIn</span><time datetime="2026-11-17">Nov 17, 2026</time></p>
+            <p class="post-text">National security is moving out of the government relations department and into the boardroom. When your products are foundational to global AI infrastructure, export controls, geopolitical exposure, and commercial strategy become deeply interconnected. That's a different kind of corporate governance challenge.</p>
+            <p class="post-foot"><span class="post-src">Link: techcrunch.com</span><a class="post-open" href="https://www.linkedin.com/feed/update/urn:li:share:7528477722541555712/" target="_blank" rel="noopener" aria-label="View on LinkedIn: National security is moving out of the government relations department and into the boardroom. When your products are foundational to global AI infrastructure, export controls, geopolitical exposure, and commercial strategy become deeply interconnected. That&#x27;s a different kind of corporate governance challenge. (Nov 17, 2026)">View on LinkedIn <span aria-hidden="true">&rarr;</span></a></p>
+          </article>
+          <article class="post">
+            <p class="post-meta"><span class="post-net"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5c0-1.2-.02-2.73-1.66-2.73-1.66 0-1.92 1.3-1.92 2.64V21h-4z"/></svg>LinkedIn</span><time datetime="2026-11-16">Nov 16, 2026</time></p>
+            <p class="post-text">Exposed credentials, weak MFA, forgotten vendor access. AI isn't necessarily finding some ingenious new way in. It's making the discovery and exploitation of ordinary security failures dramatically faster and easier to scale.</p>
+            <p class="post-foot"><span class="post-src">Link: techcrunch.com</span><a class="post-open" href="https://www.linkedin.com/posts/warren-husband_exposed-credentials-weak-mfa-forgotten-share-7528191109521543169-Vcmk/" target="_blank" rel="noopener" aria-label="View on LinkedIn: Exposed credentials, weak MFA, forgotten vendor access. AI isn&#x27;t necessarily finding some ingenious new way in. It&#x27;s making the discovery and exploitation of ordinary security failures dramatically faster and easier to scale. (Nov 16, 2026)">View on LinkedIn <span aria-hidden="true">&rarr;</span></a></p>
+          </article>
         </div>
         <!-- social:li:end -->
       </div>
@@ -846,7 +786,7 @@
         <a href="https://edgetheory.com/contact?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">Press &amp; speaking inquiries</a>
       </nav>
       <p>© 2026 Warren Husband</p>
-      <p>Last updated <time datetime="2026-11-18T14:29-06:00">November 18, 2026, 2:29 PM CT</time></p>
+      <p>Last updated <time datetime="2026-11-18T14:55-06:00">November 18, 2026, 2:55 PM CT</time></p>
     </footer>
   </div>
 </body>
