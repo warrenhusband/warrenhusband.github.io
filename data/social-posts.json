@@ -29,22 +29,22 @@
       "text": "AI governance is going to be as much a geopolitical challenge as a technical one. Building enough transparency and mutual trust to make those capabilities less dangerous is a much more realistic starting point."
     },
     {
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7528571160595382272/",
+      "urn": "urn:li:share:7528571160595382272",
+      "date": "2026-11-17",
+      "text": "We're moving from software people operate to software their agents operate. The interface might become optional, but permissions, security and accountability certainly aren't."
+    },
+    {
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7528477722541555712/",
+      "urn": "urn:li:share:7528477722541555712",
+      "date": "2026-11-17",
+      "text": "National security is moving out of the government relations department and into the boardroom. That's a different kind of corporate governance challenge."
+    },
+    {
       "url": "https://www.linkedin.com/posts/warren-husband_exposed-credentials-weak-mfa-forgotten-share-7528191109521543169-Vcmk/",
       "urn": "urn:li:share:7528191109521543169",
       "date": "2026-11-16",
       "text": "Exposed credentials, weak MFA, forgotten vendor access. AI isn't necessarily finding some ingenious new way in. It's making the discovery and exploitation of ordinary security failures dramatically faster and easier to scale."
-    },
-    {
-      "url": "https://www.linkedin.com/posts/warren-husband_why-ai-hasnt-replaced-software-engineers-activity-7526674400830488578-FTvB",
-      "urn": "urn:li:activity:7526674400830488578",
-      "date": "2026-11-12",
-      "text": "Eightfold increase in code generation versus a 30% increase in software releases; that generation-verification gap will define enterprise AI."
-    },
-    {
-      "url": "https://www.linkedin.com/posts/warren-husband_ai-is-going-to-change-both-sides-of-the-security-share-7526649826374057984-9lBF/",
-      "urn": "urn:li:share:7526649826374057984",
-      "date": "2026-11-12",
-      "text": "AI is going to change both sides of the security equation, including better ways to verify critical systems like Signal."
     }
   ]
 }
