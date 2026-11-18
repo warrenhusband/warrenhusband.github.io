@@ -19,11 +19,6 @@
       "id": "2122791463813845404",
       "date": "2026-11-17",
       "text": "Looking forward to putting this to work on my next vacation."
-    },
-    {
-      "id": "2122766351043543174",
-      "date": "2026-11-17",
-      "text": "We're reaching a point where models can recognize the test itself. A model behaving well because it recognizes an evaluation isn't necessarily a model we can trust in production."
     }
   ],
   "linkedin": [
@@ -50,12 +45,6 @@
       "urn": "urn:li:share:7526649826374057984",
       "date": "2026-11-12",
       "text": "AI is going to change both sides of the security equation, including better ways to verify critical systems like Signal."
-    },
-    {
-      "url": "https://www.linkedin.com/posts/warren-husband_anthropics-latest-update-makes-a-quiet-point-share-7526311782265778176-6AWD/",
-      "urn": "urn:li:share:7526311782265778176",
-      "date": "2026-11-11",
-      "text": "Anthropic's latest update makes a quiet point: the assistant is becoming the workspace, with Sheets, Whiteboards, and connectors."
     }
   ]
 }
