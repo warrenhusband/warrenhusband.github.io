@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
-"""Rewrite the marked On X and On LinkedIn blocks in index.html."""
+"""Rewrite the marked On X and On LinkedIn blocks in index.html.
+
+Run with --fetch-images first to fill in a missing "image" for each post
+from the og:image of its "link". The rewrite itself never touches the network.
+"""
 
 import html
 import json
+import sys
+import urllib.request
 from datetime import date
+from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import urljoin, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "index.html"
@@ -42,11 +50,18 @@ def card(href, post, network, icon):
     when = label_date(post["date"])
     label = f"View on {network}: {post['text']} ({when})"
     source = ""
-    if post.get("link_domain"):
-        source = f'<span class="post-src">Link: {text_escape(post["link_domain"])}</span>'
+    if post.get("link"):
+        source = f'<span class="post-src">Link: {text_escape(domain(post["link"]))}</span>'
+    image = ""
+    if post.get("image"):
+        image = (
+            f'            <img class="post-img" src="{attr_escape(post["image"])}" alt="" width="1200" height="630"'
+            ' loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">\n'
+        )
     return (
         "          <article class=\"post\">\n"
-        f'            <p class="post-meta"><span class="post-net">{icon}{network}</span>'
+        + image
+        + f'            <p class="post-meta"><span class="post-net">{icon}{network}</span>'
         f'<time datetime="{attr_escape(post["date"])}">{when}</time></p>\n'
         f'            <p class="post-text">{text_escape(post["text"])}</p>\n'
         f'            <p class="post-foot">{source}'
@@ -54,6 +69,53 @@ def card(href, post, network, icon):
         f'View on {network} <span aria-hidden="true">&rarr;</span></a></p>\n'
         "          </article>"
     )
+
+
+def domain(url):
+    host = urlsplit(url).hostname or ""
+    return host[4:] if host.startswith("www.") else host
+
+
+class OgImage(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.found = None
+
+    def handle_starttag(self, tag, attrs):
+        if tag != "meta" or self.found:
+            return
+        attrs = dict(attrs)
+        key = (attrs.get("property") or attrs.get("name") or "").lower()
+        if key in ("og:image", "og:image:url", "og:image:secure_url", "twitter:image") and attrs.get("content"):
+            self.found = attrs["content"].strip()
+
+
+def og_image(url):
+    request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; warrenhusband.com link preview)"})
+    with urllib.request.urlopen(request, timeout=20) as response:
+        head = response.read(600_000).decode("utf-8", "replace")
+    parser = OgImage()
+    parser.feed(head)
+    return urljoin(url, html.unescape(parser.found)) if parser.found else None
+
+
+def fetch_images(posts):
+    changed = False
+    for platform in ("x", "linkedin"):
+        for post in posts[platform][:MAX_PER_PLATFORM]:
+            if post.get("image") or not post.get("link"):
+                continue
+            try:
+                found = og_image(post["link"])
+            except Exception as error:  # a missing preview is fine; the card shows text only
+                print(f"no image for {post['link']}: {error}", file=sys.stderr)
+                continue
+            if found:
+                post["image"] = found
+                changed = True
+                print(f"{domain(post['link'])}: {found}")
+    if changed:
+        DATA.write_text(json.dumps(posts, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 def grid(cards):
@@ -80,6 +142,8 @@ def replace_marked(page, start, end, inner):
 
 def main():
     posts = json.loads(DATA.read_text(encoding="utf-8"))
+    if "--fetch-images" in sys.argv[1:]:
+        fetch_images(posts)
     page = INDEX.read_text(encoding="utf-8")
     page = replace_marked(page, "<!-- social:x:start -->", "<!-- social:x:end -->", x_markup(posts["x"][:MAX_PER_PLATFORM]))
     page = replace_marked(page, "<!-- social:li:start -->", "<!-- social:li:end -->", linkedin_markup(posts["linkedin"][:MAX_PER_PLATFORM]))
