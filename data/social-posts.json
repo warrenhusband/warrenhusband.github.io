@@ -1,6 +1,11 @@
 {
   "x": [
     {
+      "id": "2123144238280081545",
+      "date": "2026-11-18",
+      "text": "AI is already helping build the next generation of AI. The question isn't whether recursive self-improvement happens. It's who's checking the work while it does."
+    },
+    {
       "id": "2123124051442807140",
       "date": "2026-11-18",
       "text": "We're building machines that do more of our thinking for us, then acting surprised when people treat them as more than a tool. The real risk may be less about machines becoming gods and more about humans deciding they don't need to think for themselves."
@@ -14,11 +19,6 @@
       "id": "2122808272356839557",
       "date": "2026-11-17",
       "text": "We're approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That's a much bigger shift than a new way to interact with software."
-    },
-    {
-      "id": "2122791463813845404",
-      "date": "2026-11-17",
-      "text": "Looking forward to putting this to work on my next vacation."
     }
   ],
   "linkedin": [
