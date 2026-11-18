@@ -49,7 +49,7 @@
         "url": "https://warrenhusband.com/",
         "name": "Warren Husband – CTO, EdgeTheory",
         "description": "Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company. Bio, experience, speaking, headshot, and ready-to-use bios for press and event organizers.",
-        "dateModified": "2026-11-18T14:14-06:00",
+        "dateModified": "2026-11-18T14:29-06:00",
         "inLanguage": "en-US",
         "isPartOf": { "@id": "https://warrenhusband.com/#website" },
         "mainEntity": { "@id": "https://warrenhusband.com/#person" }
@@ -392,7 +392,15 @@
       border-radius: 12px;
       overflow: hidden;
     }
+    #on-x .x-card,
     #on-linkedin .li-card { position: relative; }
+    #on-x .x-frame {
+      overflow: hidden;
+      flex: 0 0 auto;
+      width: 100%;
+      align-self: stretch;
+    }
+    #on-x .x-open,
     #on-linkedin .li-open {
       position: absolute;
       inset: 0;
@@ -400,6 +408,7 @@
       background: transparent;
       cursor: pointer;
     }
+    #on-x .x-open:focus-visible,
     #on-linkedin .li-open:focus-visible {
       outline: 2px solid var(--link);
       outline-offset: -3px;
@@ -603,16 +612,28 @@
         <!-- social:x:start -->
         <div class="x-grid">
           <div class="x-card">
-            <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2123144238280081545" target="_blank" rel="noopener">AI is already helping build the next generation of AI. The question isn't whether recursive self-improvement happens. It's who's checking the work while it does.</a></blockquote>
+            <div class="x-frame">
+              <blockquote class="twitter-tweet" data-dnt="true" data-conversation="none"><a href="https://x.com/WarrenHusband/status/2123144238280081545" target="_blank" rel="noopener">AI is already helping build the next generation of AI. The question isn't whether recursive self-improvement happens. It's who's checking the work while it does.</a></blockquote>
+            </div>
+            <a class="x-open" href="https://x.com/WarrenHusband/status/2123144238280081545" target="_blank" rel="noopener" aria-label="AI is already helping build the next generation of AI. The question isn&#x27;t whether recursive self-improvement happens. It&#x27;s who&#x27;s checking the work while it does. (X post, Nov 18, 2026)"></a>
           </div>
           <div class="x-card">
-            <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2123124051442807140" target="_blank" rel="noopener">We're building machines that do more of our thinking for us, then acting surprised when people treat them as more than a tool. The real risk may be less about machines becoming gods and more about humans deciding they don't need to think for themselves.</a></blockquote>
+            <div class="x-frame">
+              <blockquote class="twitter-tweet" data-dnt="true" data-conversation="none"><a href="https://x.com/WarrenHusband/status/2123124051442807140" target="_blank" rel="noopener">We're building machines that do more of our thinking for us, then acting surprised when people treat them as more than a tool. The real risk may be less about machines becoming gods and more about humans deciding they don't need to think for themselves.</a></blockquote>
+            </div>
+            <a class="x-open" href="https://x.com/WarrenHusband/status/2123124051442807140" target="_blank" rel="noopener" aria-label="We&#x27;re building machines that do more of our thinking for us, then acting surprised when people treat them as more than a tool. The real risk may be less about machines becoming gods and more about humans deciding they don&#x27;t need to think for themselves. (X post, Nov 18, 2026)"></a>
           </div>
           <div class="x-card">
-            <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2123059307906252905" target="_blank" rel="noopener">If AI can discover mathematical truths that humans couldn't find, does understanding the proof become less important? Or does it become more important than ever?</a></blockquote>
+            <div class="x-frame">
+              <blockquote class="twitter-tweet" data-dnt="true" data-conversation="none"><a href="https://x.com/WarrenHusband/status/2123059307906252905" target="_blank" rel="noopener">If AI can discover mathematical truths that humans couldn't find, does understanding the proof become less important? Or does it become more important than ever?</a></blockquote>
+            </div>
+            <a class="x-open" href="https://x.com/WarrenHusband/status/2123059307906252905" target="_blank" rel="noopener" aria-label="If AI can discover mathematical truths that humans couldn&#x27;t find, does understanding the proof become less important? Or does it become more important than ever? (X post, Nov 18, 2026)"></a>
           </div>
           <div class="x-card">
-            <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2122808272356839557" target="_blank" rel="noopener">We're approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That's a much bigger shift than a new way to interact with software.</a></blockquote>
+            <div class="x-frame">
+              <blockquote class="twitter-tweet" data-dnt="true" data-conversation="none"><a href="https://x.com/WarrenHusband/status/2122808272356839557" target="_blank" rel="noopener">We're approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That's a much bigger shift than a new way to interact with software.</a></blockquote>
+            </div>
+            <a class="x-open" href="https://x.com/WarrenHusband/status/2122808272356839557" target="_blank" rel="noopener" aria-label="We&#x27;re approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That&#x27;s a much bigger shift than a new way to interact with software. (X post, Nov 17, 2026)"></a>
           </div>
         </div>
         <!-- social:x:end -->
@@ -620,18 +641,51 @@
           (function () {
             var block = document.getElementById("on-x");
             if (!block || !("IntersectionObserver" in window)) return;
+            function footerPx() {
+              return window.matchMedia("(max-width: 760px)").matches ? 50 : 53;
+            }
+            function clipFrame(iframe) {
+              if (!iframe || !block.contains(iframe)) return;
+              var frame = iframe.closest(".x-frame");
+              if (!frame) return;
+              var height = iframe.getBoundingClientRect().height;
+              if (height < 80) return;
+              frame.style.height = Math.round(height - footerPx()) + "px";
+            }
+            function clipAll() {
+              var frames = block.querySelectorAll("iframe");
+              for (var i = 0; i < frames.length; i++) clipFrame(frames[i]);
+            }
+            function watch(api) {
+              if (api.events && !block.hasAttribute("data-x-bound")) {
+                block.setAttribute("data-x-bound", "");
+                api.events.bind("rendered", function (event) {
+                  var node = event && event.target;
+                  var iframe = node && node.tagName === "IFRAME" ? node : node && node.querySelector && node.querySelector("iframe");
+                  clipFrame(iframe);
+                });
+              }
+              clipAll();
+            }
             var observer = new IntersectionObserver(function (entries) {
               if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
               observer.disconnect();
-              if (document.querySelector("script[data-x-widgets]")) return;
+              if (document.querySelector("script[data-x-widgets]")) {
+                if (window.twttr && window.twttr.ready) window.twttr.ready(watch);
+                return;
+              }
               var script = document.createElement("script");
               script.src = "https://platform.twitter.com/widgets.js";
               script.async = true;
               script.charset = "utf-8";
               script.setAttribute("data-x-widgets", "");
+              script.onload = function () {
+                if (window.twttr && window.twttr.ready) window.twttr.ready(watch);
+              };
               document.body.appendChild(script);
             }, { rootMargin: "240px" });
             observer.observe(block);
+            window.addEventListener("resize", clipAll);
           }());
         </script>
       </div>
@@ -792,7 +846,7 @@
         <a href="https://edgetheory.com/contact?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">Press &amp; speaking inquiries</a>
       </nav>
       <p>© 2026 Warren Husband</p>
-      <p>Last updated <time datetime="2026-11-18T14:14-06:00">November 18, 2026, 2:14 PM CT</time></p>
+      <p>Last updated <time datetime="2026-11-18T14:29-06:00">November 18, 2026, 2:29 PM CT</time></p>
     </footer>
   </div>
 </body>
