@@ -30,11 +30,15 @@ def x_markup(posts):
     cards = []
     for post in posts:
         href = f"https://x.com/WarrenHusband/status/{post['id']}"
+        label = f"{post['text']} (X post, {label_date(post['date'])})"
         cards.append(
             "          <div class=\"x-card\">\n"
-            "            <blockquote class=\"twitter-tweet\" data-dnt=\"true\">"
+            "            <div class=\"x-frame\">\n"
+            "              <blockquote class=\"twitter-tweet\" data-dnt=\"true\" data-conversation=\"none\">"
             f'<a href="{attr_escape(href)}" target="_blank" rel="noopener">{text_escape(post["text"])}</a>'
             "</blockquote>\n"
+            "            </div>\n"
+            f'            <a class="x-open" href="{attr_escape(href)}" target="_blank" rel="noopener" aria-label="{attr_escape(label)}"></a>\n'
             "          </div>"
         )
     return "        <div class=\"x-grid\">\n" + "\n".join(cards) + "\n        </div>"
