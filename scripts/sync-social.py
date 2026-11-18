@@ -3,6 +3,7 @@
 
 import html
 import json
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,6 +20,12 @@ def attr_escape(value):
     return html.escape(value, quote=True)
 
 
+def label_date(iso):
+    posted = date.fromisoformat(iso)
+    month = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()[posted.month - 1]
+    return f"{month} {posted.day}, {posted.year}"
+
+
 def x_markup(posts):
     cards = []
     for post in posts:
@@ -26,7 +33,7 @@ def x_markup(posts):
         cards.append(
             "          <div class=\"x-card\">\n"
             "            <blockquote class=\"twitter-tweet\" data-dnt=\"true\">"
-            f'<a href="{attr_escape(href)}" rel="noopener">{text_escape(post["text"])}</a>'
+            f'<a href="{attr_escape(href)}" target="_blank" rel="noopener">{text_escape(post["text"])}</a>'
             "</blockquote>\n"
             "          </div>"
         )
@@ -37,10 +44,11 @@ def linkedin_markup(posts):
     cards = []
     for post in posts:
         src = "https://www.linkedin.com/embed/feed/update/" + post["urn"]
+        label = f"{post['text']} (LinkedIn post, {label_date(post['date'])})"
         cards.append(
             "          <figure class=\"li-card\">\n"
             f'            <iframe src="{attr_escape(src)}" loading="lazy" title="{attr_escape(post["text"])}" height="480"></iframe>\n'
-            f'            <a href="{attr_escape(post["url"])}" rel="noopener">{text_escape(post["text"])}</a>\n'
+            f'            <a class="li-open" href="{attr_escape(post["url"])}" target="_blank" rel="noopener" aria-label="{attr_escape(label)}"></a>\n'
             "          </figure>"
         )
     return "        <div class=\"li-grid\">\n" + "\n".join(cards) + "\n        </div>"
