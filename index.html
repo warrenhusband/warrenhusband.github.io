@@ -49,7 +49,7 @@
         "url": "https://warrenhusband.com/",
         "name": "Warren Husband – CTO, EdgeTheory",
         "description": "Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company. Bio, experience, speaking, headshot, and ready-to-use bios for press and event organizers.",
-        "dateModified": "2026-11-18T13:38-06:00",
+        "dateModified": "2026-11-18T13:45-06:00",
         "inLanguage": "en-US",
         "isPartOf": { "@id": "https://warrenhusband.com/#website" },
         "mainEntity": { "@id": "https://warrenhusband.com/#person" }
@@ -372,14 +372,27 @@
     .essays h3 a:hover { color: var(--link); text-decoration: underline; }
     .essays .blurb { margin: 0; color: var(--muted); max-width: 38rem; }
     .more { margin-top: 1.4rem; }
-    #on-x .twitter-tweet { margin: 0 0 1rem; max-width: 100%; }
-    #on-x iframe { max-width: 100%; }
+    #on-x .x-grid,
     #on-linkedin .li-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1.25rem;
+      align-items: start;
     }
+    #on-x .x-card,
     #on-linkedin .li-card { margin: 0; min-width: 0; }
+    #on-x .twitter-tweet {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+    }
+    #on-x iframe {
+      display: block;
+      width: 100% !important;
+      max-width: 100%;
+      margin: 0;
+    }
     #on-linkedin iframe {
       display: block;
       width: 100%;
@@ -396,6 +409,7 @@
     }
     #on-linkedin .li-card a:hover { color: var(--link); text-decoration: underline; }
     @media (min-width: 761px) {
+      #on-x .x-grid,
       #on-linkedin .li-grid { grid-template-columns: 1fr 1fr; }
     }
     .speaking {
@@ -570,11 +584,20 @@
       <div class="lbl"><span aria-hidden="true">03</span><h2>On X</h2></div>
       <div class="body">
         <!-- social:x:start -->
-          <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2123124051442807140" rel="noopener">We're building machines that do more of our thinking for us, then acting surprised when people treat them as more than a tool. The real risk may be less about machines becoming gods and more about humans deciding they don't need to think for themselves.</a></blockquote>
-          <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2123059307906252905" rel="noopener">If AI can discover mathematical truths that humans couldn't find, does understanding the proof become less important? Or does it become more important than ever?</a></blockquote>
-          <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2122808272356839557" rel="noopener">We're approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That's a much bigger shift than a new way to interact with software.</a></blockquote>
-          <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2122791463813845404" rel="noopener">Looking forward to putting this to work on my next vacation.</a></blockquote>
-          <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2122766351043543174" rel="noopener">We're reaching a point where models can recognize the test itself. A model behaving well because it recognizes an evaluation isn't necessarily a model we can trust in production.</a></blockquote>
+        <div class="x-grid">
+          <div class="x-card">
+            <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2123124051442807140" rel="noopener">We're building machines that do more of our thinking for us, then acting surprised when people treat them as more than a tool. The real risk may be less about machines becoming gods and more about humans deciding they don't need to think for themselves.</a></blockquote>
+          </div>
+          <div class="x-card">
+            <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2123059307906252905" rel="noopener">If AI can discover mathematical truths that humans couldn't find, does understanding the proof become less important? Or does it become more important than ever?</a></blockquote>
+          </div>
+          <div class="x-card">
+            <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2122808272356839557" rel="noopener">We're approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That's a much bigger shift than a new way to interact with software.</a></blockquote>
+          </div>
+          <div class="x-card">
+            <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2122791463813845404" rel="noopener">Looking forward to putting this to work on my next vacation.</a></blockquote>
+          </div>
+        </div>
         <!-- social:x:end -->
         <script>
           (function () {
@@ -616,10 +639,6 @@
           <figure class="li-card">
             <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7526649826374057984" loading="lazy" title="AI is going to change both sides of the security equation, including better ways to verify critical systems like Signal." height="480"></iframe>
             <a href="https://www.linkedin.com/posts/warren-husband_ai-is-going-to-change-both-sides-of-the-security-share-7526649826374057984-9lBF/" rel="noopener">AI is going to change both sides of the security equation, including better ways to verify critical systems like Signal.</a>
-          </figure>
-          <figure class="li-card">
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7526311782265778176" loading="lazy" title="Anthropic&#x27;s latest update makes a quiet point: the assistant is becoming the workspace, with Sheets, Whiteboards, and connectors." height="480"></iframe>
-            <a href="https://www.linkedin.com/posts/warren-husband_anthropics-latest-update-makes-a-quiet-point-share-7526311782265778176-6AWD/" rel="noopener">Anthropic's latest update makes a quiet point: the assistant is becoming the workspace, with Sheets, Whiteboards, and connectors.</a>
           </figure>
         </div>
         <!-- social:li:end -->
@@ -756,7 +775,7 @@
         <a href="https://edgetheory.com/contact?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">Press &amp; speaking inquiries</a>
       </nav>
       <p>© 2026 Warren Husband</p>
-      <p>Last updated <time datetime="2026-11-18T13:38-06:00">November 18, 2026, 1:38 PM CT</time></p>
+      <p>Last updated <time datetime="2026-11-18T13:45-06:00">November 18, 2026, 1:45 PM CT</time></p>
     </footer>
   </div>
 </body>

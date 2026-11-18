@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data" / "social-posts.json"
+MAX_PER_PLATFORM = 4
 
 
 def text_escape(value):
@@ -19,15 +20,17 @@ def attr_escape(value):
 
 
 def x_markup(posts):
-    lines = []
+    cards = []
     for post in posts:
         href = f"https://x.com/WarrenHusband/status/{post['id']}"
-        lines.append(
-            '          <blockquote class="twitter-tweet" data-dnt="true">'
+        cards.append(
+            "          <div class=\"x-card\">\n"
+            "            <blockquote class=\"twitter-tweet\" data-dnt=\"true\">"
             f'<a href="{attr_escape(href)}" rel="noopener">{text_escape(post["text"])}</a>'
-            "</blockquote>"
+            "</blockquote>\n"
+            "          </div>"
         )
-    return "\n".join(lines)
+    return "        <div class=\"x-grid\">\n" + "\n".join(cards) + "\n        </div>"
 
 
 def linkedin_markup(posts):
@@ -56,8 +59,8 @@ def replace_marked(page, start, end, inner):
 def main():
     posts = json.loads(DATA.read_text(encoding="utf-8"))
     page = INDEX.read_text(encoding="utf-8")
-    page = replace_marked(page, "<!-- social:x:start -->", "<!-- social:x:end -->", x_markup(posts["x"]))
-    page = replace_marked(page, "<!-- social:li:start -->", "<!-- social:li:end -->", linkedin_markup(posts["linkedin"]))
+    page = replace_marked(page, "<!-- social:x:start -->", "<!-- social:x:end -->", x_markup(posts["x"][:MAX_PER_PLATFORM]))
+    page = replace_marked(page, "<!-- social:li:start -->", "<!-- social:li:end -->", linkedin_markup(posts["linkedin"][:MAX_PER_PLATFORM]))
     INDEX.write_text(page, encoding="utf-8")
 
 
