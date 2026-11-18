@@ -47,7 +47,7 @@ def linkedin_markup(posts):
         label = f"{post['text']} (LinkedIn post, {label_date(post['date'])})"
         cards.append(
             "          <figure class=\"li-card\">\n"
-            f'            <iframe src="{attr_escape(src)}" loading="lazy" title="{attr_escape(post["text"])}" height="740"></iframe>\n'
+            f'            <iframe src="{attr_escape(src)}" loading="lazy" title="{attr_escape(post["text"])}" height="780"></iframe>\n'
             f'            <a class="li-open" href="{attr_escape(post["url"])}" target="_blank" rel="noopener" aria-label="{attr_escape(label)}"></a>\n'
             "          </figure>"
         )
