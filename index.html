@@ -49,7 +49,7 @@
         "url": "https://warrenhusband.com/",
         "name": "Warren Husband – CTO, EdgeTheory",
         "description": "Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company. Bio, experience, speaking, headshot, and ready-to-use bios for press and event organizers.",
-        "dateModified": "2026-11-18T13:53-06:00",
+        "dateModified": "2026-11-18T14:01-06:00",
         "inLanguage": "en-US",
         "isPartOf": { "@id": "https://warrenhusband.com/#website" },
         "mainEntity": { "@id": "https://warrenhusband.com/#person" }
@@ -377,10 +377,21 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 1.25rem;
-      align-items: start;
+      align-items: stretch;
     }
     #on-x .x-card,
-    #on-linkedin .li-card { margin: 0; min-width: 0; }
+    #on-linkedin .li-card {
+      margin: 0;
+      min-width: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      background: #fff;
+      border: 1px solid #e1e8ed;
+      border-radius: 12px;
+      overflow: hidden;
+    }
     #on-linkedin .li-card { position: relative; }
     #on-linkedin .li-open {
       position: absolute;
@@ -391,32 +402,32 @@
     }
     #on-linkedin .li-open:focus-visible {
       outline: 2px solid var(--link);
-      outline-offset: 2px;
+      outline-offset: -3px;
     }
-    #on-x .twitter-tweet {
-      display: block;
-      width: 100%;
-      max-width: 100%;
-      margin: 0;
-    }
+    #on-x .twitter-tweet,
     #on-x iframe {
       display: block;
+      flex: 0 0 auto;
+      align-self: stretch;
       width: 100% !important;
       max-width: 100%;
-      margin: 0;
+      margin: 0 !important;
     }
     #on-linkedin iframe {
       display: block;
       position: relative;
       z-index: 0;
+      flex: 0 0 auto;
       width: 100%;
       max-width: 100%;
-      height: 480px;
+      height: 740px;
       border: 0;
     }
     @media (min-width: 761px) {
       #on-x .x-grid,
       #on-linkedin .li-grid { grid-template-columns: 1fr 1fr; }
+      #on-x .x-card { min-height: 680px; }
+      #on-linkedin iframe { height: 710px; }
     }
     .speaking {
       list-style: none;
@@ -631,19 +642,19 @@
         <!-- social:li:start -->
         <div class="li-grid">
           <figure class="li-card">
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7528825657611571201" loading="lazy" title="AI governance is going to be as much a geopolitical challenge as a technical one. Building enough transparency and mutual trust to make those capabilities less dangerous is a much more realistic starting point." height="480"></iframe>
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7528825657611571201" loading="lazy" title="AI governance is going to be as much a geopolitical challenge as a technical one. Building enough transparency and mutual trust to make those capabilities less dangerous is a much more realistic starting point." height="740"></iframe>
             <a class="li-open" href="https://www.linkedin.com/posts/warren-husband_ai-governance-is-going-to-be-as-much-a-geopolitical-share-7528825657611571201-7JpY/" target="_blank" rel="noopener" aria-label="AI governance is going to be as much a geopolitical challenge as a technical one. Building enough transparency and mutual trust to make those capabilities less dangerous is a much more realistic starting point. (LinkedIn post, Nov 18, 2026)"></a>
           </figure>
           <figure class="li-card">
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7528571160595382272" loading="lazy" title="We&#x27;re moving from software people operate to software their agents operate. The interface might become optional, but permissions, security and accountability certainly aren&#x27;t." height="480"></iframe>
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7528571160595382272" loading="lazy" title="We&#x27;re moving from software people operate to software their agents operate. The interface might become optional, but permissions, security and accountability certainly aren&#x27;t." height="740"></iframe>
             <a class="li-open" href="https://www.linkedin.com/feed/update/urn:li:share:7528571160595382272/" target="_blank" rel="noopener" aria-label="We&#x27;re moving from software people operate to software their agents operate. The interface might become optional, but permissions, security and accountability certainly aren&#x27;t. (LinkedIn post, Nov 17, 2026)"></a>
           </figure>
           <figure class="li-card">
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7528477722541555712" loading="lazy" title="National security is moving out of the government relations department and into the boardroom. That&#x27;s a different kind of corporate governance challenge." height="480"></iframe>
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7528477722541555712" loading="lazy" title="National security is moving out of the government relations department and into the boardroom. That&#x27;s a different kind of corporate governance challenge." height="740"></iframe>
             <a class="li-open" href="https://www.linkedin.com/feed/update/urn:li:share:7528477722541555712/" target="_blank" rel="noopener" aria-label="National security is moving out of the government relations department and into the boardroom. That&#x27;s a different kind of corporate governance challenge. (LinkedIn post, Nov 17, 2026)"></a>
           </figure>
           <figure class="li-card">
-            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7528191109521543169" loading="lazy" title="Exposed credentials, weak MFA, forgotten vendor access. AI isn&#x27;t necessarily finding some ingenious new way in. It&#x27;s making the discovery and exploitation of ordinary security failures dramatically faster and easier to scale." height="480"></iframe>
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7528191109521543169" loading="lazy" title="Exposed credentials, weak MFA, forgotten vendor access. AI isn&#x27;t necessarily finding some ingenious new way in. It&#x27;s making the discovery and exploitation of ordinary security failures dramatically faster and easier to scale." height="740"></iframe>
             <a class="li-open" href="https://www.linkedin.com/posts/warren-husband_exposed-credentials-weak-mfa-forgotten-share-7528191109521543169-Vcmk/" target="_blank" rel="noopener" aria-label="Exposed credentials, weak MFA, forgotten vendor access. AI isn&#x27;t necessarily finding some ingenious new way in. It&#x27;s making the discovery and exploitation of ordinary security failures dramatically faster and easier to scale. (LinkedIn post, Nov 16, 2026)"></a>
           </figure>
         </div>
@@ -781,7 +792,7 @@
         <a href="https://edgetheory.com/contact?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">Press &amp; speaking inquiries</a>
       </nav>
       <p>© 2026 Warren Husband</p>
-      <p>Last updated <time datetime="2026-11-18T13:53-06:00">November 18, 2026, 1:53 PM CT</time></p>
+      <p>Last updated <time datetime="2026-11-18T14:01-06:00">November 18, 2026, 2:01 PM CT</time></p>
     </footer>
   </div>
 </body>
