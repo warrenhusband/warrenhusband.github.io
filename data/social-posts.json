@@ -1,0 +1,61 @@
+{
+  "x": [
+    {
+      "id": "2123124051442807140",
+      "date": "2026-11-18",
+      "text": "We're building machines that do more of our thinking for us, then acting surprised when people treat them as more than a tool. The real risk may be less about machines becoming gods and more about humans deciding they don't need to think for themselves."
+    },
+    {
+      "id": "2123059307906252905",
+      "date": "2026-11-18",
+      "text": "If AI can discover mathematical truths that humans couldn't find, does understanding the proof become less important? Or does it become more important than ever?"
+    },
+    {
+      "id": "2122808272356839557",
+      "date": "2026-11-17",
+      "text": "We're approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That's a much bigger shift than a new way to interact with software."
+    },
+    {
+      "id": "2122791463813845404",
+      "date": "2026-11-17",
+      "text": "Looking forward to putting this to work on my next vacation."
+    },
+    {
+      "id": "2122766351043543174",
+      "date": "2026-11-17",
+      "text": "We're reaching a point where models can recognize the test itself. A model behaving well because it recognizes an evaluation isn't necessarily a model we can trust in production."
+    }
+  ],
+  "linkedin": [
+    {
+      "url": "https://www.linkedin.com/posts/warren-husband_ai-governance-is-going-to-be-as-much-a-geopolitical-share-7528825657611571201-7JpY/",
+      "urn": "urn:li:share:7528825657611571201",
+      "date": "2026-11-18",
+      "text": "AI governance is going to be as much a geopolitical challenge as a technical one. Building enough transparency and mutual trust to make those capabilities less dangerous is a much more realistic starting point."
+    },
+    {
+      "url": "https://www.linkedin.com/posts/warren-husband_exposed-credentials-weak-mfa-forgotten-share-7528191109521543169-Vcmk/",
+      "urn": "urn:li:share:7528191109521543169",
+      "date": "2026-11-16",
+      "text": "Exposed credentials, weak MFA, forgotten vendor access. AI isn't necessarily finding some ingenious new way in. It's making the discovery and exploitation of ordinary security failures dramatically faster and easier to scale."
+    },
+    {
+      "url": "https://www.linkedin.com/posts/warren-husband_why-ai-hasnt-replaced-software-engineers-activity-7526674400830488578-FTvB",
+      "urn": "urn:li:activity:7526674400830488578",
+      "date": "2026-11-12",
+      "text": "Eightfold increase in code generation versus a 30% increase in software releases; that generation-verification gap will define enterprise AI."
+    },
+    {
+      "url": "https://www.linkedin.com/posts/warren-husband_ai-is-going-to-change-both-sides-of-the-security-share-7526649826374057984-9lBF/",
+      "urn": "urn:li:share:7526649826374057984",
+      "date": "2026-11-12",
+      "text": "AI is going to change both sides of the security equation, including better ways to verify critical systems like Signal."
+    },
+    {
+      "url": "https://www.linkedin.com/posts/warren-husband_anthropics-latest-update-makes-a-quiet-point-share-7526311782265778176-6AWD/",
+      "urn": "urn:li:share:7526311782265778176",
+      "date": "2026-11-11",
+      "text": "Anthropic's latest update makes a quiet point: the assistant is becoming the workspace, with Sheets, Whiteboards, and connectors."
+    }
+  ]
+}

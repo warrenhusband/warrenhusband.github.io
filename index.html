@@ -49,7 +49,7 @@
         "url": "https://warrenhusband.com/",
         "name": "Warren Husband – CTO, EdgeTheory",
         "description": "Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company. Bio, experience, speaking, headshot, and ready-to-use bios for press and event organizers.",
-        "dateModified": "2026-11-18T14:02-06:00",
+        "dateModified": "2026-11-18T13:38-06:00",
         "inLanguage": "en-US",
         "isPartOf": { "@id": "https://warrenhusband.com/#website" },
         "mainEntity": { "@id": "https://warrenhusband.com/#person" }
@@ -252,7 +252,7 @@
       padding: 4.5rem 0 3.5rem;
       border-bottom: 1px solid var(--rule);
     }
-    .kicker, .lbl, .label, .meta, .post-meta, .role-tag {
+    .kicker, .lbl, .label, .meta, .role-tag {
       text-transform: uppercase;
       letter-spacing: .08em;
       font-size: .85rem;
@@ -372,42 +372,32 @@
     .essays h3 a:hover { color: var(--link); text-decoration: underline; }
     .essays .blurb { margin: 0; color: var(--muted); max-width: 38rem; }
     .more { margin-top: 1.4rem; }
-    .posts { list-style: none; margin: 0; padding: 0; }
-    .posts > li {
-      padding: .9rem 0;
-      border-top: 1px solid var(--rule);
+    #on-x .twitter-tweet { margin: 0 0 1rem; max-width: 100%; }
+    #on-x iframe { max-width: 100%; }
+    #on-linkedin .li-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
     }
-    .posts > li:first-child { border-top: 0; padding-top: 0; }
-    .posts p { margin: 0; }
-    .post-meta { margin: 0 0 .25rem; }
-    .post-meta .platform::before { content: "· "; }
-    .posts a {
-      color: var(--ink);
-      font-size: 1rem;
-      line-height: 1.5;
-      text-decoration: none;
-      overflow-wrap: anywhere;
-    }
-    .posts a:hover { color: var(--link); text-decoration: underline; }
-    .x-embeds { margin-top: 2rem; }
-    .x-embeds h3 {
-      margin: 0 0 .85rem;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      font-size: .85rem;
-      font-weight: 600;
-      color: var(--muted);
-    }
-    .x-embeds .twitter-tweet {
-      margin: 0 0 .9rem;
+    #on-linkedin .li-card { margin: 0; min-width: 0; }
+    #on-linkedin iframe {
+      display: block;
+      width: 100%;
       max-width: 100%;
+      height: 480px;
+      border: 0;
     }
-    .x-embeds .twitter-tweet a {
+    #on-linkedin .li-card a {
+      display: block;
+      margin-top: .55rem;
       color: var(--ink);
       line-height: 1.5;
       text-decoration: none;
     }
-    .x-embeds .twitter-tweet a:hover { color: var(--link); text-decoration: underline; }
+    #on-linkedin .li-card a:hover { color: var(--link); text-decoration: underline; }
+    @media (min-width: 761px) {
+      #on-linkedin .li-grid { grid-template-columns: 1fr 1fr; }
+    }
     .speaking {
       list-style: none;
       margin: 0 0 1.5rem;
@@ -576,41 +566,16 @@
         <p class="more"><a href="/blog/">All writing</a></p>
       </div>
     </section>
-    <section id="posts">
-      <div class="lbl"><span aria-hidden="true">03</span><h2>Recent posts</h2></div>
+    <section id="on-x">
+      <div class="lbl"><span aria-hidden="true">03</span><h2>On X</h2></div>
       <div class="body">
-        <ol class="posts">
-      <li>
-          <p class="post-meta"><time datetime="2026-11-18">Nov 18, 2026</time> <span class="platform">X</span></p>
-          <p><a href="https://x.com/WarrenHusband/status/2123144238280081545" rel="noopener" aria-label="AI is already helping build the next generation of AI. The question isn't whether recursive self-improvement happens. It's who's checking the work while it does. (X post, Nov 18, 2026)">AI is already helping build the next generation of AI. The question isn't whether recursive self-improvement happens. It's who's checking the work while it does.</a></p>
-      </li>
-      <li>
-          <p class="post-meta"><time datetime="2026-11-18">Nov 18, 2026</time> <span class="platform">X</span></p>
-          <p><a href="https://x.com/WarrenHusband/status/2123124051442807140" rel="noopener" aria-label="We're building machines that do more of our thinking for us, then acting surprised when people treat them as more than a tool. The real risk may be less about machines becoming gods and more about humans deciding they don't need to think for themselves. (X post, Nov 18, 2026)">We're building machines that do more of our thinking for us, then acting surprised when people treat them as more than a tool. The real risk may be less about machines becoming gods and more about humans deciding they don't need to think for themselves.</a></p>
-      </li>
-      <li>
-          <p class="post-meta"><time datetime="2026-11-18">Nov 18, 2026</time> <span class="platform">LinkedIn</span></p>
-          <p><a href="https://www.linkedin.com/posts/warren-husband_ai-governance-is-going-to-be-as-much-a-geopolitical-share-7528825657611571201-7JpY/" rel="noopener" aria-label="AI governance is going to be as much a geopolitical challenge as a technical one. Building enough transparency and mutual trust to make those capabilities less dangerous is a much more realistic starting point. (LinkedIn post, Nov 18, 2026)">AI governance is going to be as much a geopolitical challenge as a technical one. Building enough transparency and mutual trust to make those capabilities less dangerous is a much more realistic starting point.</a></p>
-      </li>
-      <li>
-          <p class="post-meta"><time datetime="2026-11-18">Nov 18, 2026</time> <span class="platform">X</span></p>
-          <p><a href="https://x.com/WarrenHusband/status/2123059307906252905" rel="noopener" aria-label="If AI can discover mathematical truths that humans couldn't find, does understanding the proof become less important? Or does it become more important than ever? (X post, Nov 18, 2026)">If AI can discover mathematical truths that humans couldn't find, does understanding the proof become less important? Or does it become more important than ever?</a></p>
-      </li>
-      <li>
-          <p class="post-meta"><time datetime="2026-11-17">Nov 17, 2026</time> <span class="platform">X</span></p>
-          <p><a href="https://x.com/WarrenHusband/status/2122808272356839557" rel="noopener" aria-label="We're approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That's a much bigger shift than a new way to interact with software. (X post, Nov 17, 2026)">We're approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That's a much bigger shift than a new way to interact with software.</a></p>
-      </li>
-      <li>
-          <p class="post-meta"><time datetime="2026-11-17">Nov 17, 2026</time> <span class="platform">X</span></p>
-          <p><a href="https://x.com/WarrenHusband/status/2122791463813845404" rel="noopener" aria-label="Looking forward to putting this to work on my next vacation. (X post, Nov 17, 2026)">Looking forward to putting this to work on my next vacation.</a></p>
-      </li>
-    </ol>
-        <div class="x-embeds" id="on-x">
-          <h3>On X</h3>
+        <!-- social:x:start -->
+          <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2123124051442807140" rel="noopener">We're building machines that do more of our thinking for us, then acting surprised when people treat them as more than a tool. The real risk may be less about machines becoming gods and more about humans deciding they don't need to think for themselves.</a></blockquote>
           <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2123059307906252905" rel="noopener">If AI can discover mathematical truths that humans couldn't find, does understanding the proof become less important? Or does it become more important than ever?</a></blockquote>
           <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2122808272356839557" rel="noopener">We're approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That's a much bigger shift than a new way to interact with software.</a></blockquote>
           <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2122791463813845404" rel="noopener">Looking forward to putting this to work on my next vacation.</a></blockquote>
-        </div>
+          <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2122766351043543174" rel="noopener">We're reaching a point where models can recognize the test itself. A model behaving well because it recognizes an evaluation isn't necessarily a model we can trust in production.</a></blockquote>
+        <!-- social:x:end -->
         <script>
           (function () {
             var block = document.getElementById("on-x");
@@ -631,35 +596,33 @@
         </script>
       </div>
     </section>
-    <section id="edgetheory">
-      <div class="lbl"><span aria-hidden="true">04</span><h2>Recent from EdgeTheory</h2></div>
+    <section id="on-linkedin">
+      <div class="lbl"><span aria-hidden="true">04</span><h2>On LinkedIn</h2></div>
       <div class="body">
-        <ol class="posts">
-      <li>
-          <p class="post-meta"><time datetime="2026-11-18">Nov 18, 2026</time> <span class="platform">LinkedIn</span></p>
-          <p><a href="https://www.linkedin.com/posts/edgetheory_counterintelligence-narrativeintelligence-activity-7528823247589769216-OmF6" rel="noopener" aria-label="The actual objective of foreign intelligence activity is the decision the secret, relationship, or access could shape. (LinkedIn post, Nov 18, 2026)">The actual objective of foreign intelligence activity is the decision the secret, relationship, or access could shape.</a></p>
-      </li>
-      <li>
-          <p class="post-meta"><time datetime="2026-11-17">Nov 17, 2026</time> <span class="platform">X</span></p>
-          <p><a href="https://x.com/EdgeTheory/status/2122766801389904109" rel="noopener" aria-label="Five distinct narrative ecosystems are converging into a single, self-reinforcing question about institutional trust. (X post, Nov 17, 2026)">Five distinct narrative ecosystems are converging into a single, self-reinforcing question about institutional trust.</a></p>
-      </li>
-      <li>
-          <p class="post-meta"><time datetime="2026-11-17">Nov 17, 2026</time> <span class="platform">LinkedIn</span></p>
-          <p><a href="https://www.linkedin.com/posts/edgetheory_infrastructure-publicaffairs-activity-7528453276623839232-OY4k" rel="noopener" aria-label="America’s AI infrastructure buildout is shaped by the narratives communities, policymakers, and regulators use to perceive proposed projects. (LinkedIn post, Nov 17, 2026)">America’s AI infrastructure buildout is shaped by the narratives communities, policymakers, and regulators use to perceive proposed projects.</a></p>
-      </li>
-      <li>
-          <p class="post-meta"><time datetime="2026-11-16">Nov 16, 2026</time> <span class="platform">X</span></p>
-          <p><a href="https://x.com/EdgeTheory/status/2122393062571667815" rel="noopener" aria-label="See your topic through a different lens. Send us your topic for a short, guided demo. (X post, Nov 16, 2026)">See your topic through a different lens. Send us your topic for a short, guided demo.</a></p>
-      </li>
-      <li>
-          <p class="post-meta"><time datetime="2026-11-16">Nov 16, 2026</time> <span class="platform">LinkedIn</span></p>
-          <p><a href="https://www.linkedin.com/posts/edgetheory_osint-cognitivewarfare-activity-7528098444058615809-b30Y" rel="noopener" aria-label="Understanding what is being said is no longer enough. Organizations need to understand how narratives form. (LinkedIn post, Nov 16, 2026)">Understanding what is being said is no longer enough. Organizations need to understand how narratives form.</a></p>
-      </li>
-      <li>
-          <p class="post-meta"><time datetime="2026-11-13">Nov 13, 2026</time> <span class="platform">X</span></p>
-          <p><a href="https://x.com/EdgeTheory/status/2121317266386031006" rel="noopener" aria-label="Competitive activity doesn't happen in isolation. (X post, Nov 13, 2026)">Competitive activity doesn't happen in isolation.</a></p>
-      </li>
-    </ol>
+        <!-- social:li:start -->
+        <div class="li-grid">
+          <figure class="li-card">
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7528825657611571201" loading="lazy" title="AI governance is going to be as much a geopolitical challenge as a technical one. Building enough transparency and mutual trust to make those capabilities less dangerous is a much more realistic starting point." height="480"></iframe>
+            <a href="https://www.linkedin.com/posts/warren-husband_ai-governance-is-going-to-be-as-much-a-geopolitical-share-7528825657611571201-7JpY/" rel="noopener">AI governance is going to be as much a geopolitical challenge as a technical one. Building enough transparency and mutual trust to make those capabilities less dangerous is a much more realistic starting point.</a>
+          </figure>
+          <figure class="li-card">
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7528191109521543169" loading="lazy" title="Exposed credentials, weak MFA, forgotten vendor access. AI isn&#x27;t necessarily finding some ingenious new way in. It&#x27;s making the discovery and exploitation of ordinary security failures dramatically faster and easier to scale." height="480"></iframe>
+            <a href="https://www.linkedin.com/posts/warren-husband_exposed-credentials-weak-mfa-forgotten-share-7528191109521543169-Vcmk/" rel="noopener">Exposed credentials, weak MFA, forgotten vendor access. AI isn't necessarily finding some ingenious new way in. It's making the discovery and exploitation of ordinary security failures dramatically faster and easier to scale.</a>
+          </figure>
+          <figure class="li-card">
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7526674400830488578" loading="lazy" title="Eightfold increase in code generation versus a 30% increase in software releases; that generation-verification gap will define enterprise AI." height="480"></iframe>
+            <a href="https://www.linkedin.com/posts/warren-husband_why-ai-hasnt-replaced-software-engineers-activity-7526674400830488578-FTvB" rel="noopener">Eightfold increase in code generation versus a 30% increase in software releases; that generation-verification gap will define enterprise AI.</a>
+          </figure>
+          <figure class="li-card">
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7526649826374057984" loading="lazy" title="AI is going to change both sides of the security equation, including better ways to verify critical systems like Signal." height="480"></iframe>
+            <a href="https://www.linkedin.com/posts/warren-husband_ai-is-going-to-change-both-sides-of-the-security-share-7526649826374057984-9lBF/" rel="noopener">AI is going to change both sides of the security equation, including better ways to verify critical systems like Signal.</a>
+          </figure>
+          <figure class="li-card">
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7526311782265778176" loading="lazy" title="Anthropic&#x27;s latest update makes a quiet point: the assistant is becoming the workspace, with Sheets, Whiteboards, and connectors." height="480"></iframe>
+            <a href="https://www.linkedin.com/posts/warren-husband_anthropics-latest-update-makes-a-quiet-point-share-7526311782265778176-6AWD/" rel="noopener">Anthropic's latest update makes a quiet point: the assistant is becoming the workspace, with Sheets, Whiteboards, and connectors.</a>
+          </figure>
+        </div>
+        <!-- social:li:end -->
       </div>
     </section>
     <section id="speaking">
@@ -793,7 +756,7 @@
         <a href="https://edgetheory.com/contact?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">Press &amp; speaking inquiries</a>
       </nav>
       <p>© 2026 Warren Husband</p>
-      <p>Last updated <time datetime="2026-11-18T14:02-06:00">November 18, 2026, 2:02 PM CT</time></p>
+      <p>Last updated <time datetime="2026-11-18T13:38-06:00">November 18, 2026, 1:38 PM CT</time></p>
     </footer>
   </div>
 </body>
