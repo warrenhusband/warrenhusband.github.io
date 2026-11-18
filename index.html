@@ -49,7 +49,7 @@
         "url": "https://warrenhusband.com/",
         "name": "Warren Husband – CTO, EdgeTheory",
         "description": "Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company. Bio, experience, speaking, headshot, and ready-to-use bios for press and event organizers.",
-        "dateModified": "2026-11-18T08:28-06:00",
+        "dateModified": "2026-11-18T09:03-06:00",
         "inLanguage": "en-US",
         "isPartOf": { "@id": "https://warrenhusband.com/#website" },
         "mainEntity": { "@id": "https://warrenhusband.com/#person" }
@@ -389,6 +389,25 @@
       overflow-wrap: anywhere;
     }
     .posts a:hover { color: var(--link); text-decoration: underline; }
+    .x-embeds { margin-top: 2rem; }
+    .x-embeds h3 {
+      margin: 0 0 .85rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .x-embeds .twitter-tweet {
+      margin: 0 0 .9rem;
+      max-width: 100%;
+    }
+    .x-embeds .twitter-tweet a {
+      color: var(--ink);
+      line-height: 1.5;
+      text-decoration: none;
+    }
+    .x-embeds .twitter-tweet a:hover { color: var(--link); text-decoration: underline; }
     .speaking {
       list-style: none;
       margin: 0 0 1.5rem;
@@ -586,6 +605,30 @@
           <p><a href="https://x.com/WarrenHusband/status/2122727658148479108" rel="noopener" aria-label="This is the best doc I've watched this year. (X post, Nov 17, 2026)">This is the best doc I've watched this year.</a></p>
       </li>
     </ol>
+        <div class="x-embeds" id="on-x">
+          <h3>On X</h3>
+          <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2123059307906252905" rel="noopener">If AI can discover mathematical truths that humans couldn't find, does understanding the proof become less important? Or does it become more important than ever?</a></blockquote>
+          <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2122808272356839557" rel="noopener">We're approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That's a much bigger shift than a new way to interact with software.</a></blockquote>
+          <blockquote class="twitter-tweet" data-dnt="true"><a href="https://x.com/WarrenHusband/status/2122791463813845404" rel="noopener">Looking forward to putting this to work on my next vacation.</a></blockquote>
+        </div>
+        <script>
+          (function () {
+            var block = document.getElementById("on-x");
+            if (!block || !("IntersectionObserver" in window)) return;
+            var observer = new IntersectionObserver(function (entries) {
+              if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
+              observer.disconnect();
+              if (document.querySelector("script[data-x-widgets]")) return;
+              var script = document.createElement("script");
+              script.src = "https://platform.twitter.com/widgets.js";
+              script.async = true;
+              script.charset = "utf-8";
+              script.setAttribute("data-x-widgets", "");
+              document.body.appendChild(script);
+            }, { rootMargin: "240px" });
+            observer.observe(block);
+          }());
+        </script>
       </div>
     </section>
     <section id="edgetheory">
@@ -750,7 +793,7 @@
         <a href="https://edgetheory.com/contact?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">Press &amp; speaking inquiries</a>
       </nav>
       <p>© 2026 Warren Husband</p>
-      <p>Last updated <time datetime="2026-11-18T08:28-06:00">November 18, 2026, 8:28 AM CT</time></p>
+      <p>Last updated <time datetime="2026-11-18T09:03-06:00">November 18, 2026, 9:03 AM CT</time></p>
     </footer>
   </div>
 </body>
