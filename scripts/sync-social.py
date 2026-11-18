@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
-"""Rewrite the marked On X and On LinkedIn blocks in index.html."""
+"""Rewrite the marked On X and On LinkedIn blocks in index.html.
+
+Run with --fetch-images first to fill in a missing "image" for each post
+from the og:image of its "link". The rewrite itself never touches the network.
+"""
 
 import html
 import json
+import sys
+import urllib.request
 from datetime import date
+from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import urljoin, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "index.html"
@@ -26,36 +34,100 @@ def label_date(iso):
     return f"{month} {posted.day}, {posted.year}"
 
 
-def x_markup(posts):
-    cards = []
-    for post in posts:
-        href = f"https://x.com/WarrenHusband/status/{post['id']}"
-        label = f"{post['text']} (X post, {label_date(post['date'])})"
-        cards.append(
-            "          <div class=\"x-card\">\n"
-            "            <div class=\"x-frame\">\n"
-            "              <blockquote class=\"twitter-tweet\" data-dnt=\"true\" data-conversation=\"none\">"
-            f'<a href="{attr_escape(href)}" target="_blank" rel="noopener">{text_escape(post["text"])}</a>'
-            "</blockquote>\n"
-            "            </div>\n"
-            f'            <a class="x-open" href="{attr_escape(href)}" target="_blank" rel="noopener" aria-label="{attr_escape(label)}"></a>\n'
-            "          </div>"
+X_ICON = (
+    '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3'
+    'l-4.9-6.4L6.4 22H3.3l7.3-8.3L1 2h6.4l4.4 5.9zm-1.1 18h1.7L6.3 3.9H4.5z"/></svg>'
+)
+LINKEDIN_ICON = (
+    '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z'
+    'M3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5'
+    'c0-1.2-.02-2.73-1.66-2.73-1.66 0-1.92 1.3-1.92 2.64V21h-4z"/></svg>'
+)
+
+
+def card(href, post, network, icon):
+    """One post card. The "View on" link stretches over the whole card."""
+    when = label_date(post["date"])
+    label = f"View on {network}: {post['text']} ({when})"
+    source = ""
+    if post.get("link"):
+        source = f'<span class="post-src">Link: {text_escape(domain(post["link"]))}</span>'
+    image = ""
+    if post.get("image"):
+        image = (
+            f'            <img class="post-img" src="{attr_escape(post["image"])}" alt="" width="1200" height="630"'
+            ' loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">\n'
         )
-    return "        <div class=\"x-grid\">\n" + "\n".join(cards) + "\n        </div>"
+    return (
+        "          <article class=\"post\">\n"
+        + image
+        + f'            <p class="post-meta"><span class="post-net">{icon}{network}</span>'
+        f'<time datetime="{attr_escape(post["date"])}">{when}</time></p>\n'
+        f'            <p class="post-text">{text_escape(post["text"])}</p>\n'
+        f'            <p class="post-foot">{source}'
+        f'<a class="post-open" href="{attr_escape(href)}" target="_blank" rel="noopener" aria-label="{attr_escape(label)}">'
+        f'View on {network} <span aria-hidden="true">&rarr;</span></a></p>\n'
+        "          </article>"
+    )
+
+
+def domain(url):
+    host = urlsplit(url).hostname or ""
+    return host[4:] if host.startswith("www.") else host
+
+
+class OgImage(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.found = None
+
+    def handle_starttag(self, tag, attrs):
+        if tag != "meta" or self.found:
+            return
+        attrs = dict(attrs)
+        key = (attrs.get("property") or attrs.get("name") or "").lower()
+        if key in ("og:image", "og:image:url", "og:image:secure_url", "twitter:image") and attrs.get("content"):
+            self.found = attrs["content"].strip()
+
+
+def og_image(url):
+    request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; warrenhusband.com link preview)"})
+    with urllib.request.urlopen(request, timeout=20) as response:
+        head = response.read(600_000).decode("utf-8", "replace")
+    parser = OgImage()
+    parser.feed(head)
+    return urljoin(url, html.unescape(parser.found)) if parser.found else None
+
+
+def fetch_images(posts):
+    changed = False
+    for platform in ("x", "linkedin"):
+        for post in posts[platform][:MAX_PER_PLATFORM]:
+            if post.get("image") or not post.get("link"):
+                continue
+            try:
+                found = og_image(post["link"])
+            except Exception as error:  # a missing preview is fine; the card shows text only
+                print(f"no image for {post['link']}: {error}", file=sys.stderr)
+                continue
+            if found:
+                post["image"] = found
+                changed = True
+                print(f"{domain(post['link'])}: {found}")
+    if changed:
+        DATA.write_text(json.dumps(posts, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def grid(cards):
+    return "        <div class=\"posts\">\n" + "\n".join(cards) + "\n        </div>"
+
+
+def x_markup(posts):
+    return grid(card(f"https://x.com/WarrenHusband/status/{post['id']}", post, "X", X_ICON) for post in posts)
 
 
 def linkedin_markup(posts):
-    cards = []
-    for post in posts:
-        src = "https://www.linkedin.com/embed/feed/update/" + post["urn"]
-        label = f"{post['text']} (LinkedIn post, {label_date(post['date'])})"
-        cards.append(
-            "          <figure class=\"li-card\">\n"
-            f'            <iframe src="{attr_escape(src)}" loading="lazy" title="{attr_escape(post["text"])}" height="780"></iframe>\n'
-            f'            <a class="li-open" href="{attr_escape(post["url"])}" target="_blank" rel="noopener" aria-label="{attr_escape(label)}"></a>\n'
-            "          </figure>"
-        )
-    return "        <div class=\"li-grid\">\n" + "\n".join(cards) + "\n        </div>"
+    return grid(card(post["url"], post, "LinkedIn", LINKEDIN_ICON) for post in posts)
 
 
 def replace_marked(page, start, end, inner):
@@ -70,6 +142,8 @@ def replace_marked(page, start, end, inner):
 
 def main():
     posts = json.loads(DATA.read_text(encoding="utf-8"))
+    if "--fetch-images" in sys.argv[1:]:
+        fetch_images(posts)
     page = INDEX.read_text(encoding="utf-8")
     page = replace_marked(page, "<!-- social:x:start -->", "<!-- social:x:end -->", x_markup(posts["x"][:MAX_PER_PLATFORM]))
     page = replace_marked(page, "<!-- social:li:start -->", "<!-- social:li:end -->", linkedin_markup(posts["linkedin"][:MAX_PER_PLATFORM]))
