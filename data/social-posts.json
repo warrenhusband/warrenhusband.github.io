@@ -1,6 +1,13 @@
 {
   "x": [
     {
+      "id": "2123422945074713061",
+      "date": "2026-11-19",
+      "text": "Three theories to chew on. My money is on technical debt, with a side of AI-assisted chaos.",
+      "link": "https://www.theatlantic.com/technology/2026/11/why-mass-digital-outages/689501/",
+      "image": "https://pbs.twimg.com/card_img/2123233076285218816/FvcwnFXX?format=jpg&name=800x419"
+    },
+    {
       "id": "2123144238280081545",
       "date": "2026-11-18",
       "text": "AI is already helping build the next generation of AI. The question isn't whether recursive self-improvement happens. It's who's checking the work while it does.",
@@ -20,13 +27,6 @@
       "text": "If AI can discover mathematical truths that humans couldn't find, does understanding the proof become less important? Or does it become more important than ever?",
       "link": "https://spectrum.ieee.org/enormous-theorem-ai",
       "image": "https://spectrum.ieee.org/media-library/ai-verifies-the-enormous-theorem-in-just-24-days.jpg?id=68692858&width=1200&height=600&coordinates=0%2C519%2C0%2C82"
-    },
-    {
-      "id": "2122808272356839557",
-      "date": "2026-11-17",
-      "text": "We're approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That's a much bigger shift than a new way to interact with software.",
-      "link": "https://warrenhusband.com/blog/the-interface-is-optional-now/",
-      "image": "https://warrenhusband.com/blog/the-interface-is-optional-now/og.png"
     }
   ],
   "linkedin": [
