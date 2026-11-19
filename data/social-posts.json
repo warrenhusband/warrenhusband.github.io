@@ -1,6 +1,13 @@
 {
   "x": [
     {
+      "id": "2123468577835798999",
+      "date": "2026-11-19",
+      "text": "The AI industry has built an extraordinary amount of dependency around Nvidia. This episode is a reminder that concentration risk isn't limited to chips, compute, or supply chains. It can exist at the leadership level, too.",
+      "link": "https://techcrunch.com/2026/11/18/elon-musk-says-ousting-jensen-huang-is-like-kicking-michael-jordan-off-your-team/",
+      "image": "https://techcrunch.com/wp-content/uploads/2024/08/GettyImages-524212924.jpg?resize=1200,800"
+    },
+    {
       "id": "2123422945074713061",
       "date": "2026-11-19",
       "text": "Three theories to chew on. My money is on technical debt, with a side of AI-assisted chaos.",
@@ -20,13 +27,6 @@
       "text": "We're building machines that do more of our thinking for us, then acting surprised when people treat them as more than a tool. The real risk may be less about machines becoming gods and more about humans deciding they don't need to think for themselves.",
       "link": "https://www.newyorker.com/magazine/2026/11/23/the-buddhist-ai-sect-that-wants-to-take-over-silicon-valley",
       "image": "https://media.newyorker.com/photos/6af4b4189381ddd6689aa1bb/16:9/w_1280,c_limit/r50564.jpg"
-    },
-    {
-      "id": "2123059307906252905",
-      "date": "2026-11-18",
-      "text": "If AI can discover mathematical truths that humans couldn't find, does understanding the proof become less important? Or does it become more important than ever?",
-      "link": "https://spectrum.ieee.org/enormous-theorem-ai",
-      "image": "https://spectrum.ieee.org/media-library/ai-verifies-the-enormous-theorem-in-just-24-days.jpg?id=68692858&width=1200&height=600&coordinates=0%2C519%2C0%2C82"
     }
   ],
   "linkedin": [
