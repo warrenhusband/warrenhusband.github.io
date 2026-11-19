@@ -1,6 +1,13 @@
 {
   "x": [
     {
+      "id": "2123422945074713061",
+      "date": "2026-11-19",
+      "text": "Three theories to chew on. My money is on technical debt, with a side of AI-assisted chaos.",
+      "link": "https://www.theatlantic.com/technology/2026/11/why-mass-digital-outages/689501/",
+      "image": "https://pbs.twimg.com/card_img/2123233076285218816/FvcwnFXX?format=jpg&name=800x419"
+    },
+    {
       "id": "2123144238280081545",
       "date": "2026-11-18",
       "text": "AI is already helping build the next generation of AI. The question isn't whether recursive self-improvement happens. It's who's checking the work while it does.",
@@ -20,16 +27,17 @@
       "text": "If AI can discover mathematical truths that humans couldn't find, does understanding the proof become less important? Or does it become more important than ever?",
       "link": "https://spectrum.ieee.org/enormous-theorem-ai",
       "image": "https://spectrum.ieee.org/media-library/ai-verifies-the-enormous-theorem-in-just-24-days.jpg?id=68692858&width=1200&height=600&coordinates=0%2C519%2C0%2C82"
-    },
-    {
-      "id": "2122808272356839557",
-      "date": "2026-11-17",
-      "text": "We're approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That's a much bigger shift than a new way to interact with software.",
-      "link": "https://warrenhusband.com/blog/the-interface-is-optional-now/",
-      "image": "https://warrenhusband.com/blog/the-interface-is-optional-now/og.png"
     }
   ],
   "linkedin": [
+    {
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7529188011050278912/",
+      "urn": "urn:li:share:7529188011050278912",
+      "date": "2026-11-19",
+      "text": "It doesn't have to be conscious to be dangerous. We may be spending too much time debating whether AI is becoming sentient and not enough time examining what happens when increasingly capable systems can influence people, shape decisions, and take actions in the real world. The consequences don't depend on whether there's anyone home inside the machine.",
+      "link": "https://www.wired.com/story/just-ridiculous-a-famed-philosopher-takes-on-ai-consciousness/",
+      "image": "https://media.wired.com/photos/6afcfb207b0def85d03dac43/191:100/w_1280,c_limit/Thomas-Nagel-QandA-Business.jpg"
+    },
     {
       "url": "https://www.linkedin.com/posts/warren-husband_ai-governance-is-going-to-be-as-much-a-geopolitical-share-7528825657611571201-7JpY/",
       "urn": "urn:li:share:7528825657611571201",
@@ -53,14 +61,6 @@
       "text": "National security is moving out of the government relations department and into the boardroom. When your products are foundational to global AI infrastructure, export controls, geopolitical exposure, and commercial strategy become deeply interconnected. That's a different kind of corporate governance challenge.",
       "link": "https://techcrunch.com/2026/11/17/nvidias-first-big-move-after-jensen-huangs-exit-targets-national-security/",
       "image": "https://techcrunch.com/wp-content/uploads/2024/10/GettyImages-2087335475.jpg?resize=1200,799"
-    },
-    {
-      "url": "https://www.linkedin.com/posts/warren-husband_exposed-credentials-weak-mfa-forgotten-share-7528191109521543169-Vcmk/",
-      "urn": "urn:li:share:7528191109521543169",
-      "date": "2026-11-16",
-      "text": "Exposed credentials, weak MFA, forgotten vendor access. AI isn't necessarily finding some ingenious new way in. It's making the discovery and exploitation of ordinary security failures dramatically faster and easier to scale.",
-      "link": "https://techcrunch.com/2026/11/16/fbi-says-artex-ai-open-source-hacking-tool-used-to-breach-networks-in-under-three-hours/",
-      "image": "https://techcrunch.com/wp-content/uploads/2026/02/china-hacker-computer-flag.jpg?resize=1200,675"
     }
   ]
 }
