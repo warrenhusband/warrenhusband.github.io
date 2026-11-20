@@ -3,6 +3,9 @@
 
 Run with --fetch-images first to fill in a missing "image" for each post
 from the og:image of its "link". The rewrite itself never touches the network.
+Every shown post must have an image: it refuses to write while one is missing. If the
+article site blocks the fetch, set "image" from the post's own link card (for X, the
+pbs.twimg.com/card_img/... URL in the post's embed data).
 """
 
 import html
@@ -107,7 +110,7 @@ def fetch_images(posts):
                 continue
             try:
                 found = og_image(post["link"])
-            except Exception as error:  # a missing preview is fine; the card shows text only
+            except Exception as error:  # reported here; main() then refuses to write until an image is set
                 print(f"no image for {post['link']}: {error}", file=sys.stderr)
                 continue
             if found:
@@ -144,6 +147,12 @@ def main():
     posts = json.loads(DATA.read_text(encoding="utf-8"))
     if "--fetch-images" in sys.argv[1:]:
         fetch_images(posts)
+    # Every shown post must have an image (Warren, 2026-11-20). When the article's site blocks the fetch, use the
+    # image from the post's own link card (for X, pbs.twimg.com/card_img/... from the post's embed data) in "image".
+    missing = [f"{platform} {post.get('id')}" for platform in ("x", "linkedin")
+               for post in posts[platform][:MAX_PER_PLATFORM] if not post.get("image")]
+    if missing:
+        sys.exit("refusing to write index.html: no image for " + ", ".join(missing))
     page = INDEX.read_text(encoding="utf-8")
     page = replace_marked(page, "<!-- social:x:start -->", "<!-- social:x:end -->", x_markup(posts["x"][:MAX_PER_PLATFORM]))
     page = replace_marked(page, "<!-- social:li:start -->", "<!-- social:li:end -->", linkedin_markup(posts["linkedin"][:MAX_PER_PLATFORM]))
