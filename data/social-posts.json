@@ -31,6 +31,14 @@
   ],
   "linkedin": [
     {
+      "url": "https://www.linkedin.com/posts/warren-husband_i-suspect-the-most-interesting-breakthroughs-share-7529555502809333760-a44G/",
+      "urn": "urn:li:share:7529555502809333760",
+      "date": "2026-11-20",
+      "text": "I suspect the most interesting breakthroughs may come from places we aren't looking yet. We're still learning what these systems are capable of, and the feedback loop between AI and the people building it could get very interesting.",
+      "link": "https://emergent.sh/news/can-ai-really-engineer-way-superintelligence",
+      "image": "https://cdn.prod.website-files.com/6a0f028de6df6a6fd88c3f89/6afef6363bf511e913ab9ec1_6afef635e1aa65d37e0a3f65_can-ai-really-engineer-way-superintelligence.avif"
+    },
+    {
       "url": "https://www.linkedin.com/feed/update/urn:li:share:7529188011050278912/",
       "urn": "urn:li:share:7529188011050278912",
       "date": "2026-11-19",
@@ -53,14 +61,6 @@
       "text": "We're moving from software people operate to software their agents operate. That's a pretty fundamental change in how applications need to be designed. The interface might become optional, but permissions, security and accountability certainly aren't.",
       "link": "https://warrenhusband.com/blog/the-interface-is-optional-now/",
       "image": "https://warrenhusband.com/blog/the-interface-is-optional-now/og.png"
-    },
-    {
-      "url": "https://www.linkedin.com/feed/update/urn:li:share:7528477722541555712/",
-      "urn": "urn:li:share:7528477722541555712",
-      "date": "2026-11-17",
-      "text": "National security is moving out of the government relations department and into the boardroom. When your products are foundational to global AI infrastructure, export controls, geopolitical exposure, and commercial strategy become deeply interconnected. That's a different kind of corporate governance challenge.",
-      "link": "https://techcrunch.com/2026/11/17/nvidias-first-big-move-after-jensen-huangs-exit-targets-national-security/",
-      "image": "https://techcrunch.com/wp-content/uploads/2024/10/GettyImages-2087335475.jpg?resize=1200,799"
     }
   ]
 }
