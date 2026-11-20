@@ -1,6 +1,13 @@
 {
   "x": [
     {
+      "id": "2123788515062513819",
+      "date": "2026-11-20",
+      "text": "My favorite kind of AI is the kind that quietly takes 20 steps off my to-do list. Looking forward to this.",
+      "link": "https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/11/hero_header_CU_copy.width-2200.format-webp.jpeg?resize=1200,675"
+    },
+    {
       "id": "2123506636648227023",
       "date": "2026-11-19",
       "text": "Andrew Garfield has played Spider-Man, Eduardo Saverin, and now Sam Altman. That's quite a career arc.",
@@ -20,13 +27,6 @@
       "text": "Three theories to chew on. My money is on technical debt, with a side of AI-assisted chaos.",
       "link": "https://www.theatlantic.com/technology/2026/11/why-mass-digital-outages/689501/",
       "image": "https://pbs.twimg.com/card_img/2123233076285218816/FvcwnFXX?format=jpg&name=800x419"
-    },
-    {
-      "id": "2123144238280081545",
-      "date": "2026-11-18",
-      "text": "AI is already helping build the next generation of AI. The question isn't whether recursive self-improvement happens. It's who's checking the work while it does.",
-      "link": "https://invertedpassion.substack.com/p/making-sense-of-recursive-self-improvement",
-      "image": "https://substackcdn.com/image/fetch/$s_!aO7-!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,$fp_!0.5:0.3745!/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F79661b13-d5a2-4934-b767-bc9dbc2af4c6_2400x2300.png"
     }
   ],
   "linkedin": [
