@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Rewrite the marked On X and On LinkedIn blocks in index.html.
+"""Rewrite the marked On X and On LinkedIn blocks in index.html, and the posts archive.
+
+The home page shows the newest MAX_PER_PLATFORM posts per platform. posts/index.html lists
+every post in data/social-posts.json, newest first, by month, so keep old posts in the data
+file instead of dropping them. The sitemap's /posts/ lastmod follows the newest post.
 
 Run with --fetch-images first to fill in a missing "image" for each post
 from the og:image of its "link". The rewrite itself never touches the network.
@@ -12,6 +16,7 @@ import html
 import json
 import sys
 import urllib.request
+import re
 from datetime import date
 from html.parser import HTMLParser
 from pathlib import Path
@@ -20,6 +25,9 @@ from urllib.parse import urljoin, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "index.html"
 DATA = ROOT / "data" / "social-posts.json"
+ARCHIVE = ROOT / "posts" / "index.html"
+SITEMAP = ROOT / "sitemap.xml"
+SITE = "https://warrenhusband.com"
 MAX_PER_PLATFORM = 4
 
 
@@ -125,12 +133,134 @@ def grid(cards):
     return "        <div class=\"posts\">\n" + "\n".join(cards) + "\n        </div>"
 
 
+MORE = '\n        <p class="more"><a href="/posts/">All posts</a></p>'
+
+
+def x_href(post):
+    return f"https://x.com/WarrenHusband/status/{post['id']}"
+
+
 def x_markup(posts):
-    return grid(card(f"https://x.com/WarrenHusband/status/{post['id']}", post, "X", X_ICON) for post in posts)
+    return grid(card(x_href(post), post, "X", X_ICON) for post in posts) + MORE
 
 
 def linkedin_markup(posts):
-    return grid(card(post["url"], post, "LinkedIn", LINKEDIN_ICON) for post in posts)
+    return grid(card(post["url"], post, "LinkedIn", LINKEDIN_ICON) for post in posts) + MORE
+
+
+MONTHS = "January February March April May June July August September October November December".split()
+
+
+def long_date(iso):
+    posted = date.fromisoformat(iso)
+    return f"{MONTHS[posted.month - 1]} {posted.day}, {posted.year}"
+
+
+def every_post(posts):
+    """All posts, newest first. Same-day posts keep their order in the data file, X first."""
+    items = [(post, x_href(post), "X", X_ICON) for post in posts["x"]]
+    items += [(post, post["url"], "LinkedIn", LINKEDIN_ICON) for post in posts["linkedin"]]
+    return sorted(items, key=lambda item: item[0]["date"], reverse=True)
+
+
+def entry(post, href, network, icon):
+    when = label_date(post["date"])
+    label = f"View on {network}: {post['text']} ({when})"
+    source = f'<span class="entry-src">Link: {text_escape(domain(post["link"]))}</span>' if post.get("link") else ""
+    image = ""
+    if post.get("image"):
+        image = (
+            f'          <img src="{attr_escape(post["image"])}" alt="" width="1200" height="630" loading="lazy"'
+            ' decoding="async" referrerpolicy="no-referrer" onerror="this.parentNode.classList.add(\'no-img\');this.remove()">\n'
+        )
+    return (
+        f'        <li class="entry{"" if image else " no-img"}">\n'
+        + image
+        + "          <div>\n"
+        f'            <p class="entry-meta"><span class="entry-net">{icon}{network}</span>'
+        f'<time datetime="{attr_escape(post["date"])}">{when}</time></p>\n'
+        f'            <p class="entry-text">{text_escape(post["text"])}</p>\n'
+        f'            <p class="entry-foot">{source}<a class="entry-open" href="{attr_escape(href)}" target="_blank"'
+        f' rel="noopener" aria-label="{attr_escape(label)}">View on {network} <span aria-hidden="true">&rarr;</span></a></p>\n'
+        "          </div>\n"
+        "        </li>"
+    )
+
+
+def archive_feed(items):
+    blocks, month, current = [], None, []
+    for item in items:
+        key = item[0]["date"][:7]
+        if key != month:
+            if current:
+                blocks.append(current)
+            month, current = key, []
+        current.append(item)
+    if current:
+        blocks.append(current)
+    out = []
+    for block in blocks:
+        posted = date.fromisoformat(block[0][0]["date"])
+        out.append(f'      <h2 class="month">{MONTHS[posted.month - 1]} {posted.year}</h2>')
+        out.append('      <ol class="feed">\n' + "\n".join(entry(*item) for item in block) + "\n      </ol>")
+    return "\n" + "\n".join(out) + "\n      "
+
+
+def archive_ld(items):
+    newest = items[0][0]["date"] if items else None
+    postings = []
+    for post, href, network, _ in items:
+        posting = {
+            "@type": "SocialMediaPosting",
+            "url": href,
+            "datePublished": post["date"],
+            "text": post["text"],
+            "author": {"@id": f"{SITE}/#person"},
+        }
+        if post.get("link"):
+            posting["sharedContent"] = {"@type": "WebPage", "url": post["link"]}
+        postings.append(posting)
+    data = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "@id": f"{SITE}/posts/",
+        "url": f"{SITE}/posts/",
+        "name": "Posts – Warren Husband",
+        "description": "Recent posts by Warren Husband on X and LinkedIn, newest first.",
+        "inLanguage": "en-US",
+        "isPartOf": {"@id": f"{SITE}/#website"},
+        "about": {"@id": f"{SITE}/#person"},
+        "dateModified": newest,
+        "mainEntity": {"@type": "ItemList", "itemListOrder": "https://schema.org/ItemListOrderDescending",
+                       "numberOfItems": len(postings),
+                       "itemListElement": [{"@type": "ListItem", "position": i + 1, "item": posting}
+                                           for i, posting in enumerate(postings)]},
+    }
+    body = json.dumps(data, indent=2, ensure_ascii=False).replace("</", "<\\/")
+    return '\n  <script type="application/ld+json">\n' + body + "\n  </script>\n  "
+
+
+def replace_inline(page, name, inner):
+    pattern = re.compile(rf"(<!-- posts:{name}:start -->).*?(<!-- posts:{name}:end -->)", re.S)
+    page, count = pattern.subn(lambda m: m.group(1) + inner + m.group(2), page)
+    if count != 1:
+        raise SystemExit(f"missing posts:{name} markers in {ARCHIVE}")
+    return page
+
+
+def write_archive(posts):
+    items = every_post(posts)
+    newest = items[0][0]["date"]
+    page = ARCHIVE.read_text(encoding="utf-8")
+    page = replace_inline(page, "ld", archive_ld(items))
+    page = replace_inline(page, "feed", archive_feed(items))
+    page = replace_inline(page, "stamp", f'<p>Last updated <time datetime="{newest}">{long_date(newest)}</time></p>')
+    ARCHIVE.write_text(page, encoding="utf-8")
+    sitemap = SITEMAP.read_text(encoding="utf-8")
+    entry_xml = f"  <url>\n    <loc>{SITE}/posts/</loc>\n    <lastmod>{newest}</lastmod>\n  </url>\n"
+    pattern = re.compile(rf"  <url>\s*<loc>{re.escape(SITE)}/posts/</loc>.*?</url>\n", re.S)
+    sitemap = pattern.sub(entry_xml, sitemap) if pattern.search(sitemap) else sitemap.replace("</urlset>", entry_xml + "</urlset>")
+    SITEMAP.write_text(sitemap, encoding="utf-8")
 
 
 def replace_marked(page, start, end, inner):
@@ -157,6 +287,7 @@ def main():
     page = replace_marked(page, "<!-- social:x:start -->", "<!-- social:x:end -->", x_markup(posts["x"][:MAX_PER_PLATFORM]))
     page = replace_marked(page, "<!-- social:li:start -->", "<!-- social:li:end -->", linkedin_markup(posts["linkedin"][:MAX_PER_PLATFORM]))
     INDEX.write_text(page, encoding="utf-8")
+    write_archive(posts)
 
 
 if __name__ == "__main__":
