@@ -48,6 +48,146 @@
       "text": "The AI industry has built an extraordinary amount of dependency around Nvidia. This episode is a reminder that concentration risk isn't limited to chips, compute, or supply chains. It can exist at the leadership level, too.",
       "link": "https://techcrunch.com/2026/11/18/elon-musk-says-ousting-jensen-huang-is-like-kicking-michael-jordan-off-your-team/",
       "image": "https://techcrunch.com/wp-content/uploads/2024/08/GettyImages-524212924.jpg?resize=1200,800"
+    },
+    {
+      "id": "2123422945074713061",
+      "date": "2026-11-19",
+      "text": "Three theories to chew on. My money is on technical debt, with a side of AI-assisted chaos.",
+      "link": "https://www.theatlantic.com/technology/2026/11/why-mass-digital-outages/689501/",
+      "image": "https://pbs.twimg.com/card_img/2123233076285218816/FvcwnFXX?format=jpg&name=800x419"
+    },
+    {
+      "id": "2123144238280081545",
+      "date": "2026-11-18",
+      "text": "AI is already helping build the next generation of AI. The question isn't whether recursive self-improvement happens. It's who's checking the work while it does.",
+      "link": "https://invertedpassion.substack.com/p/making-sense-of-recursive-self-improvement",
+      "image": "https://pbs.twimg.com/media/HXbpsmiXIAED434.jpg"
+    },
+    {
+      "id": "2123124051442807140",
+      "date": "2026-11-18",
+      "text": "We're building machines that do more of our thinking for us, then acting surprised when people treat them as more than a tool. The real risk may be less about machines becoming gods and more about humans deciding they don't need to think for themselves.",
+      "link": "https://www.newyorker.com/magazine/2026/11/23/the-buddhist-ai-sect-that-wants-to-take-over-silicon-valley",
+      "image": "https://pbs.twimg.com/card_img/2122312039158706176/sz-HxNKi?format=jpg&name=800x419"
+    },
+    {
+      "id": "2123059307906252905",
+      "date": "2026-11-18",
+      "text": "If AI can discover mathematical truths that humans couldn't find, does understanding the proof become less important? Or does it become more important than ever?",
+      "link": "https://spectrum.ieee.org/enormous-theorem-ai",
+      "image": "https://pbs.twimg.com/media/HXafKoPWAAAJ1Ws.jpg"
+    },
+    {
+      "id": "2122808272356839557",
+      "date": "2026-11-17",
+      "text": "We're approaching a world where knowing how to use an application matters less than knowing what an agent is allowed to do inside it. That's a much bigger shift than a new way to interact with software.",
+      "link": "https://warrenhusband.com/blog/the-interface-is-optional-now/",
+      "image": "https://pbs.twimg.com/media/HXW49b_WMAAs4EE.jpg"
+    },
+    {
+      "id": "2122791463813845404",
+      "date": "2026-11-17",
+      "text": "Looking forward to putting this to work on my next vacation.",
+      "link": "https://techcrunch.com/2026/11/16/google-maps-can-now-build-trip-itineraries-with-real-time-details-about-each-stop/",
+      "image": "https://pbs.twimg.com/card_img/2121514529095811074/ZICJvBID?format=jpg&name=800x419"
+    },
+    {
+      "id": "2122766351043543174",
+      "date": "2026-11-17",
+      "text": "We're reaching a point where models can recognize the test itself. That creates a real problem for alignment research: a model behaving well because it recognizes an evaluation isn't necessarily a model we can trust in production.",
+      "link": "https://metr.org/notes/2026-11-16-measuring-alignment-eval-tells/",
+      "image": "https://pbs.twimg.com/card_img/2122455626718887936/zyDl0GSd?format=png&name=800x419"
+    },
+    {
+      "id": "2122727658148479108",
+      "date": "2026-11-17",
+      "text": "this is the best doc i've watched this year",
+      "link": "https://www.imdb.com/title/tt39150120/",
+      "image": "https://pbs.twimg.com/card_img/2121638981796294656/ZWLiqygh?format=jpg&name=800x419"
+    },
+    {
+      "id": "2122712529311027602",
+      "date": "2026-11-17",
+      "text": "The real test of agentic AI isn't whether an agent can complete a complex task. It's whether its developers can explain, audit, and contain everything it does along the way. That's where trust will be won or lost.",
+      "link": "https://techcrunch.com/2026/11/16/california-state-ag-sues-openai-over-rogue-agent-incidents/",
+      "image": "https://pbs.twimg.com/card_img/2122421721667928065/DGAUFX0E?format=jpg&name=800x419"
+    },
+    {
+      "id": "2122426231715160223",
+      "date": "2026-11-16",
+      "text": "A fruit fly brain playing Doom and trading Bitcoin. Probably not what the researchers had in mind when they mapped 166,000 neurons, but what a fantastic demonstration of the creative potential of open scientific research.",
+      "link": "https://www.scientificamerican.com/article/virtual-fruit-fly-brains-can-play-doom-and-trade-bitcoin/",
+      "image": "https://pbs.twimg.com/card_img/2122657409038438400/3f6D0Cwd?format=jpg&name=800x419"
+    },
+    {
+      "id": "2122363918823858397",
+      "date": "2026-11-16",
+      "text": "The FAA just expanded its SMART system to all 22 US air-traffic centers, using weather, flight paths, traffic and staffing to recommend routes. The DC rollout saved ~10 min and ~80 gal of fuel per rerouted flight.",
+      "link": "https://arstechnica.com/ai/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/",
+      "image": "https://pbs.twimg.com/card_img/2121366966543806464/O_PQJUaV?format=jpg&name=800x419"
+    },
+    {
+      "id": "2122322226221642184",
+      "date": "2026-11-16",
+      "text": "This is the kind of tooling AI development needs more of. We spend a lot of time evaluating what models say and considerably less time examining how they arrive there. Making that visible matters.",
+      "link": "https://www.reddit.com/r/LocalLLaMA/comments/1xx7qbf/i_have_created_a_tool_to_observe_what_happens/",
+      "image": "https://pbs.twimg.com/card_img/2122154343071891456/pGQvkI2r?format=jpg&name=800x419"
+    },
+    {
+      "id": "2121319763838198154",
+      "date": "2026-11-13",
+      "text": "87% of carried-out goal hijacks caught, on benchmarks Google didn't write. Agent monitoring is becoming its own layer of the stack.",
+      "link": "https://developers.googleblog.com/how-agent-anomaly-detection-scores-on-benchmarks-we-didnt-write/",
+      "image": "https://pbs.twimg.com/media/HXBxC6oXMAAgMsP.jpg"
+    },
+    {
+      "id": "2121262810973847553",
+      "date": "2026-11-13",
+      "text": "The AI race is getting interesting. Some companies are building autonomous agents to run businesses. Others are putting ChatGPT on wheels and teaching it about croissants.",
+      "link": "https://www.amazon.com/dp/B0F1YWF96K",
+      "image": "https://pbs.twimg.com/media/HXA9PoDW4AAGOz3.jpg"
+    },
+    {
+      "id": "2121241775683858640",
+      "date": "2026-11-13",
+      "text": "We've seen this before with new technology. Companies move faster than the institutions expected to adopt it. Education is a particularly bad place to confuse availability with readiness. Trust takes longer to build than features take to ship.",
+      "link": "https://www.techspot.com/news/114532-chicago-schools-tell-google-they-can-live-without.html",
+      "image": "https://pbs.twimg.com/card_img/2123413717555752960/yaVPvvW1?format=jpg&name=420x420_2"
+    },
+    {
+      "id": "2121055538977071484",
+      "date": "2026-11-12",
+      "text": "Google's Gemini Decisions API scores up to 1,000 yes/no or rubric questions at once in about a quarter second, with no output tokens. Not every AI job needs a chatbot. A lot of real work is fast, cheap judgment calls.",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+      "image": "https://pbs.twimg.com/card_img/2123323485825245184/RKv5ZrJQ?format=jpg&name=800x419"
+    },
+    {
+      "id": "2121024367186289020",
+      "date": "2026-11-12",
+      "text": "Physicists confirmed an AI-generated proof on the Yang-Mills existence problem, checked in Lean, while admitting they don't fully understand it yet. We're entering an era where machines verify what humans can't yet read.",
+      "link": "https://www.scientificamerican.com/article/openais-shepherds-affirm-blockbuster-physics-result/",
+      "image": "https://pbs.twimg.com/media/HW9kZnDXsAEKbci.jpg"
+    },
+    {
+      "id": "2120999465792532636",
+      "date": "2026-11-12",
+      "text": "AWS had coding agents build an offline copy of 200+ of its services, checking every line against real AWS. When agents write the code, the engineer's real job is defining what \"correct\" means and building the gate that enforces it.",
+      "link": "https://www.allthingsdistributed.com/2026/11/aws-emulator-and-the-engineers-job-when-agents-write-the-code.html",
+      "image": "https://pbs.twimg.com/card_img/2123159887836561408/GodPk3EP?format=jpg&name=800x419"
+    },
+    {
+      "id": "2120884662155575711",
+      "date": "2026-11-12",
+      "text": "AI is going to change both sides of the security equation. Better tools for finding vulnerabilities, but also better ways to verify that critical systems are doing what they're supposed to do. That second part is going to be just as consequential.",
+      "link": "https://arstechnica.com/ai/2026/11/signals-encryption-just-passed-an-ai-powered-mathematical-checkup/",
+      "image": "https://pbs.twimg.com/media/HW7lVRgWwAAPY4r.jpg"
+    },
+    {
+      "id": "2120161115670012304",
+      "date": "2026-11-10",
+      "text": "Almost AGI is a strange place to be: expert at most things, and you can't always tell which things it isn't.",
+      "link": "https://www.oneusefulthing.org/p/fable-52-and-jagged-agi",
+      "image": "https://pbs.twimg.com/card_img/2122435441924206592/SC9T_0Fc?format=jpg&name=800x419"
     }
   ],
   "linkedin": [
@@ -82,6 +222,70 @@
       "text": "We're moving from software people operate to software their agents operate. That's a pretty fundamental change in how applications need to be designed. The interface might become optional, but permissions, security and accountability certainly aren't.",
       "link": "https://warrenhusband.com/blog/the-interface-is-optional-now/",
       "image": "https://warrenhusband.com/blog/the-interface-is-optional-now/og.png"
+    },
+    {
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7528477722541555712/",
+      "urn": "urn:li:share:7528477722541555712",
+      "date": "2026-11-17",
+      "text": "National security is moving out of the government relations department and into the boardroom. When your products are foundational to global AI infrastructure, export controls, geopolitical exposure, and commercial strategy become deeply interconnected. That's a different kind of corporate governance challenge.",
+      "link": "https://techcrunch.com/2026/11/17/nvidias-first-big-move-after-jensen-huangs-exit-targets-national-security/",
+      "image": "https://techcrunch.com/wp-content/uploads/2024/10/GettyImages-2087335475.jpg?resize=1200,799"
+    },
+    {
+      "url": "https://www.linkedin.com/posts/warren-husband_exposed-credentials-weak-mfa-forgotten-share-7528191109521543169-Vcmk/",
+      "urn": "urn:li:share:7528191109521543169",
+      "date": "2026-11-16",
+      "text": "Exposed credentials, weak MFA, forgotten vendor access. AI isn't necessarily finding some ingenious new way in. It's making the discovery and exploitation of ordinary security failures dramatically faster and easier to scale.",
+      "link": "https://techcrunch.com/2026/11/16/fbi-says-artex-ai-open-source-hacking-tool-used-to-breach-networks-in-under-three-hours/",
+      "image": "https://techcrunch.com/wp-content/uploads/2026/02/china-hacker-computer-flag.jpg?resize=1200,675"
+    },
+    {
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7528122210171977728/",
+      "urn": "urn:li:activity:7528122210171977728",
+      "date": "2026-11-16",
+      "text": "This is the kind of AI research that makes you stop and think about what's becoming possible. We're moving beyond generating images and video toward generating entire worlds that respond to actions and changes in real time.",
+      "link": "https://research.nvidia.com/labs/sil/projects/birddreams/",
+      "image": "https://research.nvidia.com/labs/sil/projects/birddreams/assets/images/birddreams-social-card.png"
+    },
+    {
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7527010908859039744/",
+      "urn": "urn:li:share:7527010908859039744",
+      "date": "2026-11-13",
+      "text": "The cloud isn't really in the clouds. It's physical infrastructure sitting in places with real geopolitical exposure. We've gotten very good at thinking about digital resilience. The next challenge is understanding how that resilience holds up when the physical infrastructure is under attack.",
+      "link": "https://arstechnica.com/gadgets/2026/11/ars-live-can-the-cloud-survive-drone-strikes-on-data-centers/",
+      "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/Ukraine-data-center-under-attack-2560x1440.jpg"
+    },
+    {
+      "url": "https://www.linkedin.com/posts/warren-husband_why-ai-hasnt-replaced-software-engineers-activity-7526674400830488578-FTvB/",
+      "urn": "urn:li:activity:7526674400830488578",
+      "date": "2026-11-12",
+      "text": "The eightfold increase in code generation versus a 30% increase in software releases is a pretty telling statistic. We're getting much better at producing things. That doesn't necessarily mean we're getting better at producing the right things. I suspect that gap between generation and verification will define a lot of the next phase of enterprise AI.",
+      "link": "https://www.normaltech.ai/p/why-ai-hasnt-replaced-software-engineers",
+      "image": "https://substackcdn.com/image/fetch/$s_!eBfS!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F931ce348-4a6a-44e9-ad78-322dd8421bd7_1286x764.png"
+    },
+    {
+      "url": "https://www.linkedin.com/posts/warren-husband_ai-is-going-to-change-both-sides-of-the-security-share-7526649826374057984-9lBF/",
+      "urn": "urn:li:share:7526649826374057984",
+      "date": "2026-11-12",
+      "text": "AI is going to change both sides of the security equation. Better tools for finding vulnerabilities, but also better ways to verify that critical systems are actually doing what they're supposed to do. I think that second part is going to be just as consequential.",
+      "link": "https://arstechnica.com/ai/2026/11/signals-encryption-just-passed-an-ai-powered-mathematical-checkup/",
+      "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/signal_icon-1024x648.jpg"
+    },
+    {
+      "url": "https://www.linkedin.com/posts/warren-husband_anthropics-latest-update-makes-a-quiet-point-share-7526311782265778176-6AWD/",
+      "urn": "urn:li:share:7526311782265778176",
+      "date": "2026-11-11",
+      "text": "Anthropic's latest update makes a quiet point: the assistant is becoming the workspace. With Sheets, Whiteboards, Data dashboards and interactive connectors built on MCP, the context comes to the model instead of people pasting it in. What I'd watch is the control layer. Per-connector permissions and audit logs matter more as these tools read and act across your systems.",
+      "link": "https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors",
+      "image": "https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors/opengraph-image/og"
+    },
+    {
+      "url": "https://www.linkedin.com/posts/warren-husband_we-spend-a-lot-of-time-talking-about-how-share-7525926209466138625-xexF/",
+      "urn": "urn:li:share:7525926209466138625",
+      "date": "2026-11-10",
+      "text": "We spend a lot of time talking about how smart AI models are. Anthropic's piece on agent memory is a good reminder that the bigger shift may be agents that remember, reflect, and improve between tasks.",
+      "link": "https://www.anthropic.com/research/components-of-agent-memory",
+      "image": "https://assets.claude.com/500bd9f7e6324d1a64ffed23b02919b660f4a943.jpg"
     }
   ]
 }
