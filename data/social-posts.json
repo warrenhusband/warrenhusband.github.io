@@ -1,6 +1,13 @@
 {
   "x": [
     {
+      "id": "2124553749326913751",
+      "date": "2026-11-22",
+      "text": "Space rock behaving strangely, scientists scratching their heads, spacecraft missing its appointment. Somewhere, a science fiction screenwriter is taking notes.",
+      "link": "https://www.scientificamerican.com/article/weirdly-accelerating-space-rock-keeps-puzzling-astronomers/",
+      "image": "https://pbs.twimg.com/media/HXvuVz1WoAA77ml.jpg"
+    },
+    {
       "id": "2124178554401534173",
       "date": "2026-11-21",
       "text": "I love projects like this. Technology moves so quickly that we rarely get to appreciate the distance we've traveled.",
@@ -191,6 +198,14 @@
     }
   ],
   "linkedin": [
+    {
+      "url": "https://www.linkedin.com/posts/warren-husband_ai-safety-is-too-important-to-become-a-matter-share-7530321801273384960-yPt6/",
+      "urn": "urn:li:share:7530321801273384960",
+      "date": "2026-11-22",
+      "text": "AI safety is too important to become a matter of faith.",
+      "link": "https://www.washingtonpost.com/technology/2026/11/22/inside-an-ai-prophets-secretive-plans-humanitys-future/",
+      "image": "https://cloudfront-us-east-1.images.arcpublishing.com/wapo/ORJMXYWGKRFUNNVETYVSHWLD3Q.jpg"
+    },
     {
       "url": "https://www.linkedin.com/posts/warren-husband_i-suspect-the-most-interesting-breakthroughs-share-7529555502809333760-a44G/",
       "urn": "urn:li:share:7529555502809333760",
