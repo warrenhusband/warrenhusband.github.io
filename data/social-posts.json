@@ -1,6 +1,13 @@
 {
   "x": [
     {
+      "id": "2124875630806212718",
+      "date": "2026-11-23",
+      "text": "Imagine being able to manipulate gravity instead of fighting it. The implications for transportation, energy, space exploration, and technology would be staggering. @newscientist #Physics",
+      "link": "https://www.newscientist.com/article/2599897-quantum-effect-could-reverse-gravity-and-violate-einsteins-theory-of-relativity/",
+      "image": "https://www.newscientist.com/wp-content/uploads/2026/11/SEI_321280192.jpg"
+    },
+    {
       "id": "2124630073202385230",
       "date": "2026-11-22",
       "text": "Encryption can protect the message in transit. But what happens when the operating system itself can read what's on your screen?",
@@ -205,6 +212,14 @@
     }
   ],
   "linkedin": [
+    {
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7530321801927626753/",
+      "urn": "urn:li:activity:7530321801927626753",
+      "date": "2026-11-23",
+      "text": "We may be asking the wrong question about AI consciousness. Whether a system actually experiences anything is fascinating, but its ability to influence decisions, manipulate perceptions, and take consequential actions doesn't depend on having an inner life.\n#AI #AIEthics #AIConsciousness",
+      "link": "https://www.noemamag.com/the-mythology-of-conscious-ai/",
+      "image": "https://noemamag.imgix.net/2026/01/The-Mythology-of-Conscious-AI-scaled.jpg?fit=crop&fm=pjpg&h=628&ixlib=php-3.3.1&w=1200&wpsize=noema-social-facebook&s=ac64b80d34a8583e44429565e7df4a07"
+    },
     {
       "url": "https://www.linkedin.com/posts/warren-husband_ai-safety-is-too-important-to-become-a-matter-share-7530321801273384960-yPt6/",
       "urn": "urn:li:share:7530321801273384960",
