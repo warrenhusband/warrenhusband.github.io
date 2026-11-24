@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Warren Husband – CTO, EdgeTheory</title>
-  <meta name="description" content="Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company. Bio, experience, speaking, headshot, and ready-to-use bios for press and event organizers.">
+  <meta name="description" content="Warren Husband is CTO of EdgeTheory, a narrative intelligence company. Bio, writing, talks, headshot, and ready-to-use bios for press and event organizers.">
   <link rel="canonical" href="https://warrenhusband.com/">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
@@ -16,7 +16,7 @@
   <meta property="profile:first_name" content="Warren">
   <meta property="profile:last_name" content="Husband">
   <meta property="og:title" content="Warren Husband – CTO, EdgeTheory">
-  <meta property="og:description" content="Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company. Bio, experience, speaking, headshot, and ready-to-use bios for press and event organizers.">
+  <meta property="og:description" content="Warren Husband is CTO of EdgeTheory, a narrative intelligence company. Bio, writing, talks, headshot, and ready-to-use bios for press and event organizers.">
   <meta property="og:url" content="https://warrenhusband.com/">
   <meta property="og:image" content="https://warrenhusband.com/og-image.png">
   <meta property="og:image:type" content="image/png">
@@ -29,7 +29,7 @@
   <meta name="twitter:image" content="https://warrenhusband.com/og-image.png">
   <meta name="twitter:image:alt" content="Warren Husband, Chief Technology Officer at EdgeTheory">
   <meta name="twitter:title" content="Warren Husband – CTO, EdgeTheory">
-  <meta name="twitter:description" content="Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company. Bio, experience, speaking, headshot, and ready-to-use bios for press and event organizers.">
+  <meta name="twitter:description" content="Warren Husband is CTO of EdgeTheory, a narrative intelligence company. Bio, writing, talks, headshot, and ready-to-use bios for press and event organizers.">
 
   <script type="application/ld+json">
   {
@@ -48,8 +48,8 @@
         "@id": "https://warrenhusband.com/",
         "url": "https://warrenhusband.com/",
         "name": "Warren Husband – CTO, EdgeTheory",
-        "description": "Warren Husband is Chief Technology Officer at EdgeTheory, a narrative intelligence company. Bio, experience, speaking, headshot, and ready-to-use bios for press and event organizers.",
-        "dateModified": "2026-11-24T08:44-06:00",
+        "description": "Warren Husband is CTO of EdgeTheory, a narrative intelligence company. Bio, writing, talks, headshot, and ready-to-use bios for press and event organizers.",
+        "dateModified": "2026-11-24T09:17-06:00",
         "inLanguage": "en-US",
         "isPartOf": { "@id": "https://warrenhusband.com/#website" },
         "mainEntity": { "@id": "https://warrenhusband.com/#person" }
@@ -190,6 +190,7 @@
       --rule: #d9cfbd;
       --link: #a14026;
       --card: #fffdf8;
+      --num: #1e3669;
       color-scheme: light;
     }
     @media (prefers-color-scheme: dark) {
@@ -200,6 +201,7 @@
         --rule: #3a332a;
         --link: #ec8a64;
         --card: #1f1b16;
+        --num: #efe8db;
         color-scheme: dark;
       }
     }
@@ -335,7 +337,7 @@
       font-family: Fraunces, Georgia, serif;
       font-size: 2.2rem;
       letter-spacing: 0;
-      color: var(--ink);
+      color: var(--num);
       line-height: 1;
       margin-bottom: .4rem;
       font-weight: 400;
@@ -512,6 +514,7 @@
       color: var(--muted);
       font-size: .92rem;
     }
+    .timeline .where, .speaking .where { display: block; }
     .timeline .note { grid-column: 2; color: var(--muted); font-size: .98rem; }
     .skills { margin-top: .3rem; }
     footer {
@@ -531,7 +534,11 @@
       .timeline li { grid-template-columns: 1fr; }
       .timeline .when, .timeline .what, .timeline .note { grid-column: 1; grid-row: auto; }
       .mast { flex-direction: column; align-items: flex-start; gap: .3rem; }
+      .mast nav { column-gap: 1rem; }
       .stats { gap: 2rem; }
+    }
+    @media (max-width: 374px) {
+      .mast nav { column-gap: .75rem; }
     }
 
   </style>
@@ -542,6 +549,7 @@
       <a class="word" href="/">Warren Husband</a>
       <nav aria-label="Sections">
         <a href="#writing">Writing</a>
+        <a href="/blog/">Blog</a>
         <a href="#speaking">Speaking</a>
         <a href="#experience">Experience</a>
         <a href="#press">Press kit</a>
@@ -551,7 +559,7 @@
       <div>
         <p class="kicker">CTO · EdgeTheory · Mississippi</p>
         <h1>Warren<br>Husband</h1>
-        <p class="lede">Chief Technology Officer at <a href="https://edgetheory.com/?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">EdgeTheory</a>, working in <em>narrative intelligence</em>: understanding the stories that shape what people believe, where they start, how they spread, and where they're heading.</p>
+        <p class="lede">Chief Technology Officer at <a href="https://edgetheory.com/?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">EdgeTheory</a>, working in <em>narrative intelligence</em>: Understanding the stories that shape what people believe, where they start, how they spread, and where they're heading.</p>
         <ul class="stats">
           <li><b>30+ years</b> in software, since 1995</li>
           <li><b>2018</b> joined EdgeTheory as CTO</li>
@@ -565,8 +573,6 @@
           <a href="https://medium.com/@warrenhusband" rel="me">Medium</a>
           <a href="https://speakerhub.com/speaker/warren-husband" rel="me">SpeakerHub</a>
           <a href="https://www.youtube.com/@warrenhusband" rel="me">YouTube</a>
-          <a href="#press">Press kit</a>
-          <a href="/blog/">Blog</a>
         </nav>
       </div>
       <picture>
@@ -642,7 +648,6 @@
             <p class="post-foot"><span class="post-src">Link: newscientist.com</span><a class="post-open" href="https://x.com/WarrenHusband/status/2124875630806212718" target="_blank" rel="noopener" aria-label="View on X: Imagine being able to manipulate gravity instead of fighting it. The implications for transportation, energy, space exploration, and technology would be staggering. @newscientist #Physics (Nov 23, 2026)">View on X <span aria-hidden="true">&rarr;</span></a></p>
           </article>
         </div>
-        <p class="more"><a href="/posts/">All posts</a></p>
         <!-- social:x:end -->
       </div>
     </section>
@@ -678,29 +683,30 @@
             <p class="post-foot"><span class="post-src">Link: emergent.sh</span><a class="post-open" href="https://www.linkedin.com/posts/warren-husband_i-suspect-the-most-interesting-breakthroughs-share-7529555502809333760-a44G/" target="_blank" rel="noopener" aria-label="View on LinkedIn: I suspect the most interesting breakthroughs may come from places we aren&#x27;t looking yet. We&#x27;re still learning what these systems are capable of, and the feedback loop between AI and the people building it could get very interesting. (Nov 20, 2026)">View on LinkedIn <span aria-hidden="true">&rarr;</span></a></p>
           </article>
         </div>
-        <p class="more"><a href="/posts/">All posts</a></p>
+        <p class="more"><a href="/posts/">All posts on X and LinkedIn</a></p>
         <!-- social:li:end -->
       </div>
     </section>
     <section id="speaking">
       <div class="lbl"><span aria-hidden="true">05</span><h2>Speaking &amp; press kit</h2></div>
       <div class="body">
+        <p class="label">Past talks</p>
         <ul class="speaking">
           <li id="msu-xai-2026">
             <h3>Beyond the AI Buzz: Narrative Intelligence for Real-World National Security</h3>
             <a class="event" href="https://xai-exlent.github.io/workshop-2026/">XAI Workshop 2026 (XAI: Experiential Learning in AI/ML for Future Innovators), Mississippi State University</a>
-            <span class="when">October 27, 2026 · Bill R. Foster Ballroom, Colvard Student Union, Starkville, MS</span>
-            <span class="note">Keynote: “Beyond the AI Buzz: Narrative Intelligence for Real-World National Security.” Also a workshop panelist.</span>
+            <span class="when">October 27, 2026<span class="where">Bill R. Foster Ballroom, Colvard Student Union, Starkville, MS</span></span>
+            <span class="note">Keynote. Also a workshop panelist.</span>
           </li>
           <li id="ncni-2026">
             <h3>The Intelligence of the Narrative</h3>
             <a class="event" href="https://ncnisummit.org/2026">NCNI Summit 2026 (National Center for Narrative Intelligence, 3rd Annual Invitational Summit)</a>
-            <span class="when">March 31, 2026 · Gertrude C. Ford Ballroom, The Inn at Ole Miss, Oxford, MS</span>
-            <span class="note">“The Intelligence of the Narrative” (Cognitive Warfare &amp; Artificial Intelligence session).</span>
+            <span class="when">March 31, 2026<span class="where">Gertrude C. Ford Ballroom, The Inn at Ole Miss, Oxford, MS</span></span>
+            <span class="note">Cognitive Warfare &amp; Artificial Intelligence session.</span>
           </li>
         </ul>
         <div class="press" id="press">
-          <h3>Booking a speaker? Press kit</h3>
+          <h3>Booking a speaker? Get the press kit</h3>
           <p><a class="button" href="https://edgetheory.com/contact?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">Press &amp; speaking inquiries</a></p>
           <p class="asset"><a class="download" href="warren-husband-cto-edgetheory.jpg" download="warren-husband-1200.jpg">Download headshot</a></p>
           <p class="file-note">1200×1200 JPEG</p>
@@ -725,67 +731,67 @@
         <ol class="timeline">
       <li>
         <span class="what">CTO, EdgeTheory</span>
-        <span class="when">Feb 2018 – Present · Ridgeland, MS</span>
+        <span class="when">Feb 2018&nbsp;– Present<span class="where">Ridgeland, MS</span></span>
         <span class="note">Leads the engineering team behind EdgeTheory's narrative intelligence platform. Day to day that means working with current AI and LLM models, agentic AI workflows and MCP, retrieval and embeddings, and cloud data engineering.</span>
       </li>
       <li>
         <span class="what">Team Leader / Senior Software Engineer, NXXIO / Spivey &amp; Company</span>
-        <span class="when">Mar 2015 – Feb 2018 · New Orleans, LA</span>
+        <span class="when">Mar 2015&nbsp;– Feb 2018<span class="where">New Orleans, LA</span></span>
         <span class="note">Led the remote development team. Built sales, compliance, and onboarding portals for sales teams, physicians, and lab staff, and QuickBooks invoicing. Rebuilt a science portal to process HL7 data and combine lab reports from multiple labs into one report.</span>
       </li>
       <li>
         <span class="what">Team Leader / Senior Software Engineer, Renaissance RX</span>
-        <span class="when">Jul 2013 – Mar 2015 · New Orleans, LA</span>
+        <span class="when">Jul 2013&nbsp;– Mar 2015<span class="where">New Orleans, LA</span></span>
         <span class="note">Led the remote development team. Built web portals for sales data, pharmacogenomics analyses, and physician registries, working directly with physicians, lab staff, and pharmacists.</span>
       </li>
       <li>
         <span class="what">Senior Software Engineer, Natural Molecular Testing</span>
-        <span class="when">Jan 2013 – Jul 2013 · Renton, WA</span>
+        <span class="when">Jan 2013&nbsp;– Jul 2013<span class="where">Renton, WA</span></span>
         <span class="note">Designed a pharmacogenomics report format that made DNA lab results easier for physicians and patients to understand. Built sales and physician-registry portals.</span>
       </li>
       <li>
         <span class="what">Information Technology Director, Bladder Health Network</span>
-        <span class="when">Oct 2005 – Jan 2013 · Jackson, MS</span>
+        <span class="when">Oct 2005&nbsp;– Jan 2013<span class="where">Jackson, MS</span></span>
         <span class="note">Ran software, infrastructure, and technology decisions. Built patient scheduling, study-data, and physician reporting for urogynecological studies. Built a Boston Scientific sales portal and iPhone apps for physicians and Boston Scientific sales reps.</span>
       </li>
       <li>
         <span class="what">Senior Web Applications Developer, Bomgar Corporation</span>
-        <span class="when">Aug 2005 – Nov 2009 · Ridgeland, MS</span>
+        <span class="when">Aug 2005&nbsp;– Nov 2009<span class="where">Ridgeland, MS</span></span>
         <span class="note">Built the online purchasing system integrated with Salesforce, iTransact, and FedEx, a lead scoring and routing system, and a VAR portal builder.</span>
       </li>
       <li>
         <span class="what">Director of Software Engineering, TicketsXChange</span>
-        <span class="when">May 2005 – Aug 2005 · Oxford, MS</span>
+        <span class="when">May 2005&nbsp;– Aug 2005<span class="where">Oxford, MS</span></span>
         <span class="note">Built the customer-management system and the data sync that let local box offices sell tickets from their own servers on game day.</span>
       </li>
       <li>
         <span class="what">Senior Programmer/Analyst, Mississippi Baptist Health Systems</span>
-        <span class="when">Nov 2002 – Mar 2005 · Jackson, MS</span>
+        <span class="when">Nov 2002&nbsp;– Mar 2005<span class="where">Jackson, MS</span></span>
         <span class="note">Built hospital-wide software, including application delivery and inventory, patient tracking, pre-admissions, dietary ordering, and a patient smart card.</span>
       </li>
       <li>
         <span class="what">President and CEO, Kalostech</span>
-        <span class="when">Oct 2001 – Dec 2009 · Jackson, MS</span>
+        <span class="when">Oct 2001&nbsp;– Dec 2009<span class="where">Jackson, MS</span></span>
         <span class="note">Software development, networking, and IT consulting for clients including the Mississippi Band of Choctaw Indians, Primerica Financial, Young Life, and Lakeland Radiologists.</span>
       </li>
       <li>
         <span class="what">Senior Software Engineer, GoCo-OP</span>
-        <span class="when">Jan 2001 – Oct 2001 · Maitland, FL</span>
+        <span class="when">Jan 2001&nbsp;– Oct 2001<span class="where">Maitland, FL</span></span>
         <span class="note">Wrote coding standards, led code reviews, and helped build web-based procurement software used by Marriott and Wyndham.</span>
       </li>
       <li>
         <span class="what">Senior Software Engineer, Baport Technologies</span>
-        <span class="when">Mar 2000 – Nov 2000 · Lake Mary, FL</span>
+        <span class="when">Mar 2000&nbsp;– Nov 2000<span class="where">Lake Mary, FL</span></span>
         <span class="note">Built a web-based accounting application and its printing system, and helped build automated tests and prototypes for new modules.</span>
       </li>
       <li>
         <span class="what">Software Engineer / Web Master, Stromberg</span>
-        <span class="when">May 1999 – Mar 2000 · Lake Mary, FL</span>
+        <span class="when">May 1999&nbsp;– Mar 2000<span class="where">Lake Mary, FL</span></span>
         <span class="note">Built the company website, a dealer extranet, and web and thin-client editions of Stromberg Time Manager.</span>
       </li>
       <li>
         <span class="what">Project Manager / Director of Training / Sr. Software Engineer, Vention, LLC</span>
-        <span class="when">Dec 1995 – Apr 1999 · Jackson, MS</span>
+        <span class="when">Dec 1995&nbsp;– Apr 1999<span class="where">Jackson, MS</span></span>
         <span class="note">Trained new engineers in web and database development, built client websites and portals (including Mossy Oak Camouflage's e-commerce site), and ran the company's web and SQL servers.</span>
       </li>
     </ol>
@@ -798,7 +804,7 @@
     <section id="education">
       <div class="lbl"><span aria-hidden="true">07</span><h2>Education</h2></div>
       <div class="body">
-        <p class="education"><a href="https://www.belhaven.edu/">Belhaven University</a>, Jackson, MS. B.S. in Computer Science, minor in Business Administration, 1994 – 1998.</p>
+        <p class="education"><a href="https://www.belhaven.edu/">Belhaven University</a>, Jackson, MS. B.S. in Computer Science, minor in Business Administration, 1994&nbsp;–&nbsp;1998.</p>
       </div>
     </section>
     <footer>
@@ -816,7 +822,7 @@
         <a href="https://edgetheory.com/contact?utm_source=warrenhusband.com&amp;utm_medium=referral&amp;utm_campaign=warren_husband_bio">Press &amp; speaking inquiries</a>
       </nav>
       <p>© 2026 Warren Husband</p>
-      <p>Last updated <time datetime="2026-11-24T08:44-06:00">November 24, 2026, 8:44 AM CT</time></p>
+      <p>Last updated <time datetime="2026-11-24T09:17-06:00">November 24, 2026, 9:17 AM CT</time></p>
     </footer>
   </div>
 </body>
