@@ -3,13 +3,15 @@
 
 The home page shows the newest MAX_PER_PLATFORM posts per platform. posts/index.html lists
 every post in data/social-posts.json, newest first, by month, so keep old posts in the data
-file instead of dropping them. The sitemap's /posts/ lastmod follows the newest post.
+file instead of dropping them. In the sitemap, /posts/ lastmod follows the newest post, and the
+home page's lastmod is the later of the newest shown post and index.html's ProfilePage dateModified.
 
 Run with --fetch-images first to fill in a missing "image" for each post
 from the og:image of its "link". The rewrite itself never touches the network.
 Every shown post must have an image: it refuses to write while one is missing. If the
 article site blocks the fetch, set "image" from the post's own link card (for X, the
-pbs.twimg.com/card_img/... URL in the post's embed data).
+pbs.twimg.com/card_img/... URL in the post's embed data). Substack "subscribe" banners are
+skipped, since on a card they look like an ad.
 """
 
 import html
@@ -107,7 +109,16 @@ def og_image(url):
         head = response.read(600_000).decode("utf-8", "replace")
     parser = OgImage()
     parser.feed(head)
-    return urljoin(url, html.unescape(parser.found)) if parser.found else None
+    if not parser.found:
+        return None
+    found = urljoin(url, html.unescape(parser.found))
+    if is_subscribe_card(found):
+        raise ValueError(f"og:image is a newsletter subscribe banner ({found})")
+    return found
+
+
+def is_subscribe_card(url):
+    return "subscribe-card" in url
 
 
 def fetch_images(posts):
@@ -133,7 +144,7 @@ def grid(cards):
     return "        <div class=\"posts\">\n" + "\n".join(cards) + "\n        </div>"
 
 
-MORE = '\n        <p class="more"><a href="/posts/">All posts</a></p>'
+MORE = '\n        <p class="more"><a href="/posts/">All posts on X and LinkedIn</a></p>'
 
 
 def x_href(post):
@@ -141,7 +152,7 @@ def x_href(post):
 
 
 def x_markup(posts):
-    return grid(card(x_href(post), post, "X", X_ICON) for post in posts) + MORE
+    return grid(card(x_href(post), post, "X", X_ICON) for post in posts)
 
 
 def linkedin_markup(posts):
@@ -263,6 +274,18 @@ def write_archive(posts):
     SITEMAP.write_text(sitemap, encoding="utf-8")
 
 
+def write_home_lastmod(posts):
+    """Keep the sitemap's home-page lastmod in step with the post lists and the page's own dateModified."""
+    shown = [post["date"] for platform in ("x", "linkedin") for post in posts[platform][:MAX_PER_PLATFORM]]
+    modified = re.search(r'"dateModified":\s*"(\d{4}-\d{2}-\d{2})', INDEX.read_text(encoding="utf-8"))
+    lastmod = max(shown + ([modified.group(1)] if modified else []))
+    sitemap = SITEMAP.read_text(encoding="utf-8")
+    pattern = re.compile(rf"(<loc>{re.escape(SITE)}/</loc>\s*<lastmod>)[^<]*(</lastmod>)")
+    if not pattern.search(sitemap):
+        raise SystemExit("sitemap.xml has no home-page <lastmod>")
+    SITEMAP.write_text(pattern.sub(rf"\g<1>{lastmod}\g<2>", sitemap), encoding="utf-8")
+
+
 def replace_marked(page, start, end, inner):
     start_at = page.find(start)
     end_at = page.find(end)
@@ -288,6 +311,7 @@ def main():
     page = replace_marked(page, "<!-- social:li:start -->", "<!-- social:li:end -->", linkedin_markup(posts["linkedin"][:MAX_PER_PLATFORM]))
     INDEX.write_text(page, encoding="utf-8")
     write_archive(posts)
+    write_home_lastmod(posts)
 
 
 if __name__ == "__main__":
