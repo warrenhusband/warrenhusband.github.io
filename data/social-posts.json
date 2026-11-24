@@ -1,6 +1,13 @@
 {
   "x": [
     {
+      "id": "2125238021499085311",
+      "date": "2026-11-24",
+      "text": "This could be a meaningful shift in how software gets built. Not simply automating what developers do today, but opening the door to entirely new ways of working.",
+      "link": "https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/",
+      "image": "https://pbs.twimg.com/media/HX5T6Y2W4AEoZDs.jpg"
+    },
+    {
       "id": "2124978979824152764",
       "date": "2026-11-23",
       "text": "We're getting closer to a world where meaningful AI capability is something you own rather than rent. #AI",
@@ -226,6 +233,14 @@
     }
   ],
   "linkedin": [
+    {
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7531001203241951232/",
+      "urn": "urn:li:activity:7531001203241951232",
+      "date": "2026-11-24",
+      "text": "This is why you never give curious developers access to undocumented APIs. Actually, please keep giving them access.",
+      "link": "https://www.macworld.com/article/3294451/trick-turns-macbooks-force-touch-trackpad-into-audio-speaker.html",
+      "image": "https://www.macworld.com/wp-content/uploads/2026/11/3294451-0-25420100-1795463047-m3-macbook-air-trackpad.jpg?quality=50&strip=all&w=1024"
+    },
     {
       "url": "https://www.linkedin.com/feed/update/urn:li:activity:7530321801927626753/",
       "urn": "urn:li:activity:7530321801927626753",
