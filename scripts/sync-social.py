@@ -9,8 +9,10 @@ home page's lastmod is the later of the newest shown post and index.html's Profi
 Run with --fetch-images first to fill in a missing "image" for each post
 from the og:image of its "link". The rewrite itself never touches the network.
 Every shown post must have an image: it refuses to write while one is missing. If the
-article site blocks the fetch, set "image" from the post's own link card (for X, the
-pbs.twimg.com/card_img/... URL in the post's embed data). Substack "subscribe" banners are
+article site blocks the fetch, open the article in a browser and copy its og:image, or use a
+photo attached to the post itself (pbs.twimg.com/media/...). Never use X link-card images
+(pbs.twimg.com/card_img/...): X expires them within days, and the archive keeps posts for good,
+so the script refuses to write while any post uses one. Substack "subscribe" banners are
 skipped, since on a card they look like an ad.
 """
 
@@ -300,8 +302,12 @@ def main():
     posts = json.loads(DATA.read_text(encoding="utf-8"))
     if "--fetch-images" in sys.argv[1:]:
         fetch_images(posts)
-    # Every shown post must have an image (Warren, 2026-11-20). When the article's site blocks the fetch, use the
-    # image from the post's own link card (for X, pbs.twimg.com/card_img/... from the post's embed data) in "image".
+    expiring = [f"{platform} {post.get('id') or post.get('urn')}" for platform in ("x", "linkedin")
+                for post in posts[platform] if "/card_img/" in post.get("image", "")]
+    if expiring:
+        sys.exit("refusing to write: X card_img images expire, use the article's og:image for " + ", ".join(expiring))
+    # Every shown post must have an image (Warren, 2026-11-20). When the article's site blocks the fetch, copy the
+    # article's og:image from a browser, or use a photo attached to the post (pbs.twimg.com/media/...).
     missing = [f"{platform} {post.get('id')}" for platform in ("x", "linkedin")
                for post in posts[platform][:MAX_PER_PLATFORM] if not post.get("image")]
     if missing:
