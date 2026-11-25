@@ -1,6 +1,13 @@
 {
   "x": [
     {
+      "id": "2125600431296426009",
+      "date": "2026-11-25",
+      "text": "The IT outages are now interplanetary. @arstechnica #Mars",
+      "link": "https://arstechnica.com/space/2026/11/half-of-nasas-aging-mars-fleet-knocked-offline-by-technical-issues/",
+      "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/11/PIA26752-1152x648-1795552223.jpg"
+    },
+    {
       "id": "2125333664024113311",
       "date": "2026-11-24",
       "text": "Interesting to see aviation, electrification, and autonomous systems converging.",
@@ -247,6 +254,22 @@
     }
   ],
   "linkedin": [
+    {
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7531367208178851840/",
+      "urn": "urn:li:activity:7531367208178851840",
+      "date": "2026-11-25",
+      "text": "AI agents have officially entered the honeypot era. Not surprisingly, giving an autonomous agent access to a tempting pile of credentials and hoping it behaves isn't exactly a stellar security strategy. via WIRED\n#AIAgents #Cybersecurity #AISecurity",
+      "link": "https://www.wired.com/story/ai-agents-can-get-honeypotted-too-aw/",
+      "image": "https://media.wired.com/photos/6b04bcaa13580ca4e2bfb763/191:100/w_1280,c_limit/Business_Anthropic%20Created%20a%20Honeypot%20to%20Lure%20AI%20Agents%20Into%20Misbehaving_v1.jpg"
+    },
+    {
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7531363596627320832/",
+      "urn": "urn:li:activity:7531363596627320832",
+      "date": "2026-11-25",
+      "text": "Perfect security was never a realistic goal. What's becoming increasingly important is resilience: systems that can withstand compromise, recover quickly, and prevent individual vulnerabilities from becoming catastrophic failures. AI raises the stakes, but it also gives us some powerful new tools to build that resilience. via The New Yorker\n#Cybersecurity #Resilience #AI",
+      "link": "https://www.newyorker.com/culture/q-and-a/are-we-really-witnessing-a-cyber-apocalypse",
+      "image": "https://media.newyorker.com/photos/6b0617776dabd14c5e14e80f/16:9/w_1280,c_limit/Rothman---Cyber-Apocalypse---GettyImages-2305197766.jpg"
+    },
     {
       "url": "https://www.linkedin.com/feed/update/urn:li:activity:7531001203241951232/",
       "urn": "urn:li:activity:7531001203241951232",
