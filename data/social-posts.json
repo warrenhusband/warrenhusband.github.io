@@ -1,6 +1,13 @@
 {
   "x": [
     {
+      "id": "2126379672623587463",
+      "date": "2026-11-27",
+      "text": "quarter of a micron, navigating the bloodstream, crossing the blood-brain barrier, and delivering a payload. The engineering involved here is wild. @TechSpot #Nanotech",
+      "link": "https://www.techspot.com/news/114715-caltech-nanorobot-got-cancer-drugs-mouse-brains-parkinson.html",
+      "image": "https://www.techspot.com/images2/news/bigimage/2026/11/2026-11-26-image-8.jpg"
+    },
+    {
       "id": "2125696054058270901",
       "date": "2026-11-25",
       "text": "The freezer attacks are a blunt demonstration that cyber warfare doesn't have to be sophisticated to have real-world consequences. The hard part isn't always breaking in. It's understanding what you can make happen once you're there. @FT #Cybersecurity",
@@ -268,6 +275,14 @@
     }
   ],
   "linkedin": [
+    {
+      "url": "https://www.linkedin.com/posts/warren-husband_physics-wireless-innovation-share-7532144922922123264-UzHF/",
+      "urn": "urn:li:share:7532144922922123264",
+      "date": "2026-11-27",
+      "text": "Imagine communications that don't care about walls, rock, water, or other physical barriers. The current implementation is obviously a long way from practical, but the underlying physics opens up some fascinating possibilities.\n#Physics #Wireless #Innovation",
+      "link": "https://www.techspot.com/news/114724-1950s-elevator-sent-message-through-brick-wall-using.html",
+      "image": "https://www.techspot.com/images2/news/bigimage/2026/11/2026-11-27-image-2.jpg"
+    },
     {
       "url": "https://www.linkedin.com/feed/update/urn:li:activity:7531367208178851840/",
       "urn": "urn:li:activity:7531367208178851840",
